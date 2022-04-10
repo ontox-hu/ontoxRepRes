@@ -1,0 +1,30 @@
+# Hands-on storing data
+
+```{r setup2, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Data flows in ONTOX
+
+Specifics about ontox here!
+
+With very practical starting points
+
+## version control
+
+ - github?
+ 
+ - version control low-fi without git
+
+I will need to do some research on this, as I just throw github at everything. Here is a start:
+https://rebelsguidetopm.com/how-to-do-document-version-control/
+
+
+
+
+## workflows
+
+ - sysrev
+ - more
+ - more
+

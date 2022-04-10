@@ -1,0 +1,217 @@
+# Hands-on storing data
+
+With some sketches of sample content
+
+
+```{r setup2, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<style>
+.blauw {
+  background-color: #f3fbfe;
+}
+</style>
+
+## Introducing Reproducible Research
+
+Reproducible research means that you work in a way that makes it possible for someone else to reach the same results from your data. Within ONTOX, this is an important concept, as reproducibility leads to increased rigour and quality of scientific outputs, and thus to greater trust in our results.Additionally, a reproducible workflow leads to a decrease in headaches over your own project data management.  
+
+In general, the most important part of a reproducible workflow around a dataset is giving all meta data on your data (including your hypotheses, study design, specifics on your data collection and all the analysis steps you took, as well as any publications based on this data.) The second most important thing is version control: keeping track of any changes to your dataset, and to any documentation accompanying it.
+
+[Click for more information: Symposium report, October 2015. Reproducibility and reliability of biomedical research: improving research  practice](https://acmedsci.ac.uk/viewFile/56314e40aac61.pdf)
+
+
+### exercise: some reflection on own or peer reproducibility? {.blauw}
+
+some exercise here using own data / papers / email conversations etc.
+
+perhaps: go through your e-mail and look for the last time you sent some colleague or colaborator data. Suppose you move to a different university, your mailbox is closed and some stranger needs to use your data for a project. Would they have enough information to do so?
+
+## The _GUI problem_
+
+Most people would agree that this seems to be a good practice. However, many people use GUI based software (graphical user interface). Citing Wikipedia, this is a *"user interface that allows users to interact with electronic devices through graphical icons and audio indicator such as primary notation, instead of text-based user interfaces, typed command labels or text navigation."* So basically, any program that you use by clicking around in menu's, or using voice control etc, for data science this could for instance be Excel.
+
+However, how would you 'describe' the steps of an analysis or creation of a graph when you use GUI based software? 
+
+```{r messysteps, dpi = 80, echo=F}
+knitr::include_graphics(
+  file.path(
+    "images/messy_steps.jpg"
+  )
+)
+```
+
+<p style="font-size:14px">**The file "./Rmd/steps_to_graph_from_excel_file.html" shows you how to do this using the programming language R.</p>
+
+Maybe ~~videotape~~ tiktok-record your process and add .mp4 to your paper? Type out every step in a Word document? Both options seem rather silly. This is actually really hard!
+
+This is why so many researchers are using code to analyse their data. If you do, just make sure you keep the code with the data. If you don't, make sure you precisely keep track of every step you take, in a separate text document.
+
+## What you need for replication
+
+To replicate a scientific study we need at least:
+
+- **Context** Scientific context! Research questions, related publications.. [<mark>P<mark/>]
+- **Methods** Exactly how the data was gathered [<mark>P</mark>, _D_, <mark>C</mark>]
+    + In what model or population? (e.g. some cell line, some knockout mouse etc)
+    + *Exact* (experimental) design of the study
+- **Data** Actually the raw data itself, to check if you find something similar [<mark>D</mark>] 
+- **Meta data** which is data about the data. For instance who gathered it, when, where, licence information, keywords...)[<mark>D</mark>, _C_] 
+- **Data analysis** All steps in data analysis [_P_, <mark>C</mark>]
+    + Exploratory data analysis of the data 
+    + data mangling decisisons, such as fitering and outlier selection
+    + Which inductive statistical tests or inference was done and how.
+- **Interpretation** How the data was interpreted [<mark>P</mark>, _C_]
+    + All choices made in the interpretation of the data (there is usually not one possible way to interpret results..)
+    + Conclusions and academic scoping of the results
+- **Access to all of the above!** [<mark>OAcc, OSrc</mark>]
+
+<p style="font-size:14px">$P = Publication$, $D = Data$, $C = Code$, $OAcc = Open\ Access$, $OSrc = Open\ Source$ </p>
+
+So we can conclude that:
+
+$Reproducible\ (Open)\ Science = P + D + C + OAcc + OSrc$
+
+## File names
+
+**Do you recognize this?**
+
+
+```{r, out.width = "300px", echo=FALSE}
+knitr::include_graphics(
+  file.path(
+    "images/final.jpg"
+  )
+)
+
+```
+
+The use of version control abolishes the need for inventing a file name every time you save it. We will briefly discuss github in the second half of this workshop. With the use of proper version control you only have to think about naming a file just once with a good name. But what entitles a 'good' file name?
+
+A good file name is:
+
+ 1. Unique in a folder (prevent duplicated names)
+ 1. Is short, but descriptive (if you need it to be longer to be descriptive enough, choose that)
+ 1. Does not contain any special characters* except for `_` and a `.` before the extension. Having multiple dots (`.`) in a file name can be confusing but sometimes is required. For example for an archive we sometimes see `<file_name>.tar.gz`
+ 1. The typeface of a file name is ideally set in lowercase only. If you want to deviate from this use `UpperFirst` camelcase instead.
+ 1. The most important thing about naming files is to be consistent. This is also the hardest part!
+ 1. If you receive a file from somebody else: **Never change the file name, even if it does not meet the above requirements**. Changing  a file name causes a breakage between the file and the source it came from. If you change a file name you recieved from a person or downloaded from the internet, the person who send the file will not know about the new name.
+
+*The special characters you should avoid in a file name:
+```
+! @ # $ % ^ & * ( ) + - = : " ' ; ? > < ~ / ? { } [ ] \ | ` , 
+```
+
+Special characters are reserved for other purposes and can cause problems when a back-up of the files is made or when files need to be loaded in analyzing software or when copying files.
+
+**Basically, what was stated about file names, also applied to naming variables in a dataset.**
+
+
+## Gorilla analytics folder structure
+
+To help you build a thorough data management process for yourself that you can start using and expanding when needed, we need a framework. In this workshop we will use some of the concepts from the `Guerrilla Analytics` framework, as described by Enda Ridge in [this booklet](https://www.elsevier.com/books/T/A/9780128002186).  
+
+Some key Guerrilla Analytics Principles to remember:
+
+ >1. Space is cheap, confusion is expensive
+ >1. Use simple, visual project structures and conventions
+ >1. Keep an intact link to data and the dissemination of knowledge (e.g. papers based on the data, emails)
+ >1. Version control changes to data and analytics code 
+ >1. Consolidate team knowledge (agree on guidelines and stick to it as a team)  
+
+<p style="font-size:14px">[Guerrilla Analytics book by Enda Ridge, ](https://guerrilla-analytics.net/)</p>
+
+**And then:** 
+
+Only the basics on how to use folders to keep track of data versions.
+
+/data/v1
+
+/data_raw
+
+etc
+
+
+## 
+
+
+### exercise: cleaning your own folder structure {.blauw}
+
+Look at your research projects and clean the folder structure?
+
+## Meta data
+
+### exercise: starting to add meta data files {.blauw}
+
+Add meta data files to your current project?
+
+## Tidy data
+
+Tidy data is a way of organising your data in a neat and structured way. If you make your data tidy, it is ensured that it is machine readable. This is important in ONTOX, as we want to use the data to build an AI platform.
+
+So what is tidy data:
+
+1. Each variable must have its own column.  
+1. Each observation must have its own row. 
+1. Each value must have its own cell.
+
+*Table1: Example of tidy data*
+
+| country 	| year 	| population 	| birth rate 	|
+|:---------	|:-----	|:----------	|:-----------	|
+| mali    	| 2001 	| 10.000.000 	| 6.88       	|
+| mali    	| 2010 	| 15.000.000 	| 6.06       	|
+| sweden  	| 2001 	| 9.000.000  	| 1.57       	|
+| sweden  	| 2010 	| 10.000.000 	| 1.85       	|
+
+
+Each variable must have its own column.  
+
+```{r , echo=FALSE, message=FALSE, out.width = "60%"}
+knitr::include_graphics("images/03_4_tidy1.jpg")
+```
+
+Each observation must have its own row. 
+
+```{r , echo=FALSE, message=FALSE, out.width = "60%"}
+knitr::include_graphics("images/03_5_tidy2.jpg")
+```
+
+Each value must have its own cell.
+
+```{r , echo=FALSE, message=FALSE, out.width = "60%"}
+knitr::include_graphics("images/03_6_tidy3.jpg")
+```
+
+So the following table would by untidy, as there are multiple observations per row:
+
+*Table2: Example of untidy data*
+
+| participant  	| sample1 	| sample2 	| sample3 	| sample4 	|
+|:----------	|:------	|:--------	|:-------------	|:-----	|
+| Pietje   	| 7.5  	| 6      	| 8.2         	| 8   	|
+| Marietje 	| 8    	| 7.9    	| 5           	| 9   	|
+
+
+This would be the tidy version:
+
+*Table3: Example of untidy data made tidy*
+
+| student  	| sample      	| stairs_walked 	|
+|:----------	|:-------------	|:-------	|
+| Pietje   	| 1        	| 7.5   	|
+| Pietje   	| 2      	| 6     	|
+| Pietje   	| 3 	| 8.2   	|
+| Pietje   	| 4         	| 8     	|
+| Marietje 	| 1        	| 8     	|
+| Marietje 	| 2      	| 7.9   	|
+| Marietje 	| 3 	| 5     	|
+| Marietje 	| 4         	| 9     	|
+
+x
+
+**HERE overview of the amount of work you throw at someone else down the line if you _dont_ provide your data tidy within ONTOX**
+
+
+

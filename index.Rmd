@@ -1,0 +1,59 @@
+---
+title: ""
+author: "Alyanne de Haan, Marc Teunis"
+site: bookdown::bookdown_site
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+# Workshop overview
+
+## Why you want to complete this workshop
+
+incentives be here
+
+## Contents and schedule (proposed)
+
+
+ - Where to store your data during a project (cloud working, security)
+ - How to store your data (folder setup, meta data, naming)
+ - Data sharing, code sharing, version control (how and why)
+ - Open data, licencing, repositories
+ - Workflow from data collection to paper
+ - Data management plans 
+
+
+## Schedule (proposed)
+
+Total of 4 hours (13:00 - 17:00) 
+
+#### 13:00-13:40
+ - welcome
+ - broad introduction to research data management FAIR data in ONTOX
+ - trouble that arrises when not managing your data (examples)
+ - intro storing data: metadata, folder structure
+ 
+#### 13:40-14:40 hands-on storing your current data
+ - metadata
+ - folder structure with gorilla data analysis
+ - analysing and cleaning your own current data storage ways
+
+#### 14:40-15:00 sticky notes /discussion
+ - on incentives and barriers
+
+#### 15:00-15:20 break
+
+#### 15:20-15:40  intro sharing data: 
+  - licensing, version control, workflow
+
+#### 15:40-16:40  hands-on sharing your current data
+ - version control for data and documents
+ - workflow data sharing within ontox
+
+#### 16:40- 17:00
+ - immediate plans for tomorrow: Prioritization of training needs from here : https://open-science-training-handbook.github.io/Open-Science-Training-Handbook_EN/05ExamplesAndPracticalGuidance/
+ - closure
+
