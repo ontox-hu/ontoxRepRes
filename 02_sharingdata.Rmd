@@ -1,4 +1,4 @@
-# Hands-on storing data
+# Hands-on sharing data
 
 ```{r setup2, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
