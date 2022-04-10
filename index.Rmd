@@ -31,15 +31,18 @@ incentives be here
 Total of 4 hours (13:00 - 17:00) 
 
 #### 13:00-13:40
- - welcome
+ - welcome, everyone introduces themselves
  - broad introduction to research data management FAIR data in ONTOX
  - trouble that arrises when not managing your data (examples)
  - intro storing data: metadata, folder structure
  
-#### 13:40-14:40 hands-on storing your current data
+#### 13:40-14:30 hands-on storing your current data
  - metadata
  - folder structure with gorilla data analysis
  - analysing and cleaning your own current data storage ways
+
+#### 14:30-14:40 central conclusion
+ - overview of the amount of work you throw at someone else down the line if you _dont_ provide your data tidy within ONTOX
 
 #### 14:40-15:00 sticky notes /discussion
  - on incentives and barriers
@@ -54,6 +57,6 @@ Total of 4 hours (13:00 - 17:00)
  - workflow data sharing within ontox
 
 #### 16:40- 17:00
- - immediate plans for tomorrow: Prioritization of training needs from here : https://open-science-training-handbook.github.io/Open-Science-Training-Handbook_EN/05ExamplesAndPracticalGuidance/
+ - immediate plans for tomorrow: perhaps Prioritization of training needs from here : https://open-science-training-handbook.github.io/Open-Science-Training-Handbook_EN/05ExamplesAndPracticalGuidance/
  - closure
 

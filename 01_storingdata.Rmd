@@ -28,6 +28,8 @@ some exercise here using own data / papers / email conversations etc.
 
 perhaps: go through your e-mail and look for the last time you sent some colleague or colaborator data. Suppose you move to a different university, your mailbox is closed and some stranger needs to use your data for a project. Would they have enough information to do so?
 
+Discuss in pairs of 2.
+
 ## The _GUI problem_
 
 Most people would agree that this seems to be a good practice. However, many people use GUI based software (graphical user interface). Citing Wikipedia, this is a *"user interface that allows users to interact with electronic devices through graphical icons and audio indicator such as primary notation, instead of text-based user interfaces, typed command labels or text navigation."* So basically, any program that you use by clicking around in menu's, or using voice control etc, for data science this could for instance be Excel.
@@ -211,7 +213,7 @@ This would be the tidy version:
 
 x
 
-**HERE overview of the amount of work you throw at someone else down the line if you _dont_ provide your data tidy within ONTOX**
+
 
 
 

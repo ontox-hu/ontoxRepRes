@@ -4,6 +4,12 @@
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+<style>
+.blauw {
+  background-color: #f3fbfe;
+}
+</style>
+
 ## Data flows in ONTOX
 
 Specifics about ontox here!
@@ -20,6 +26,9 @@ I will need to do some research on this, as I just throw github at everything. H
 https://rebelsguidetopm.com/how-to-do-document-version-control/
 
 
+### exercise: someting {.blauw}
+
+x
 
 
 ## workflows
@@ -28,3 +37,6 @@ https://rebelsguidetopm.com/how-to-do-document-version-control/
  - more
  - more
 
+### exercise: something {.blauw}
+
+x
