@@ -32,16 +32,16 @@ Total of 4 hours (13:00 - 17:00)
 
 #### 13:00-13:40
  - welcome, everyone introduces themselves
- - broad introduction to research data management FAIR data in ONTOX
- - trouble that arrises when not managing your data (examples)
+ - broad introduction to research data management and FAIR data in ONTOX
+ - demo AI: why we need it to be machine readable
  - intro storing data: metadata, folder structure
  
-#### 13:40-14:30 hands-on storing your current data
+#### 13:40-14:30 hands-on storing your current data 
  - metadata
  - folder structure with gorilla data analysis
  - analysing and cleaning your own current data storage ways
 
-#### 14:30-14:40 central conclusion
+#### 14:30-14:40 central conclusion storing data
  - overview of the amount of work you throw at someone else down the line if you _dont_ provide your data tidy within ONTOX
 
 #### 14:40-15:00 sticky notes /discussion

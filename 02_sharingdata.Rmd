@@ -12,9 +12,9 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Data flows in ONTOX
 
-Specifics about ontox here!
+Specifics about ontox data workflows here
 
-With very practical starting points
+With very practical starting points.
 
 ## version control
 
@@ -22,21 +22,22 @@ With very practical starting points
  
  - version control low-fi without git
 
-I will need to do some research on this, as I just throw github at everything. Here is a start:
+note: I will need to do some research on this, as I just throw github at everything. Here is a start:
 https://rebelsguidetopm.com/how-to-do-document-version-control/
 
+I propose to split the group here. People with previous coding experience can make a start with github in 1 hou.
+
+People without previous coding experience will have to focus on how to implement version control right now, in a ms-word based environment.
 
 ### exercise: someting {.blauw}
 
-x
+version control exercise.
 
 
 ## workflows
 
- - sysrev
- - more
- - more
+OR: we spend the hour going through a specific ontox workflow. For instance involving sysrev.
 
 ### exercise: something {.blauw}
 
-x
+ontox workflow exercise.

@@ -24,7 +24,7 @@ In general, the most important part of a reproducible workflow around a dataset 
 
 ### exercise: some reflection on own or peer reproducibility? {.blauw}
 
-some exercise here using own data / papers / email conversations etc.
+5-10 minutes
 
 perhaps: go through your e-mail and look for the last time you sent some colleague or colaborator data. Suppose you move to a different university, your mailbox is closed and some stranger needs to use your data for a project. Would they have enough information to do so?
 
@@ -140,13 +140,17 @@ etc
 
 ### exercise: cleaning your own folder structure {.blauw}
 
-Look at your research projects and clean the folder structure?
+15 minutes
+
+Look at your research projects. What needs to be done to clean the folder structure? Try to update it right now.
 
 ## Meta data
 
 ### exercise: starting to add meta data files {.blauw}
 
-Add meta data files to your current project?
+15 minutes 
+
+Add meta data files to your current project
 
 ## Tidy data
 
@@ -211,7 +215,7 @@ This would be the tidy version:
 | Marietje 	| 3 	| 5     	|
 | Marietje 	| 4         	| 9     	|
 
-x
+We will discuss why tidy data is needed in a central discussion next.
 
 
 
