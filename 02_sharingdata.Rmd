@@ -11,34 +11,14 @@ knitr::opts_chunk$set(echo = TRUE)
 </style>
 
 ## Introduction
-Whether you are working in an experimental, computational or design oriented scientific field, data is often either the final or at least an important product of your scientific research. When working in science, we seldom work in isolation, so sharing data and being able to track mutations and versions of the data and it's connected metadata is an import  
+Whether you are working in an experimental, computational or design oriented scientific field, data is often either the final or at least an important product of your scientific research. When working in science, we seldom work in isolation, so sharing data and being able to track mutations and versions of the data and it's connected metadata should be an import aspect of your work. Because usually we grow into a project without having much education on very practical things such as where to store data, how to handle file structure, how to define versions of the data and how to handle mutations and version change, we decided to focus on these aspects in a very practical manner. In this part of the workshop, we will provide you with hands-on practical handles on how to collaborate on data. We will provide you with ways how to communicate on your data workflow and you will learn how to administer and track changes to your data. We will share some good practices on how to deal with sharing of data with others as well.
 
+The contents of this part of the workshop:
 
-
-## Version Control, using Github
-
-With very practical starting points.
- - github?
- - version control low-fi without git
-note: I will need to do some research on this, as I just throw github at everything. Here is a start:
-https://rebelsguidetopm.com/how-to-do-document-version-control/
-
-I propose to split the group here. People with previous coding experience can make a start with github in 1 hou.
-**{I prefer spending the time on learning everybody about Github}**
-People without previous coding experience will have to focus on how to implement version control right now, in a ms-word based environment.
-
-
-
-
-
-
-
-### exercise: someting {.blauw}
-
-version control exercise.
-
-
-
+ 1. Defining and visualizing your data workflow, using `{mermaid}`
+ 1. Version control on data (and code). For those familiar with programming we will introduce Git and Github. For those not planning on using a computer language to do data science, we intorduce an alternative workflow
+ 1. Sending (and recieving) data via email and storing data online (Google Drive).
+ 
 
 ## Data flows in ONTOX
 
@@ -79,3 +59,40 @@ Add
 to the start of your file.
 When you want to end the definition of the flow diagram, close the mermaid fragment with:
 ` ``` `
+
+## Version control on documents and data
+You may know from exprience how an unnoticed change in a document, the use of the wrong version or the loss of edits can lead to loss of time invested, frustration and above all confusion! This is why keeping a record on all mutations on a document or the data is important. Especially, tracking mutations on the data is important for another reason: reproducibility and validity of conclusions connected to the data.  In Brown & Kaiser (2018), the authors write an important note on science that drives Reproducible Research:
+
+"…in science, three things matter:
+
+    the data,
+    the methods used to collect the data […], and
+    the logic connecting the data and methods to conclusions,
+
+everything else is a distraction."
+
+This means that in practice, when we adhere to the Reproducible Research principles, we can reproduce the analysis and the results from a data analysis in a paper when we:
+
+ - Are sure that the data is exactly the same as the data used by the authors of the paper
+ - We have the _exact_ methods used to do the analysis
+ - We have a reproducible analysis environment (meaning we use the same software and/or settings)
+ 
+This sounds trivial, but really is not. This also leads to the conclusion that using software that depends on a graphical user interface is not really compatible with Reproducible Research. We are going to illustrate this with a  
+
+ 
+ 
+ 
+
+
+
+
+
+## Version Control, using Github
+
+## Version Control, using 
+
+https://rebelsguidetopm.com/how-to-do-document-version-control/
+
+### exercise: someting {.blauw}
+
+version control exercise.
