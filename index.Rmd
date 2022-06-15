@@ -1,7 +1,8 @@
 ---
-title: ""
+title: "conquer the chaos"
 author: "Alyanne de Haan, Marc Teunis"
 site: bookdown::bookdown_site
+output: Gmisc::docx_document
 ---
 
 ```{r setup, include=FALSE}
@@ -13,7 +14,15 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Why you want to complete this workshop
 
-incentives be here
+Here be text including:
+ - Research projects are chaotic
+ - everyone has trouble keeping track of manuscipt versions
+ - almost everyone stores data in a way that works for them, but is almost impossible to reproduce once someone changes jobs.
+ - there are some easy systems to implement that conquer this chaos
+ - make your work more productive
+ - collaborations easier
+ - and ontox possible.
+
 
 ## Contents and schedule (proposed)
 
@@ -23,7 +32,6 @@ incentives be here
  - Data sharing, code sharing, version control (how and why)
  - Open data, licencing, repositories
  - Workflow from data collection to paper
- - Data management plans 
 
 
 ## Schedule (proposed)
