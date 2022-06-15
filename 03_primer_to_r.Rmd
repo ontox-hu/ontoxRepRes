@@ -1,0 +1,6 @@
+# Primer to R for data science
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
