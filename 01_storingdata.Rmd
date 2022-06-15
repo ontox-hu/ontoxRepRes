@@ -26,13 +26,13 @@ In general, the most important part of a reproducible workflow around a dataset 
 
 5-10 minutes
 
-perhaps: go through your e-mail and look for the last time you sent some colleague or colaborator data. Suppose you move to a different university, your mailbox is closed and some stranger needs to use your data for a project. Would they have enough information to do so?
+Go through your e-mail and look for the last time you sent some colleague or colaborator data. Suppose you move to a different university, your mailbox is closed and some stranger needs to use your data for a project. They have your e-mail. Would they have enough information to do so?
 
 Discuss in pairs of 2.
 
 ## The _GUI problem_
 
-Most people would agree that this seems to be a good practice. However, many people use GUI based software (graphical user interface). Citing Wikipedia, this is a *"user interface that allows users to interact with electronic devices through graphical icons and audio indicator such as primary notation, instead of text-based user interfaces, typed command labels or text navigation."* So basically, any program that you use by clicking around in menu's, or using voice control etc, for data science this could for instance be Excel.
+Many people use GUI based software (graphical user interface). Citing Wikipedia, this is a *"user interface that allows users to interact with electronic devices through graphical icons and audio indicator such as primary notation, instead of text-based user interfaces, typed command labels or text navigation."* So basically, any program that you use by clicking around in menu's, or using voice control etc, for data science this could for instance be Excel.
 
 However, how would you 'describe' the steps of an analysis or creation of a graph when you use GUI based software? 
 
@@ -48,9 +48,11 @@ knitr::include_graphics(
 
 Maybe ~~videotape~~ tiktok-record your process and add .mp4 to your paper? Type out every step in a Word document? Both options seem rather silly. This is actually really hard!
 
-This is why so many researchers are using code to analyse their data. If you do, just make sure you keep the code with the data. If you don't, make sure you precisely keep track of every step you take, in a separate text document.
+This is why so many researchers are using code to analyse their data. Code will automatically show all the steps you performed when doing an analysis. If you use code, just make sure you keep the code with the data. If you don't, make sure you precisely keep track of every step you take, in a separate text document.
 
 ## What you need for replication
+
+
 
 To replicate a scientific study we need at least:
 
@@ -58,10 +60,10 @@ To replicate a scientific study we need at least:
 - **Methods** Exactly how the data was gathered [<mark>P</mark>, _D_, <mark>C</mark>]
     + In what model or population? (e.g. some cell line, some knockout mouse etc)
     + *Exact* (experimental) design of the study
-- **Data** Actually the raw data itself, to check if you find something similar [<mark>D</mark>] 
-- **Meta data** which is data about the data. For instance who gathered it, when, where, licence information, keywords...)[<mark>D</mark>, _C_] 
+- **Data** Actually the raw data itself, to check if you find something similar [<mark>D</mark>]
+- **Meta data** which is data about the data. For instance who gathered it, when, where, licence information, keywords...)[<mark>D</mark>, _C_]
 - **Data analysis** All steps in data analysis [_P_, <mark>C</mark>]
-    + Exploratory data analysis of the data 
+    + Exploratory data analysis of the data
     + data mangling decisisons, such as fitering and outlier selection
     + Which inductive statistical tests or inference was done and how.
 - **Interpretation** How the data was interpreted [<mark>P</mark>, _C_]
@@ -74,6 +76,12 @@ To replicate a scientific study we need at least:
 So we can conclude that:
 
 $Reproducible\ (Open)\ Science = P + D + C + OAcc + OSrc$
+
+### data log
+
+XXX
+
+
 
 ## File names
 
@@ -89,7 +97,7 @@ knitr::include_graphics(
 
 ```
 
-The use of version control abolishes the need for inventing a file name every time you save it. We will briefly discuss github in the second half of this workshop. With the use of proper version control you only have to think about naming a file just once with a good name. But what entitles a 'good' file name?
+The use of version control abolishes the need for inventing a file name every time you save it. We will briefly discuss version control in the second half of this workshop. With the use of proper version control you only have to think about naming a file just once with a good name. But what entitles a 'good' file name?
 
 A good file name is:
 
@@ -102,7 +110,7 @@ A good file name is:
 
 *The special characters you should avoid in a file name:
 ```
-! @ # $ % ^ & * ( ) + - = : " ' ; ? > < ~ / ? { } [ ] \ | ` , 
+! @ # $ % ^ & * ( ) + - = : " ' ; ? > < ~ / ? { } [ ] \ | ` ,
 ```
 
 Special characters are reserved for other purposes and can cause problems when a back-up of the files is made or when files need to be loaded in analyzing software or when copying files.
