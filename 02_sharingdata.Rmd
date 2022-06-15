@@ -10,6 +10,11 @@ knitr::opts_chunk$set(echo = TRUE)
 }
 </style>
 
+## Introduction
+Whether you are working in an experimental, computational or design oriented scientific field, data is often either the final or at least an important product of your scientific research. When working in science, we seldom work in isolation, so sharing data and being able to track mutations and versions of the data and it's connected metadata is an import  
+
+
+
 ## Version Control, using Github
 
 With very practical starting points.
