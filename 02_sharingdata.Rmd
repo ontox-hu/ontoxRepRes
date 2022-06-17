@@ -89,12 +89,10 @@ Try recreating the graph below from the dataset `steps_graph_excel.csv` in the /
 
 Data Source
 
-This dataset is part of the base-R installation as a datset in the `{datasets}` R-package as the "Puromycin" dataset-object.  
-
+This dataset is part of the base-R installation in the `{datasets}` R-package as the `Puromycin` dataset-object.  
 ```{r, echo=FALSE}
 library(tidyverse)
 datasets::Puromycin
-
 
 data(package = "datasets", "Puromycin")
 Puromycin |>
