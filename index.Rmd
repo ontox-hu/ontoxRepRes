@@ -15,18 +15,34 @@ knitr::opts_chunk$set(echo = TRUE)
 
 incentives be here
 
-## Contents and schedule (proposed)
 
+## Learning objectives
 
- - Where to store your data during a project (cloud working, security)
- - How to store your data (folder setup, meta data, naming)
- - Data sharing, code sharing, version control (how and why)
- - Open data, licencing, repositories
- - Workflow from data collection to paper
- - Data management plans 
+After this workshop you:
 
+ - Can store your research projects (data, code, manuscripts, etc) in a future proof way, that fascilitates collaboration, and saves you a lot of time if you ever want to revisit, share or alter your project. 
+ - Know which information needs to be stored with data, and how to keep these together when collaborating with others.
+ - Can keep your projects under version control, so you can always backtrace what changed, when, and by whom.
+ - Applied all this to your current most active research project
+ - Can start tomorrow (or well, next monday) with using this workflow in your everyday work.
+ 
+## Contents 
 
-## Schedule (proposed)
+This workshop is devided in 2 parts: 
+
+Practical Data Handling
+
+ - Folder structure
+ - meta data
+ - Data provenance
+ 
+Data sharing
+
+ - Sending others your data or code 
+ - Receiving data or code
+ - Version control 
+
+## Schedule 
 
 Total of 4 hours (13:00 - 17:00) 
 
