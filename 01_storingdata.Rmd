@@ -1,7 +1,10 @@
-# Hands-on storing data
+# Hands-on data handling
 
-With some sketches of sample content
+ - Folder structure
+ - meta data
+ - Data provenance
 
+**Note**: most of the text on these pages are for future reference for you and colleagues. We will discuss the information live in this workshop. You can find the exercises in the menu left, or by finding the blue blocks on the page.
 
 ```{r setup2, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -15,112 +18,37 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Introducing Reproducible Research
 
-Reproducible research means that you work in a way that makes it possible for someone else to reach the same results from your data. Within ONTOX, this is an important concept, as reproducibility leads to increased rigour and quality of scientific outputs, and thus to greater trust in our results.Additionally, a reproducible workflow leads to a decrease in headaches over your own project data management.  
+Reproducible research means that you work in a way that makes it possible for someone else to reach the same results from your data. Within ONTOX, this is an important concept, as reproducibility leads to increased rigour and quality of scientific outputs, and thus to greater trust in our results.Additionally, a reproducible workflow leads to a decrease in headaches over your own project data management, revisions, and using data or analyses from previous projects.  
 
-In general, the most important part of a reproducible workflow around a dataset is giving all meta data on your data (including your hypotheses, study design, specifics on your data collection and all the analysis steps you took, as well as any publications based on this data.) The second most important thing is version control: keeping track of any changes to your dataset, and to any documentation accompanying it.
+In general, the most important part of a reproducible workflow around a dataset is giving all meta data on your data (including your hypotheses, study design, specifics on your data collection and all the analysis steps you took, as well as any publications based on this data.) The second most important thing is version control: keeping track of any changes to your dataset, and to any documentation accompanying it. We will start with setting up a folder structure to store this information.
 
 [Click for more information: Symposium report, October 2015. Reproducibility and reliability of biomedical research: improving research  practice](https://acmedsci.ac.uk/viewFile/56314e40aac61.pdf)
 
 
-### exercise: some reflection on own or peer reproducibility? {.blauw}
-
-5-10 minutes
-
-Go through your e-mail and look for the last time you sent some colleague or colaborator data. Suppose you move to a different university, your mailbox is closed and some stranger needs to use your data for a project. They have your e-mail. Would they have enough information to do so?
-
-Discuss in pairs of 2.
-
-## The _GUI problem_
-
-Many people use GUI based software (graphical user interface). Citing Wikipedia, this is a *"user interface that allows users to interact with electronic devices through graphical icons and audio indicator such as primary notation, instead of text-based user interfaces, typed command labels or text navigation."* So basically, any program that you use by clicking around in menu's, or using voice control etc, for data science this could for instance be Excel.
-
-However, how would you 'describe' the steps of an analysis or creation of a graph when you use GUI based software? 
-
-```{r messysteps, dpi = 80, echo=F}
-knitr::include_graphics(
-  file.path(
-    "images/messy_steps.jpg"
-  )
-)
-```
-
-<p style="font-size:14px">**The file "./Rmd/steps_to_graph_from_excel_file.html" shows you how to do this using the programming language R.</p>
-
-Maybe ~~videotape~~ tiktok-record your process and add .mp4 to your paper? Type out every step in a Word document? Both options seem rather silly. This is actually really hard!
-
-This is why so many researchers are using code to analyse their data. Code will automatically show all the steps you performed when doing an analysis. If you use code, just make sure you keep the code with the data. If you don't, make sure you precisely keep track of every step you take, in a separate text document.
-
 ## What you need for replication
 
+To replicate a scientific study you would need some information from and information about it. So this is the information that we should be keeping together when working on a project:
 
-
-To replicate a scientific study we need at least:
-
-- **Context** Scientific context! Research questions, related publications.. [<mark>P<mark/>]
-- **Methods** Exactly how the data was gathered [<mark>P</mark>, _D_, <mark>C</mark>]
-    + In what model or population? (e.g. some cell line, some knockout mouse etc)
-    + *Exact* (experimental) design of the study
-- **Data** Actually the raw data itself, to check if you find something similar [<mark>D</mark>]
-- **Meta data** which is data about the data. For instance who gathered it, when, where, licence information, keywords...)[<mark>D</mark>, _C_]
-- **Data analysis** All steps in data analysis [_P_, <mark>C</mark>]
-    + Exploratory data analysis of the data
+- **Context and interpretation** Scientific context! Research questions, related publications..  
+    + manuscrips
+    + presentations
+    + posters
+- **Methods** Exactly how the data was gathered 
+    + protocols
+    + code from experiments
+    + ethical committee approvals
+- **Data** 
+    + the raw data itself
+    + meta data (which is data about the data. For instance who gathered it, when, where, licence information, keywords...)
+- **Data analysis** All steps in data analysis 
+    + Exploratory data analysis of the data 
     + data mangling decisisons, such as fitering and outlier selection
+    + processed data
     + Which inductive statistical tests or inference was done and how.
-- **Interpretation** How the data was interpreted [<mark>P</mark>, _C_]
-    + All choices made in the interpretation of the data (there is usually not one possible way to interpret results..)
-    + Conclusions and academic scoping of the results
-- **Access to all of the above!** [<mark>OAcc, OSrc</mark>]
-
-<p style="font-size:14px">$P = Publication$, $D = Data$, $C = Code$, $OAcc = Open\ Access$, $OSrc = Open\ Source$ </p>
-
-So we can conclude that:
-
-$Reproducible\ (Open)\ Science = P + D + C + OAcc + OSrc$
-
-### data log
-
-XXX
-
-
-
-## File names
-
-**Do you recognize this?**
-
-
-```{r, out.width = "300px", echo=FALSE}
-knitr::include_graphics(
-  file.path(
-    "images/final.jpg"
-  )
-)
-
-```
-
-The use of version control abolishes the need for inventing a file name every time you save it. We will briefly discuss version control in the second half of this workshop. With the use of proper version control you only have to think about naming a file just once with a good name. But what entitles a 'good' file name?
-
-A good file name is:
-
- 1. Unique in a folder (prevent duplicated names)
- 1. Is short, but descriptive (if you need it to be longer to be descriptive enough, choose that)
- 1. Does not contain any special characters* except for `_` and a `.` before the extension. Having multiple dots (`.`) in a file name can be confusing but sometimes is required. For example for an archive we sometimes see `<file_name>.tar.gz`
- 1. The typeface of a file name is ideally set in lowercase only. If you want to deviate from this use `UpperFirst` camelcase instead.
- 1. The most important thing about naming files is to be consistent. This is also the hardest part!
- 1. If you receive a file from somebody else: **Never change the file name, even if it does not meet the above requirements**. Changing  a file name causes a breakage between the file and the source it came from. If you change a file name you recieved from a person or downloaded from the internet, the person who send the file will not know about the new name.
-
-*The special characters you should avoid in a file name:
-```
-! @ # $ % ^ & * ( ) + - = : " ' ; ? > < ~ / ? { } [ ] \ | ` ,
-```
-
-Special characters are reserved for other purposes and can cause problems when a back-up of the files is made or when files need to be loaded in analyzing software or when copying files.
-
-**Basically, what was stated about file names, also applied to naming variables in a dataset.**
-
 
 ## Gorilla analytics folder structure
 
-To help you build a thorough data management process for yourself that you can start using and expanding when needed, we need a framework. In this workshop we will use some of the concepts from the `Guerrilla Analytics` framework, as described by Enda Ridge in [this booklet](https://www.elsevier.com/books/T/A/9780128002186).  
+I you set up your projects in a way that makes it easy to find all this information, you will save yourself and others a lot of time. To help you start building this we will use the `Guerrilla Analytics` framework, as described by Enda Ridge in [this booklet](https://www.elsevier.com/books/T/A/9780128002186).  
 
 Some key Guerrilla Analytics Principles to remember:
 
@@ -132,100 +60,251 @@ Some key Guerrilla Analytics Principles to remember:
 
 <p style="font-size:14px">[Guerrilla Analytics book by Enda Ridge, ](https://guerrilla-analytics.net/)</p>
 
-**And then:** 
+### non reproducible folder structure
 
-Only the basics on how to use folders to keep track of data versions.
+A quite common way to organise our digital files, is by making categories. For instance, both of your teachers today organised their laptops previously similar to:
 
-/data/v1
+```{r, eval=F, include=F}
+fs::dir_tree(here::here("wrong_structure"))
+```
 
-/data_raw
+```
+old_laptop/wrong_structure
+├── courses
+├── ethical approval
+├── failed projects
+├── images
+├── manuscripts
+│   ├── me_et al , 2020_v01 - Copy.docx
+│   ├── me_et al , 2020_v02.docx
+│   └── me_et al , 2020_v03_final_final.docx
+├── presentations
+├── project A
+│   ├── Data files 001
+│   ├── Project Documentation
+│   ├── Volunteer responses
+│   ├── analyses
+│   └── revision
+│       ├── new analyses
+│       ├── new figs
+│       └── replies to reviewers
+└── protocols
 
-etc
+```
+
+This makes sense but has at least two major drawbacks:
+
+ 1. Deep nesting of files in folders can cause you to lose files, or the link between files. Most importantly, in 10 years time: will you remember on what dataset a specific powerpoint presentation was based?
+ 2. Things will change. There will be new categories and new types of files, you had not thought of before. Where will these go?
 
 
-## 
+### reproducible folder structure
+
+So when managing files in projects adhere to the following guidelines
+
+ 1. **Create a separate folder for each analytics project** . Keep the unit of a project small. 
+ 1. **Use the same folder structure in every project** Better even: agree on a folder structure as group.
+ 1. **Do not deeply nest folders** (max 2-3 levels, so no *project/documentation/applications/metc/first_communication/input/docs/moredocs/mail.txt*)
+ 1. **Keep information about the data, close to the data**. Save a README.txt in the data folder with for example descriptions about variables and meta data.
+ 1. **Store each dataset in its own sub-folder.** example below.
+ 1. **Do not change file names or move them.** Don't change a file name of a file you recieve or download from the internet. If you absolutely have to, record your changes in the README.txt file.
+ 1. **Do not manually edit data source files.** if you can prevent it. You can (_almost_) always solve this using code. If you absolutely have to, record your changes in the README.txt file.
+ 1. **In code, use relative paths** (so not mylaptop/users/alyanne/studyA/data/etc) as absolute paths will change over time.
+
+So for instance, your folder structure could look like this:
+
+```{r, eval=F, include=F}
+fs::dir_tree(here::here("correct_structure"))
+```
+
+```
+new_laptop/better_example_structure
+├── courses
+├── project A
+│   ├── analyses
+│   │   ├── code
+│   │   ├── data
+│   │   └── data_raw
+│   │       └── Volunteer responses
+│   ├── documentation
+│   ├── ethical approval
+│   ├── images
+│   ├── manuscript
+│   │   ├── me_et al , 2020.docx
+│   │   ├── version 1
+│   │   └── version 2
+│   ├── methods
+│   │   └── protocols
+│   └── presentations
+├── project B
+└── project C
+```
 
 
-### exercise: cleaning your own folder structure {.blauw}
+## **Exercise** cleaning your own folder structure {.blauw}
 
 15 minutes
 
-Look at your research projects. What needs to be done to clean the folder structure? Try to update it right now.
+Look at your research projects. Which example folder structure does it resemble the most?
+
+ 1. What needs to be done to clean your folder structure? 
+ 1. Try to fix a few things right now.
+ 1. Book a timeslot (e.g. 1 morning) in your calendar somewhere this month to fix the folder structure of your current projects.
+
+## **Advanced Exercise** automated workflows for advanced participants {.blauw}
+
+If you have more experience in managing your research projects and already know all about folder structues, meta data, licencing etc, you already use code (R, Python, Matlab, Julia, etc) to analyse your data and you now feel you misestimated the level of this workshop: no worries! Use the time to automate what you are already doing. 
+
+For instance, this folder structure looks a lot like [cookiecutter](https://drivendata.github.io/cookiecutter-data-science/), which has options for integration in workflows in R and Python. But we also like to bring [WORCS](https://cran.r-project.org/web/packages/worcs/vignettes/workflow.html) to your attention. 
+
+Use the time dedicated to this exercise to scan both options for automated workflows.
+
+
+## File names
+
+Well, having neat and tidy folders of course won't be enough. There is more needed to work reproducibly and save future you a headache when revisiting a project.
+
+One note on file names: 
+
+The main trouble with file names is actually not a file name problem, it is a version control problem. You will recognise this:
+
+```{r, out.width = "300px", echo=FALSE}
+knitr::include_graphics(
+  file.path(
+    "images/final.jpg"
+  )
+)
+
+```
+
+The use of version control abolishes the need for inventing a file name every time you save it. We will discuss version control in the second half of this workshop. With the use of proper version control you only have to think about naming a file just once with a good name. But what entitles a 'good' file name?
+
+A good file name is:
+
+ 1. **Unique** in a folder (prevent duplicated names)
+ 1. Is short, but most importantly : **descriptive** (if you need it to be longer to be descriptive enough, choose that)
+ 1. Does not contain any **special characters** except for `_` and a `.` before the extension. Special characters are reserved for other purposes and can cause problems when a back-up of the files is made or when files need to be loaded in analyzing software or when copying files.
+ 1. **Be consistent**. Important, but also hard!
+ 1. Don't use sequential filenames (e.g. "fig3A.png", "final_data.csv") as this will usually change as the project evolves.
+ 1. If you receive a file from somebody else: **Never change the file name, even if it does not meet the above requirements**. Changing  a file name causes a breakage between the file and the source it came from. If you change a file name you received from a person or downloaded from the internet, the person who send the file will not know about the new name. Also, you won't be able to trace it back to the source.
+
 
 ## Meta data
 
-### exercise: starting to add meta data files {.blauw}
+Meta data is data about the data, such as for instance the type of variables, number of observations, experimental design and who gathered the data. This is quite often not reliably documented (or at least not easily accessible) but very important: data without context loses some of its purpose. 
+
+
+Take a look at this [Wikipedia image of cocoa pods](https://commons.wikimedia.org/wiki/File:Cocoa_Pods.JPG) and scroll down. As you can see, Wikipedia stores a lot of metadata on file usage, licence, author, date, source, file size... Even the original meta data from the camera is included (scroll to the bottom).
+
+Meta information for data files, like type of variables, ranges, units, number of observations or subjects in a study, type of analysis or experimental design often goes in a README.txt file or a sheet in the Excel file containing the data. Keep the readme information close to the data file. Also, information about who is the owner of the data or who performed the experiment when and where and with what type of device or reagents is very useful to include.
+
+Over at the [The Carpentries Incubator](https://carpentries-incubator.org/), there is a really nice example of meta data in life sciences:
+
+According to [How to FAIR](https://howtofair.dk/) we can distinguish between three main types of metadata:
+
+ - **Administrative metadata**: data about a project or resource that are relevant for managing it;  
+   + E.g. project/resource owner, principal investigator, project collaborators, funder, project period, etc. They are usually assigned to the data, before you collect or create them.
+ - **Descriptive or citation metadata**: data about a dataset or resource that allow people to discover and identify it; 
+   + E.g. authors, title, abstract, keywords, persistent identifier, related publications, etc.
+ - **Structural metadata**: data about how a dataset or resource came about, but also how it is internally structured.  
+   + E.g. the unit of analysis, collection method, sampling procedure, sample size, categories, variables, etc. Structural metadata have to be gathered by the researchers according to best practice in their research community and will be published together with the data.
+   
+Descriptive and structural metadata should be added continuously throughout the project.
+
+## **Exercise** Identifying metadata types {.blauw}
+
+5 minutes
+
+Here we have an excel spreadsheet that contains project metadata for a made-up experiment of plant metabolites:
+
+```{r, echo=FALSE, fig.cap="example of a meta data file"}
+knitr::include_graphics(
+  here::here(
+    "images",
+    "04-metadatafull_spreadsheet.png"))
+```
+
+Figure credits: *Tomasz Zielinski and Andrés Romanowski*
+
+In groups, identify different types of metadata (administrative, descriptive, structural) present in this example.
+
+## {.unlisted .unnumbered}
+
+<details><summary>Click here for a solution</summary>
+
+ - Administrative metadata marked in blue
+ - Descriptive metadata marked in orange
+ - Structural metadata marked in green
+
+```{r, echo=FALSE}
+knitr::include_graphics(
+  here::here(
+    "images",
+    "04-metadatafull_spreadsheet_solution.png"))
+```
+
+</details>
+</br>
+
+Source: [FAIR in (biological) practice](https://carpentries-incubator.github.io/fair-bio-practice/05-intro-to-metadata/index.html#types-of-metadata). Licensed under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/) 2022. We took [Exercise 1: Identifying metadata types](https://carpentries-incubator.github.io/fair-bio-practice/05-intro-to-metadata/index.html#exercise-1-identifying-metadata-types-4-min) out of context, but we actually would recommend looking at all their course material when you find the time.
+
+### What should be in a meta data file?
+
+Save at the very least in your meta data file (usually called "meta data" or "readme"):
+
+ - **General information**
+    - title 
+    - information about the authors (name, institution, email address)
+ - **license information**
+ - **descriptive meta data**
+    - short description
+    - date the file was created
+    - date of data collection
+    - location of data collection
+ - **structural meta data**
+    - variable list (full names and explanations)
+    - units of measurements
+    - definition for missing data (NA)
+    - whether you changed anything in the data file manually (better not to!), if so: when, why and how. 
+ - **methodological information**
+    - description of methods (you can link to publications or protocols)
+    - description of data processing 
+    - any software or specific instruments used
+    - Describe details that may influence reuse or replication efforts
+
+Here is a nice example file by the university of Bath for [bioinformatics projects](https://researchdata.bath.ac.uk/91/19/ReadMe.txt), another more general template [available for download](https://library.bath.ac.uk/ld.php?content_id=32074262), and here [another template for experimental data](https://library.bath.ac.uk/ld.php?content_id=32652573)
+
+This may seem to be a bit too much, but try and see how much you could fill in and keep the template for future projects! Remember that any metadata is better than none.
+
+## **Exercise** starting to add meta data files {.blauw}
+
+<mark>XXX moet deze interactief?</mark>
 
 15 minutes 
 
-Add meta data files to your current project
-
-## Tidy data
-
-Tidy data is a way of organising your data in a neat and structured way. If you make your data tidy, it is ensured that it is machine readable. This is important in ONTOX, as we want to use the data to build an AI platform.
-
-So what is tidy data:
-
-1. Each variable must have its own column.  
-1. Each observation must have its own row. 
-1. Each value must have its own cell.
-
-*Table1: Example of tidy data*
-
-| country 	| year 	| population 	| birth rate 	|
-|:---------	|:-----	|:----------	|:-----------	|
-| mali    	| 2001 	| 10.000.000 	| 6.88       	|
-| mali    	| 2010 	| 15.000.000 	| 6.06       	|
-| sweden  	| 2001 	| 9.000.000  	| 1.57       	|
-| sweden  	| 2010 	| 10.000.000 	| 1.85       	|
+ - Google and discuss whether there are meta data standards for your field.
+ - Start to add meta data files to your current most active project if you don't have them.
 
 
-Each variable must have its own column.  
+## Version controlling data & data provenance
 
-```{r , echo=FALSE, message=FALSE, out.width = "60%"}
-knitr::include_graphics("images/03_4_tidy1.jpg")
+Important in a project like ONTOX is data provenance. Provenance describes the the place of origin or earliest known history of something.
+
+Data provenance thus means that for each data point you use, you should be able to tell where it came from. Where was it collected, by whom, which experiment, etc.
+
+Obviously, keeping meta data with your data and not changing raw data file names helps solve the bulk of this problem. There is an issue though: data may change. You may for instance receive an updated dataset. What now?
+
+ - Each dataset you receive goes in a numbered folder in the data-raw folder. If you recieve an updated file, you add the old file to a new folder called `v01` inside the orginal `data` folder. 
+ - The updated file replaces the old (v01) file. If then you recieve yet another update, you can repeat this trick with a `v02` folder inside the `data` folder again. 
+ - In this way, the file directly in the data folder is always the latest updated version. 
+ - Keep track of the changes in your meta data file. 
+ - always immediately update your meta data file, and keep it together with the data at all times. Losing your meta data is like storing shelves full of unlabeled tins...
+
+
+```{r, echo=FALSE,  out.width = "100px"}
+knitr::include_graphics(
+  here::here(
+    "images",
+    "1539096097.png"))
 ```
-
-Each observation must have its own row. 
-
-```{r , echo=FALSE, message=FALSE, out.width = "60%"}
-knitr::include_graphics("images/03_5_tidy2.jpg")
-```
-
-Each value must have its own cell.
-
-```{r , echo=FALSE, message=FALSE, out.width = "60%"}
-knitr::include_graphics("images/03_6_tidy3.jpg")
-```
-
-So the following table would by untidy, as there are multiple observations per row:
-
-*Table2: Example of untidy data*
-
-| participant  	| sample1 	| sample2 	| sample3 	| sample4 	|
-|:----------	|:------	|:--------	|:-------------	|:-----	|
-| Pietje   	| 7.5  	| 6      	| 8.2         	| 8   	|
-| Marietje 	| 8    	| 7.9    	| 5           	| 9   	|
-
-
-This would be the tidy version:
-
-*Table3: Example of untidy data made tidy*
-
-| student  	| sample      	| stairs_walked 	|
-|:----------	|:-------------	|:-------	|
-| Pietje   	| 1        	| 7.5   	|
-| Pietje   	| 2      	| 6     	|
-| Pietje   	| 3 	| 8.2   	|
-| Pietje   	| 4         	| 8     	|
-| Marietje 	| 1        	| 8     	|
-| Marietje 	| 2      	| 7.9   	|
-| Marietje 	| 3 	| 5     	|
-| Marietje 	| 4         	| 9     	|
-
-We will discuss why tidy data is needed in a central discussion next.
-
-
-
-
-
+ 
