@@ -4,6 +4,8 @@
  - meta data
  - Data provenance
 
+**Note**: most of the text on these pages are for future reference for you and colleagues. We will discuss the information live in this workshop. You can find the exercises in the menu left, or by finding the blue blocks on the page.
+
 ```{r setup2, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
@@ -139,25 +141,23 @@ new_laptop/correct_example_structure
 ```
 
 
-### exercise: cleaning your own folder structure {.blauw}
+## **exercise** cleaning your own folder structure {.blauw}
 
 15 minutes
 
 Look at your research projects. Which example folder structure does it resemble the most?
 
- 1. What needs to be done to clean the folder structure? 
+ 1. What needs to be done to clean your folder structure? 
  1. Try to fix a few things right now.
- 1. Book a timeslot (e.g. 1 morning) in your calendar to fix the folder structure of your current projects.
+ 1. Book a timeslot (e.g. 1 morning) in your calendar somewhere this month to fix the folder structure of your current projects.
 
+### File names
 
+Well, having neat and tidy folders of course won't be enough. There is more needed to work reproducibly and save future you a headache when revisiting a project.
 
-## meta data
+One note on file names: 
 
-
-## File names
-
-**Do you recognize this?**
-
+The main trouble with file names is actually not a file name problem, it is a version control problem. You will recognise this:
 
 ```{r, out.width = "300px", echo=FALSE}
 knitr::include_graphics(
@@ -168,36 +168,95 @@ knitr::include_graphics(
 
 ```
 
-The use of version control abolishes the need for inventing a file name every time you save it. We will briefly discuss github in the second half of this workshop. With the use of proper version control you only have to think about naming a file just once with a good name. But what entitles a 'good' file name?
+The use of version control abolishes the need for inventing a file name every time you save it. We will discuss version control in the second half of this workshop. With the use of proper version control you only have to think about naming a file just once with a good name. But what entitles a 'good' file name?
 
 A good file name is:
 
- 1. Unique in a folder (prevent duplicated names)
- 1. Is short, but descriptive (if you need it to be longer to be descriptive enough, choose that)
- 1. Does not contain any special characters* except for `_` and a `.` before the extension. Having multiple dots (`.`) in a file name can be confusing but sometimes is required. For example for an archive we sometimes see `<file_name>.tar.gz`
- 1. The typeface of a file name is ideally set in lowercase only. If you want to deviate from this use `UpperFirst` camelcase instead.
- 1. The most important thing about naming files is to be consistent. This is also the hardest part!
- 1. If you receive a file from somebody else: **Never change the file name, even if it does not meet the above requirements**. Changing  a file name causes a breakage between the file and the source it came from. If you change a file name you recieved from a person or downloaded from the internet, the person who send the file will not know about the new name.
+ 1. **Unique** in a folder (prevent duplicated names)
+ 1. Is short, but most importantly : **descriptive** (if you need it to be longer to be descriptive enough, choose that)
+ 1. Does not contain any **special characters** except for `_` and a `.` before the extension. Special characters are reserved for other purposes and can cause problems when a back-up of the files is made or when files need to be loaded in analyzing software or when copying files.
+ 1. **Be consistent**. Important, but also hard!
+ 1. If you receive a file from somebody else: **Never change the file name, even if it does not meet the above requirements**. Changing  a file name causes a breakage between the file and the source it came from. If you change a file name you received from a person or downloaded from the internet, the person who send the file will not know about the new name. Also, you won't be able to trace it back to the source.
 
-*The special characters you should avoid in a file name:
+
+## meta data
+
+Meta data is data about the data, such as for instance the type of variables, number of observations, experimental design and who gathered the data. This is quite often not reliably documented (or at least not easily accessible) but very important: data without context loses some of its purpose. 
+
+
+Take a look at this [Wikipedia image of cocoa pods](https://commons.wikimedia.org/wiki/File:Cocoa_Pods.JPG) and scroll down. As you can see, Wikipedia stores a lot of metadata on file usage, licence, author, date, source, file size... Even the original meta data from the camera is included (scroll to the bottom).
+
+Meta information for data files, like type of variables, ranges, units, number of observations or subjects in a study, type of analysis or experimental design often goes in a README.txt file or a sheet in the Excel file containing the data. Keep the readme information close to the data file. Also, information about who is the owner of the data or who performed the experiment when and where and with what type of device or reagents is very useful to include.
+
+Over at the [The Carpentries Incubator](https://carpentries-incubator.org/), there is a really nice example of meta data in life sciences:
+
+According to [How to FAIR](https://howtofair.dk/) we can distinguish between three main types of metadata:
+
+ - **Administrative metadata**: data about a project or resource that are relevant for managing it;  
+   + E.g. project/resource owner, principal investigator, project collaborators, funder, project period, etc. They are usually assigned to the data, before you collect or create them.
+ - **Descriptive or citation metadata**: data about a dataset or resource that allow people to discover and identify it; 
+   + E.g. authors, title, abstract, keywords, persistent identifier, related publications, etc.
+ - **Structural metadata**: data about how a dataset or resource came about, but also how it is internally structured.  
+   + E.g. the unit of analysis, collection method, sampling procedure, sample size, categories, variables, etc. Structural metadata have to be gathered by the researchers according to best practice in their research community and will be published together with the data.
+   
+Descriptive and structural metadata should be added continuously throughout the project.
+
+## **Exercise** Identifying metadata types {.blauw}
+
+5 minutes
+
+Here we have an excel spreadsheet that contains project metadata for a made-up experiment of plant metabolites:
+
+```{r, echo=FALSE, fig.cap="example of a meta data file"}
+knitr::include_graphics(
+  here::here(
+    "images",
+    "04-metadatafull_spreadsheet.png"))
 ```
-! @ # $ % ^ & * ( ) + - = : " ' ; ? > < ~ / ? { } [ ] \ | ` , 
+
+Figure credits: *Tomasz Zielinski and Andrés Romanowski*
+
+In groups, identify different types of metadata (administrative, descriptive, structural) present in this example.
+
+###
+
+<details><summary>Click here for a solution</summary>
+
+ - Administrative metadata marked in blue
+ - Descriptive metadata marked in orange
+ - Structural metadata marked in green
+
+```{r, echo=FALSE}
+knitr::include_graphics(
+  here::here(
+    "images",
+    "04-metadatafull_spreadsheet_solution.png"))
 ```
 
-Special characters are reserved for other purposes and can cause problems when a back-up of the files is made or when files need to be loaded in analyzing software or when copying files.
+</details>
+</br>
 
-**Basically, what was stated about file names, also applied to naming variables in a dataset.**
+Source: [FAIR in (biological) practice](https://carpentries-incubator.github.io/fair-bio-practice/05-intro-to-metadata/index.html#types-of-metadata). Licensed under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/) 2022. We took [Exercise 1: Identifying metadata types](https://carpentries-incubator.github.io/fair-bio-practice/05-intro-to-metadata/index.html#exercise-1-identifying-metadata-types-4-min) out of context, but we actually would recommend looking at all their course material when you find the time.
 
 
+## **exercise** starting to add meta data files {.blauw}
 
-
-## Meta data
-
-### exercise: starting to add meta data files {.blauw}
+<mark>XXX moet deze interactief?</mark>
 
 15 minutes 
 
-Add meta data files to your current project
+ - Google and discuss whether there are meta data standards for your topic.
+ - Start to add meta data files to your current most active project if you don't have them.
+
+
+### Version controlling data & data provenance
+
+
+
+
+
+
+
 
 ## Tidy data
 
