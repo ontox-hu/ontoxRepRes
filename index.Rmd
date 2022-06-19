@@ -53,8 +53,8 @@ Total of 4 hours (13:00 - 17:00)
  - intro storing data: metadata, folder structure
  
 #### 13:40-14:30 hands-on storing your current data 
- - metadata
  - folder structure with gorilla data analysis
+ - metadata
  - analysing and cleaning your own current data storage ways
 
 #### 14:30-14:40 central conclusion storing data
@@ -66,7 +66,7 @@ Total of 4 hours (13:00 - 17:00)
 #### 15:00-15:20 break
 
 #### 15:20-15:40  intro sharing data: 
-  - licensing, version control, workflow
+  - version control, workflow
 
 #### 15:40-16:40  hands-on sharing your current data
  - version control for data and documents

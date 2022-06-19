@@ -118,14 +118,14 @@ fs::dir_tree(here::here("correct_structure"))
 ```
 
 ```
-new_laptop/correct_example_structure
+new_laptop/better_example_structure
 ├── courses
 ├── project A
 │   ├── analyses
 │   │   ├── code
-│   │   └── data
-│   ├── data_raw
-│   │   └── Volunteer responses
+│   │   ├── data
+│   │   └── data_raw
+│   │       └── Volunteer responses
 │   ├── documentation
 │   ├── ethical approval
 │   ├── images
@@ -238,6 +238,33 @@ knitr::include_graphics(
 
 Source: [FAIR in (biological) practice](https://carpentries-incubator.github.io/fair-bio-practice/05-intro-to-metadata/index.html#types-of-metadata). Licensed under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/) 2022. We took [Exercise 1: Identifying metadata types](https://carpentries-incubator.github.io/fair-bio-practice/05-intro-to-metadata/index.html#exercise-1-identifying-metadata-types-4-min) out of context, but we actually would recommend looking at all their course material when you find the time.
 
+### What should be in a meta data file?
+
+Save at the very least in your meta data file (usually called "meta data" or "readme"):
+
+ - **General information**
+    - title 
+    - information about the authors (name, institution, email address)
+ - **license information**
+ - **descriptive meta data**
+    - short description
+    - date the file was created
+    - date of data collection
+    - location of data collection
+ - **structural meta data**
+    - variable list (full names and explanations)
+    - units of measurements
+    - definition for missing data (NA)
+    - whether you changed anything in the data file manually (better not to!), if so: when, why and how. 
+ - **methodological information**
+    - description of methods (you can link to publications or protocols)
+    - description of data processing 
+    - any software or specific instruments used
+    - Describe details that may influence reuse or replication efforts
+
+Here is a nice example file by the university of Bath for [bioinformatics projects](https://researchdata.bath.ac.uk/91/19/ReadMe.txt), another more general template [available for download](https://library.bath.ac.uk/ld.php?content_id=32074262), and here [another template for experimental data](https://library.bath.ac.uk/ld.php?content_id=32652573)
+
+This may seem to be a bit too much, but try and see how much you could fill in and keep the template for future projects! Remember that any metadata is better than none.
 
 ## **exercise** starting to add meta data files {.blauw}
 
@@ -245,7 +272,7 @@ Source: [FAIR in (biological) practice](https://carpentries-incubator.github.io/
 
 15 minutes 
 
- - Google and discuss whether there are meta data standards for your topic.
+ - Google and discuss whether there are meta data standards for your field.
  - Start to add meta data files to your current most active project if you don't have them.
 
 
