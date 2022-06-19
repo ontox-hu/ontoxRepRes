@@ -14,6 +14,20 @@ knitr::opts_chunk$set(
 }
 </style>
 
+
+Note: this half of the workshop we will split the participants based on their previous experience and tools they are using.
+
+XXexplain
+
+## Exercise: reflection {.blauw}
+
+5-10 minutes
+
+Go through your e-mail and look for the last time you sent some colleague or colaborator data. Suppose you move to a different university, your mailbox is closed and some stranger needs to use your data for a project. Would they have enough information to do so?
+
+Discuss in pairs of 2.
+
+
 ## Introduction
 Whether you are working in an experimental, computational or design oriented scientific field, data is often either the final or at least an important product of your scientific research. When working in science, we seldom work in isolation, so sharing data and being able to track mutations and versions of the data and it's connected metadata should be an import aspect of your work. Because usually we grow into a project without having much education on very practical things such as where to store data, how to handle file structure, how to define versions of the data and how to handle mutations and version change, we decided to focus on these aspects in a very practical manner. In this part of the workshop, we will provide you with hands-on practical handles on how to collaborate on data. We will provide you with ways how to communicate on your data workflow and you will learn how to administer and track changes to your data. We will share some good practices on how to deal with sharing of data with others as well.
 
@@ -22,7 +36,7 @@ The contents of this part of the workshop:
  1. Defining and visualizing your data workflow, using `{mermaid}`
  1. Version control on data (and code). For those familiar with programming we will introduce Git and Github. For those not planning on using a computer language to do data science, we intorduce an alternative workflow
  1. Sending (and recieving) data via email and storing data online (Google Drive).
- 
+
 
 ## Data flows in ONTOX
 
@@ -142,3 +156,5 @@ https://rebelsguidetopm.com/how-to-do-document-version-control/
 ### exercise: someting {.blauw}
 
 version control exercise.
+
+
