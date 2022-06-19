@@ -20,7 +20,7 @@ incentives be here
 
 After this workshop you:
 
- - Can store your research projects (data, code, manuscripts, etc) in a future proof way, that fascilitates collaboration, and saves you a lot of time if you ever want to revisit, share or alter your project. 
+ - Can store your research projects (data, code, manuscripts, etc) in a future proof way, that fascilitates collaboration, and saves you a lot of time if you ever want to revisit, share or alter your projects. 
  - Know which information needs to be stored with data, and how to keep these together when collaborating with others.
  - Can keep your projects under version control, so you can always backtrace what changed, when, and by whom.
  - Applied all this to your current most active research project
