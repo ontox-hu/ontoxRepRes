@@ -141,7 +141,7 @@ new_laptop/better_example_structure
 ```
 
 
-## **exercise** cleaning your own folder structure {.blauw}
+## **Exercise** cleaning your own folder structure {.blauw}
 
 15 minutes
 
@@ -150,6 +150,15 @@ Look at your research projects. Which example folder structure does it resemble 
  1. What needs to be done to clean your folder structure? 
  1. Try to fix a few things right now.
  1. Book a timeslot (e.g. 1 morning) in your calendar somewhere this month to fix the folder structure of your current projects.
+
+## **Advanced Exercise** automated workflows for advanced participants {.blauw}
+
+If you have more experience in managing your research projects and already know all about folder structues, meta data, licencing etc, you already use code (R, Python, Matlab, Julia, etc) to analyse your data and you now feel you misestimated the level of this workshop: no worries! Use the time to automate what you are already doing. 
+
+For instance, this folder structure looks a lot like [cookiecutter](https://drivendata.github.io/cookiecutter-data-science/), which has options for integration in workflows in R and Python. But we also like to bring [WORCS](https://cran.r-project.org/web/packages/worcs/vignettes/workflow.html) to your attention. 
+
+Use the time dedicated to this exercise to scan both options for automated workflows.
+
 
 ### File names
 
@@ -179,7 +188,7 @@ A good file name is:
  1. If you receive a file from somebody else: **Never change the file name, even if it does not meet the above requirements**. Changing  a file name causes a breakage between the file and the source it came from. If you change a file name you received from a person or downloaded from the internet, the person who send the file will not know about the new name. Also, you won't be able to trace it back to the source.
 
 
-## meta data
+## Meta data
 
 Meta data is data about the data, such as for instance the type of variables, number of observations, experimental design and who gathered the data. This is quite often not reliably documented (or at least not easily accessible) but very important: data without context loses some of its purpose. 
 
@@ -266,7 +275,7 @@ Here is a nice example file by the university of Bath for [bioinformatics projec
 
 This may seem to be a bit too much, but try and see how much you could fill in and keep the template for future projects! Remember that any metadata is better than none.
 
-## **exercise** starting to add meta data files {.blauw}
+## **Exercise** starting to add meta data files {.blauw}
 
 <mark>XXX moet deze interactief?</mark>
 
@@ -278,100 +287,10 @@ This may seem to be a bit too much, but try and see how much you could fill in a
 
 ### Version controlling data & data provenance
 
+Important in a project like ONTOX is data provenance. Provenance describes the the place of origin or earliest known history of something.
 
+Data provenance thus means that for each data point you use, you should be able to tell where it came from. Where was it collected, by whom, which experiment, etc.
 
-
-
-
-
-
-## Tidy data
-
-Tidy data is a way of organising your data in a neat and structured way. If you make your data tidy, it is ensured that it is machine readable. This is important in ONTOX, as we want to use the data to build an AI platform.
-
-So what is tidy data:
-
-1. Each variable must have its own column.  
-1. Each observation must have its own row. 
-1. Each value must have its own cell.
-
-*Table1: Example of tidy data*
-
-| country 	| year 	| population 	| birth rate 	|
-|:---------	|:-----	|:----------	|:-----------	|
-| mali    	| 2001 	| 10.000.000 	| 6.88       	|
-| mali    	| 2010 	| 15.000.000 	| 6.06       	|
-| sweden  	| 2001 	| 9.000.000  	| 1.57       	|
-| sweden  	| 2010 	| 10.000.000 	| 1.85       	|
-
-
-Each variable must have its own column.  
-
-```{r , echo=FALSE, message=FALSE, out.width = "60%"}
-knitr::include_graphics("images/03_4_tidy1.jpg")
-```
-
-Each observation must have its own row. 
-
-```{r , echo=FALSE, message=FALSE, out.width = "60%"}
-knitr::include_graphics("images/03_5_tidy2.jpg")
-```
-
-Each value must have its own cell.
-
-```{r , echo=FALSE, message=FALSE, out.width = "60%"}
-knitr::include_graphics("images/03_6_tidy3.jpg")
-```
-
-So the following table would by untidy, as there are multiple observations per row:
-
-*Table2: Example of untidy data*
-
-| participant  	| sample1 	| sample2 	| sample3 	| sample4 	|
-|:----------	|:------	|:--------	|:-------------	|:-----	|
-| Pietje   	| 7.5  	| 6      	| 8.2         	| 8   	|
-| Marietje 	| 8    	| 7.9    	| 5           	| 9   	|
-
-
-This would be the tidy version:
-
-*Table3: Example of untidy data made tidy*
-
-| student  	| sample      	| stairs_walked 	|
-|:----------	|:-------------	|:-------	|
-| Pietje   	| 1        	| 7.5   	|
-| Pietje   	| 2      	| 6     	|
-| Pietje   	| 3 	| 8.2   	|
-| Pietje   	| 4         	| 8     	|
-| Marietje 	| 1        	| 8     	|
-| Marietje 	| 2      	| 7.9   	|
-| Marietje 	| 3 	| 5     	|
-| Marietje 	| 4         	| 9     	|
-
-We will discuss why tidy data is needed in a central discussion next.
-
-
-
-## Data provenance
-
-## The _GUI problem_
-
-Most people would agree that this seems to be a good practice. However, many people use GUI based software (graphical user interface). Citing Wikipedia, this is a *"user interface that allows users to interact with electronic devices through graphical icons and audio indicator such as primary notation, instead of text-based user interfaces, typed command labels or text navigation."* So basically, any program that you use by clicking around in menu's, or using voice control etc, for data science this could for instance be Excel.
-
-However, how would you 'describe' the steps of an analysis or creation of a graph when you use GUI based software? 
-
-```{r messysteps, dpi = 80, echo=F}
-knitr::include_graphics(
-  file.path(
-    "images/messy_steps.jpg"
-  )
-)
-```
-
-<p style="font-size:14px">**The file "./Rmd/steps_to_graph_from_excel_file.html" shows you how to do this using the programming language R.</p>
-
-Maybe ~~videotape~~ tiktok-record your process and add .mp4 to your paper? Type out every step in a Word document? Both options seem rather silly. This is actually really hard!
-
-This is why so many researchers are using code to analyse their data. If you do, just make sure you keep the code with the data. If you don't, make sure you precisely keep track of every step you take, in a separate text document.
+Obviously, keeping meta data with your data and not changing raw data file names helps solve the bulk of this problem. There is an issue though: data may change. You may receive an updated dataset. You will also process the data yourself to be able to analyse it. 
 
 
