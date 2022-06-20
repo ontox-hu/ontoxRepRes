@@ -38,8 +38,9 @@ In this part of the workshop, we will provide you with hands-on practical handle
 
 The contents of this part of the workshop:
 
- 1. Defining and visualizing your data workflow, using `{mermaid}`
- 1. Version control on data (and code). For those familiar with programming we will introduce Git and Github. 
+
+ 1. Version control on data (and code). For those familiar with programming we will introduce Git and Github.
+ 1. Defining and visualizing your data workflow, using `{mermaid}` <mark>XXX omdraaien in les!</mark>
  1. Sending (and recieving) data via email and storing data online (Google Drive).
 
 
