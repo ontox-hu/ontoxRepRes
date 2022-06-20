@@ -53,36 +53,31 @@ Data sharing
 
 Total of 4 hours (13:00 - 17:00) 
 
-#### 13:00-13:40
+#### 13:00-13:30
  - 20 min welcome, everyone introduces themselves
- - 20 min broad introduction to research data management and FAIR data in ONTOX
+ - 10 min broad introduction to research data management and FAIR data in ONTOX (XXX stress amount of work you throw at someone else down the line if you _dont_ provide your data tidy within ONTOX)
 
-#### 13:40-14:30 hands-on storing your current data 
- - 5-10 min intro folder structure
+#### 13:30-14:20 hands-on storing your current data 
+ - 5 min intro folder structure
  - 15-20 min DIY analysing and cleaning your own current data storage ways
- - 5-10 min intro metadata
+ - 5 min intro metadata
  - 15-20 min DIY and discussion meta data
 
-#### 14:30-14:40 central conclusion storing data
- - overview of the amount of work you throw at someone else down the line if you _dont_ provide your data tidy within ONTOX
-
-#### 14:40-15:00 sticky notes /discussion
+#### 14:20-14:40 sticky notes /discussion
  - on incentives and barriers for using reproducible methods <mark>sticky note board needed? </mark> 
 
-#### 15:00-15:20 break
+#### 14:40-15:00 break
 
-#### 15:20-15:40  intro sharing data: 
-  - 10 min The usual workflow
-  - 10 min demo AI: why we need it to be machine readable
+#### 15:00-16:30  hands-on sharing your current data
+ - 10 min intro: The usual problematic workflow
+ - 5-10 min DIY B1  sharing excel files 
+ - 15-20 min DIY B2 data in excel / github
+ - 10 min demo AI: why we need it to be machine readable
+ - 5-10 min intro tidy data / mermaid
+ - 10 min intro version control
+ - 20 min DIY version control
 
-#### 15:40-16:40  hands-on sharing your current data
- - DIY sharing excel files 1 + 2
- - tidy data
- - advanced: sharing code
- - demo github: version control for data and documents
-
-
-#### 16:40- 17:00
+#### 16:30- 17:00
  - immediate plans for tomorrow: perhaps Prioritization of training needs from here : https://open-science-training-handbook.github.io/Open-Science-Training-Handbook_EN/05ExamplesAndPracticalGuidance/
  - closure
 
