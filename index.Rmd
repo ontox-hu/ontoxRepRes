@@ -68,14 +68,18 @@ Total of 4 hours (13:00 - 17:00)
 
 #### 14:40-15:00 break
 
-#### 15:00-16:30  hands-on sharing your current data
+#### 15:00-16:40  hands-on sharing your current data
  - 10 min intro: The usual problematic workflow
- - 5-10 min DIY B1  sharing excel files 
- - 15-20 min DIY B2 data in excel / github
- - 10 min demo AI: why we need it to be machine readable
- - 5-10 min intro tidy data / mermaid
- - 10 min intro version control
- - 20 min DIY version control
+ - collaboration and digital data
+   + *5-10 min DIY B1  sharing excel files* 
+   + *15-20 min DIY B2 data in excel / github*
+ - machine readable data and workflows
+   + 10 min demo AI: why we need it to be machine readable
+   + 5-10 min intro tidy data / mermaid
+   + *10 min DIY*
+ - version control
+   + 10 min intro version control
+   + *10 min DIY version control*
 
 #### 16:30- 17:00
  - immediate plans for tomorrow: perhaps Prioritization of training needs from here : https://open-science-training-handbook.github.io/Open-Science-Training-Handbook_EN/05ExamplesAndPracticalGuidance/
