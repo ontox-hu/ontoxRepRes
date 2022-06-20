@@ -141,7 +141,7 @@ new_laptop/better_example_structure
 ```
 
 
-## **Exercise** cleaning your own folder structure {.blauw}
+## **Exercise A1:** cleaning your own folder structure {.blauw}
 
 15 minutes
 
@@ -151,7 +151,7 @@ Look at your research projects. Which example folder structure does it resemble 
  1. Try to fix a few things right now.
  1. Book a timeslot (e.g. 1 morning) in your calendar somewhere this month to fix the folder structure of your current projects.
 
-## **Advanced Exercise** automated workflows for advanced participants {.blauw}
+## **Advanced Exercise A1:** automated workflows for advanced participants {.blauw}
 
 If you have more experience in managing your research projects and already know all about folder structues, meta data, licencing etc, you already use code (R, Python, Matlab, Julia, etc) to analyse your data and you now feel you misestimated the level of this workshop: no worries! Use the time to automate what you are already doing. 
 
@@ -211,7 +211,9 @@ According to [How to FAIR](https://howtofair.dk/) we can distinguish between thr
    
 Descriptive and structural metadata should be added continuously throughout the project.
 
-## **Exercise** Identifying metadata types {.blauw}
+## **Exercise A2:** Identifying metadata types {.blauw}
+
+Exercise by [FAIR in (biological) practice course on carpentries-incubator](https://carpentries-incubator.github.io/fair-bio-practice/05-intro-to-metadata/index.html#types-of-metadata). (see below for full reference)
 
 5 minutes
 
@@ -252,38 +254,38 @@ Source: [FAIR in (biological) practice](https://carpentries-incubator.github.io/
 
 Save at the very least in your meta data file (usually called "meta data" or "readme"):
 
- - **General information**
+ - **Administrative metadata**: 
     - title 
     - information about the authors (name, institution, email address)
- - **license information**
- - **descriptive meta data**
+    - license information
+ - **Descriptive or citation metadata**: 
     - short description
     - date the file was created
     - date of data collection
     - location of data collection
- - **structural meta data**
+    - description of methods (you can link to publications or protocols)
+    - description of data processing 
+    - any software or specific instruments used
+    - Describe details that may influence reuse or replication efforts    
+ - **Structural metadata**: 
     - variable list (full names and explanations)
     - units of measurements
     - definition for missing data (NA)
     - whether you changed anything in the data file manually (better not to!), if so: when, why and how. 
- - **methodological information**
-    - description of methods (you can link to publications or protocols)
-    - description of data processing 
-    - any software or specific instruments used
-    - Describe details that may influence reuse or replication efforts
+
 
 Here is a nice example file by the university of Bath for [bioinformatics projects](https://researchdata.bath.ac.uk/91/19/ReadMe.txt), another more general template [available for download](https://library.bath.ac.uk/ld.php?content_id=32074262), and here [another template for experimental data](https://library.bath.ac.uk/ld.php?content_id=32652573)
 
-This may seem to be a bit too much, but try and see how much you could fill in and keep the template for future projects! Remember that any metadata is better than none.
+This may seem to be a bit too much, but try and see how much you could fill in and keep the template for future projects! 
 
-## **Exercise** starting to add meta data files {.blauw}
+## **Exercise A3:** starting to add meta data files {.blauw}
 
 <mark>XXX moet deze interactief?</mark>
 
 15 minutes 
 
  - Google and discuss whether there are meta data standards for your field.
- - Start to add meta data files to your current most active project if you don't have them.
+ - Start to add meta data files to your current most active project if you don't have them. If you don't have an agreed on format, just open a word/excel document and start adding administrative, descriptive and structural meta data. Remember that any metadata is better than none.
 
 
 ## Version controlling data & data provenance

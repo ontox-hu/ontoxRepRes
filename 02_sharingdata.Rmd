@@ -15,21 +15,25 @@ knitr::opts_chunk$set(
 </style>
 
 
-Note: this half of the workshop we will split the participants based on their previous experience and tools they are using.
+**Note: this half of the workshop we will split the participants based on their previous experience and tools they are using.**
 
-XXexplain
 
-## **Exercise** reflection {.blauw}
+## **Exercise A1: ** reflection {.blauw}
 
 5-10 minutes
 
-Go through your e-mail and look for the last time you sent some colleague or colaborator data. Suppose you move to a different university, your mailbox is closed and some stranger needs to use your data for a project. Would they have enough information to do so?
+Go through your e-mail and look for the last time you sent some colleague or colaborator data. Suppose you move to a different university, your mailbox is closed and some stranger needs to use your data for a project. Would they have enough information to do so? What would you do differently?
 
 Discuss in pairs of 2.
 
 
 
-## **Exercise:** What can go wrong with data in Excel (groups of 3-5)
+## **Exercise A2: ** What can go wrong with data in Excel (groups of 3-5)
+
+Exercise by [FAIR in (biological) practice course on carpentries-incubator](https://carpentries-incubator.github.io/fair-bio-practice/05-intro-to-metadata/index.html#types-of-metadata). (see below for full reference)
+
+15 minutes
+
 Tables are one of the best forms of storing and representing information. That is why we find them almost everywhere, from a menu in a restaurant, a bank statement, to professional databases. No surprise then that we biologists love tables and we tend to predominantly use Excel.
 
 Excel is easy to use, flexible and powerful, however, it often gives us too much freedom which leads to bad practices and difficult to re-use data and metadata.

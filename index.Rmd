@@ -76,10 +76,11 @@ Total of 4 hours (13:00 - 17:00)
   - 10 min demo AI: why we need it to be machine readable
 
 #### 15:40-16:40  hands-on sharing your current data
- - version control for data and documents
- - sharing excel files
+ - DIY sharing excel files 1 + 2
  - tidy data
  - advanced: sharing code
+ - demo github: version control for data and documents
+
 
 #### 16:40- 17:00
  - immediate plans for tomorrow: perhaps Prioritization of training needs from here : https://open-science-training-handbook.github.io/Open-Science-Training-Handbook_EN/05ExamplesAndPracticalGuidance/
