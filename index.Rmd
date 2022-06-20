@@ -54,27 +54,26 @@ Data sharing
 Total of 4 hours (13:00 - 17:00) 
 
 #### 13:00-13:40
- - welcome, everyone introduces themselves
- - broad introduction to research data management and FAIR data in ONTOX
- - fair
- 
+ - 20 min welcome, everyone introduces themselves
+ - 20 min broad introduction to research data management and FAIR data in ONTOX
+
 #### 13:40-14:30 hands-on storing your current data 
- - intro folder structure
- - DIY analysing and cleaning your own current data storage ways
- - intro metadata
- - DIY and discussion meta data
+ - 5-10 min intro folder structure
+ - 15-20 min DIY analysing and cleaning your own current data storage ways
+ - 5-10 min intro metadata
+ - 15-20 min DIY and discussion meta data
 
 #### 14:30-14:40 central conclusion storing data
  - overview of the amount of work you throw at someone else down the line if you _dont_ provide your data tidy within ONTOX
 
 #### 14:40-15:00 sticky notes /discussion
- - on incentives and barriers for using reproducible methods
+ - on incentives and barriers for using reproducible methods <mark>sticky note board needed? </mark> 
 
 #### 15:00-15:20 break
 
 #### 15:20-15:40  intro sharing data: 
-  - The usual workflow
-  - demo AI: why we need it to be machine readable
+  - 10 min The usual workflow
+  - 10 min demo AI: why we need it to be machine readable
 
 #### 15:40-16:40  hands-on sharing your current data
  - version control for data and documents

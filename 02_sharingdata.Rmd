@@ -19,7 +19,7 @@ Note: this half of the workshop we will split the participants based on their pr
 
 XXexplain
 
-## Exercise: reflection {.blauw}
+## **Exercise** reflection {.blauw}
 
 5-10 minutes
 
@@ -27,6 +27,49 @@ Go through your e-mail and look for the last time you sent some colleague or col
 
 Discuss in pairs of 2.
 
+
+
+## **Exercise:** What can go wrong with data in Excel (groups of 3-5)
+Tables are one of the best forms of storing and representing information. That is why we find them almost everywhere, from a menu in a restaurant, a bank statement, to professional databases. No surprise then that we biologists love tables and we tend to predominantly use Excel.
+
+Excel is easy to use, flexible and powerful, however, it often gives us too much freedom which leads to bad practices and difficult to re-use data and metadata.
+
+Have a look at the following example data-file in Excel (you can download it [here](data/04-bad-excel.xlsx)):
+
+```{r, echo=FALSE,  out.width = "900px"}
+knitr::include_graphics(
+  here::here(
+    "images",
+    "bad-excel.png"))
+```
+
+It contains data similar to the presented data before from experiments on plants in different light conditions. Imagine you need to work with this file, and you got it emailed from a collaborator.
+
+ 1. What do you find confusing?
+   What would you try to clarify with the author before doing anything with the file?
+ 1. What will be the issues with calculation of: average biomas, biomas per genotype?
+ 1. Typically, more advanced data analysis is done programmatically, which requires either conversion to text format as csv, tsv format or using a library that reads Excel files and “kind of makes this conversion on the fly”. Save this file in a text format, close Excel and reopen the saved files. What has changed?
+ 1. Have you seen similar tables? Do you believe this example is realistic and replicates real-life issues?
+
+## {.unlisted .unnumbered}
+
+<details><summary>Click here for a solution</summary>
+
+ 1. This file hopefully unrealistically exacerbates typical bad practices in Excel.Some things that may be confusing: 
+   - Why are there two tables, are the period measurement related to the metabolics i.e. same samples? 
+   - Do colors in the period table have the same meaning? Seems no. 
+   - Why can row 22 be read, whilst row 13 says error? 
+   - What is the meaning of values in the media column? 
+   - Are the genotypes the same in different blocks or not? 
+   - What is the meaning behind bold text in the table? 
+   - What is the definition of the terms/why are units missing/inconsistent? 
+ 1. - Before averaging the biomas weight, they need to get converted the same unit and the text needs to get replaced by the unit. - Averaging per genotype needs manual selection of suitable entries 
+ 1. - Information about light conditions is completely lost. - Header columns are scrambled. - The update date may change its meaning depending on the location (switch year with day).
+
+</details>
+</br>
+
+Source: [FAIR in (biological) practice](https://carpentries-incubator.github.io/fair-bio-practice/05-intro-to-metadata/index.html#types-of-metadata). Licensed under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/) 2022. We took [Exercise 1: What can go wrong with data in Excel](https://carpentries-incubator.github.io/fair-bio-practice/07-data-in-excel/index.html#exercise-1-what-can-go-wrong-with-data-in-excel-4-min) out of context.
 
 ## Introduction
 Whether you are working in an experimental, computational or design oriented scientific field, data is often either the final or at least an important product of your scientific research. When working in science, we seldom work in isolation, so sharing data and being able to track mutations and versions of the data and it's connected metadata should be an import aspect of your work. Because usually we grow into a project without having much education on very practical things such as where to store data, how to handle file structure, how to define versions of the data and how to handle mutations and version change, we decided to focus on these aspects in a very practical manner. In this part of the workshop, we will provide you with hands-on practical handles on how to collaborate on data. We will provide you with ways how to communicate on your data workflow and you will learn how to administer and track changes to your data. We will share some good practices on how to deal with sharing of data with others as well.

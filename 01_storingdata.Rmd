@@ -4,7 +4,7 @@
  - meta data
  - Data provenance
 
-**Note**: most of the text on these pages are for future reference for you and colleagues. We will discuss the information live in this workshop. You can find the exercises in the menu left, or by finding the blue blocks on the page.
+**Note: most of the text on these pages are for future reference for you and colleagues. We will discuss the information live in this workshop. You can find the exercises in the menu left, or by finding the blue blocks on the page.**
 
 ```{r setup2, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -77,7 +77,7 @@ old_laptop/wrong_structure
 ├── manuscripts
 │   ├── me_et al , 2020_v01 - Copy.docx
 │   ├── me_et al , 2020_v02.docx
-│   └── me_et al , 2020_v03_final_final.docx
+│   └── me_et al about A, 2020_v03_final_final.docx
 ├── presentations
 ├── project A
 │   ├── Data files 001
