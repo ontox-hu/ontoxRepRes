@@ -103,83 +103,95 @@ Never highlight cells, rows or columns that should be excluded from an analysis,
 
 Source: [FAIR in (biological) practice](https://carpentries-incubator.github.io/fair-bio-practice/05-intro-to-metadata/index.html#types-of-metadata). Licensed under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/) 2022. We took [Exercise 1: What can go wrong with data in Excel](https://carpentries-incubator.github.io/fair-bio-practice/07-data-in-excel/index.html#exercise-1-what-can-go-wrong-with-data-in-excel-4-min) out of context.
 
+## Tidy data
+
+Tidy data is a way of organising your data in a neat and structured way. If you make your data tidy, it is ensured that it is machine readable. This is important in ONTOX, as we want to use the data to build an AI platform.
+
+So what is tidy data:
+
+1. Each variable must have its own column.  
+1. Each observation must have its own row. 
+1. Each value must have its own cell.
+
+*Table1: Example of tidy data*
+
+| country 	| year 	| population 	| birth rate 	|
+|:---------	|:-----	|:----------	|:-----------	|
+| mali    	| 2001 	| 10.000.000 	| 6.88       	|
+| mali    	| 2010 	| 15.000.000 	| 6.06       	|
+| sweden  	| 2001 	| 9.000.000  	| 1.57       	|
+| sweden  	| 2010 	| 10.000.000 	| 1.85       	|
+
+
+Each variable must have its own column.  
+
+```{r , echo=FALSE, message=FALSE, out.width = "60%"}
+knitr::include_graphics("images/03_4_tidy1.jpg")
+```
+
+Each observation must have its own row. 
+
+```{r , echo=FALSE, message=FALSE, out.width = "60%"}
+knitr::include_graphics("images/03_5_tidy2.jpg")
+```
+
+Each value must have its own cell.
+
+```{r , echo=FALSE, message=FALSE, out.width = "60%"}
+knitr::include_graphics("images/03_6_tidy3.jpg")
+```
+
+So the following table would by untidy, as there are multiple observations per row:
+
+*Table2: Example of untidy data*
+
+| participant  	| sample1 	| sample2 	| sample3 	| sample4 	|
+|:----------	|:------	|:--------	|:-------------	|:-----	|
+| Pietje   	| 7.5  	| 6      	| 8.2         	| 8   	|
+| Marietje 	| 8    	| 7.9    	| 5           	| 9   	|
+
+
+This would be the tidy version:
+
+*Table3: Example of untidy data made tidy*
+
+| student  	| sample      	| stairs_walked 	|
+|:----------	|:-------------	|:-------	|
+| Pietje   	| 1        	| 7.5   	|
+| Pietje   	| 2      	| 6     	|
+| Pietje   	| 3 	| 8.2   	|
+| Pietje   	| 4         	| 8     	|
+| Marietje 	| 1        	| 8     	|
+| Marietje 	| 2      	| 7.9   	|
+| Marietje 	| 3 	| 5     	|
+| Marietje 	| 4         	| 9     	|
+
+
+
+
 ## Version control on documents and data
-You may know from exprience how an unnoticed change in a document, the use of the wrong version or the loss of edits can lead to loss of time invested, frustration and above all confusion! This is why keeping a record on all mutations on a document or the data is important. Especially, tracking mutations on the data is important for another reason: reproducibility and validity of conclusions connected to the data.  In Brown & Kaiser (2018), the authors write an important note on science that drives Reproducible Research:
-
-"…in science, three things matter:
-
-    the data,
-    the methods used to collect the data […], and
-    the logic connecting the data and methods to conclusions,
-
-everything else is a distraction."
-
-This means that in practice, when we adhere to the Reproducible Research principles, we can reproduce the analysis and the results from a data analysis in a paper when we:
-
- - Are sure that the data is exactly the same as the data used by the authors of the paper
- - We have the _exact_ methods used to do the analysis
- - We have a reproducible analysis environment (meaning we use the same software and/or settings)
- 
-This sounds trivial, but really is not. This also leads to the conclusion that using software that depends on a graphical user interface is not really compatible with Reproducible Research. We are going to illustrate this with a small exercise. This exercise is meant as a primer to get you to consider using a programming language to do data analysis. Although the authors are quite agnostic when it comes to programming for data science. Meaning they could basically learn every language because of prior knowledge. They both howver, prefer working with R. We will give something of a primer on R in part 3 of this short course. Although both authors are adept programmers a word of warning is appropriate here: Learning to program is hard. It need practice, discipline and patience. Frustration and errors are an integral part of learning how to and doing programming. In the long run, you will be able to 'cash' on your investments, but it is not an easy win and usually you will also be opposed by some (or many if you are unlucky) in your academic environment. Learning how to use a programming language to solve analytic problems, to generate visualizations and to write your future publications (yes you can!) does have the advantage that you will be able to integrate the Reproducible Research principles in full in your daily work as a scientist. More on this later. 
-
-### **Exercise B5**; Recreating a graphs and recording the steps, given the data and the result {.blauw}
-
-Try recreating the graph below from the dataset `steps_graph_excel.csv` in the /data folder of the course repository. Record at least 10 steps that you would need to recreate your version of this graph.
-
-Data Source
-
-This dataset is part of the base-R installation in the `{datasets}` R-package as the `Puromycin` dataset-object.  
-```{r, echo=FALSE}
-library(tidyverse)
-datasets::Puromycin
-
-data(package = "datasets", "Puromycin")
-Puromycin |>
-  as_tibble() |>
-  group_by(state, conc) |>
-  summarise(mean_rate = mean(rate),
-            sd = sd(rate))  |>
-  ggplot(aes(x = as_factor(conc), y = mean_rate)) +
-  geom_col(aes(fill = state, group = state), position = position_dodge(0.9)) +
-  geom_errorbar(
-    aes(
-      ymin=mean_rate-sd, 
-      ymax=mean_rate+sd, 
-      group = state), 
-    position = position_dodge(0.9),
-    width = 0.25) +
-   xlab("Concentration Puromycin (ppm)") +
-   ylab("Reaction Rates (counts/min/min)") 
-```
-```{r, include=FALSE, eval=FALSE}
-# run one-time
-datasets::Puromycin |>
-  write_csv(
-    here::here(
-      "data",
-      "steps_graph_excel.csv"
-    )
-  )
-```
-
-
+You may know from experience how an unnoticed change in a document, the use of the wrong version or the loss of edits can lead to loss of time invested, frustration and above all confusion! This is why keeping a record on all mutations on a document or the data is important. There usually will be [quite a lot](https://phdcomics.com/comics/archive.php?comicid=1531). Especially, tracking mutations on the data is important for another reason: reproducibility and validity of conclusions connected to the data.
 
  
  
- 
 
+## Manual Version Control
 
-
-
-
-## Version Control, using Github
-
-## Version Control, using 
-
+https://carpentries-incubator.github.io/fair-bio-practice/11-version-control/index.html#manual-versioning
 https://rebelsguidetopm.com/how-to-do-document-version-control/
 
-### exercise: someting {.blauw}
-
-version control exercise.
+## Document Version control using onedrive
 
 
+## Document Version control using google docs
+
+## exercise: someting {.blauw}
+
+## **version control exercise.**
+
+## Key Points
+
+ - keep your excel files machine readable and umambiguous
+ - don't use formatting to convey information in Excel
+ - use tidy data if possible
+ - version control takes some effort, but saves a lot of confusion -thus time- in the long run

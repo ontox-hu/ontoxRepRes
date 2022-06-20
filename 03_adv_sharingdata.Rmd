@@ -84,81 +84,17 @@ When you want to end the definition of the flow diagram, close the mermaid fragm
 ` ``` `
 
 ## Version control on documents and data
-You may know from exprience how an unnoticed change in a document, the use of the wrong version or the loss of edits can lead to loss of time invested, frustration and above all confusion! This is why keeping a record on all mutations on a document or the data is important. Especially, tracking mutations on the data is important for another reason: reproducibility and validity of conclusions connected to the data.  In Brown & Kaiser (2018), the authors write an important note on science that drives Reproducible Research:
-
-"…in science, three things matter:
-
-    the data,
-    the methods used to collect the data […], and
-    the logic connecting the data and methods to conclusions,
-
-everything else is a distraction."
-
-This means that in practice, when we adhere to the Reproducible Research principles, we can reproduce the analysis and the results from a data analysis in a paper when we:
-
- - Are sure that the data is exactly the same as the data used by the authors of the paper
- - We have the _exact_ methods used to do the analysis
- - We have a reproducible analysis environment (meaning we use the same software and/or settings)
- 
-This sounds trivial, but really is not. This also leads to the conclusion that using software that depends on a graphical user interface is not really compatible with Reproducible Research. We are going to illustrate this with a small exercise. This exercise is meant as a primer to get you to consider using a programming language to do data analysis. Although the authors are quite agnostic when it comes to programming for data science. Meaning they could basically learn every language because of prior knowledge. They both howver, prefer working with R. We will give something of a primer on R in part 3 of this short course. Although both authors are adept programmers a word of warning is appropriate here: Learning to program is hard. It need practice, discipline and patience. Frustration and errors are an integral part of learning how to and doing programming. In the long run, you will be able to 'cash' on your investments, but it is not an easy win and usually you will also be opposed by some (or many if you are unlucky) in your academic environment. Learning how to use a programming language to solve analytic problems, to generate visualizations and to write your future publications (yes you can!) does have the advantage that you will be able to integrate the Reproducible Research principles in full in your daily work as a scientist. More on this later. 
-
-### **Exercise B4**; Recreating a graphs and recording the steps, given the data and the result {.blauw}
-
-Try recreating the graph below from the dataset `steps_graph_excel.csv` in the /data folder of the course repository. Record at least 10 steps that you would need to recreate your version of this graph.
-
-Data Source
-
-This dataset is part of the base-R installation in the `{datasets}` R-package as the `Puromycin` dataset-object.  
-```{r, echo=FALSE}
-library(tidyverse)
-datasets::Puromycin
-
-data(package = "datasets", "Puromycin")
-Puromycin |>
-  as_tibble() |>
-  group_by(state, conc) |>
-  summarise(mean_rate = mean(rate),
-            sd = sd(rate))  |>
-  ggplot(aes(x = as_factor(conc), y = mean_rate)) +
-  geom_col(aes(fill = state, group = state), position = position_dodge(0.9)) +
-  geom_errorbar(
-    aes(
-      ymin=mean_rate-sd, 
-      ymax=mean_rate+sd, 
-      group = state), 
-    position = position_dodge(0.9),
-    width = 0.25) +
-   xlab("Concentration Puromycin (ppm)") +
-   ylab("Reaction Rates (counts/min/min)") 
-```
-```{r, include=FALSE, eval=FALSE}
-# run one-time
-datasets::Puromycin |>
-  write_csv(
-    here::here(
-      "data",
-      "steps_graph_excel.csv"
-    )
-  )
-```
-
-
-
+You may know from experience how an unnoticed change in a document, the use of the wrong version or the loss of edits can lead to loss of time invested, frustration and above all confusion! This is why keeping a record on all mutations on a document or the data is important.There usually will be [quite a lot](https://phdcomics.com/comics/archive.php?comicid=1531). Especially, tracking mutations on the data is important for another reason: reproducibility and validity of conclusions connected to the data.  
  
  
- 
-
-
 
 
 
 ## Version Control, using Github
+https://lesmaterialen.rstudio.hu.nl/workflows-reader/gitintro.html
 
-## Version Control, using 
 
-https://rebelsguidetopm.com/how-to-do-document-version-control/
-
-### exercise: someting {.blauw}
+### **Exercise:** someting {.blauw}
 
 version control exercise.
 
