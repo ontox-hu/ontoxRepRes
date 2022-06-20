@@ -103,7 +103,7 @@ Never highlight cells, rows or columns that should be excluded from an analysis,
 
 Source: [FAIR in (biological) practice](https://carpentries-incubator.github.io/fair-bio-practice/05-intro-to-metadata/index.html#types-of-metadata). Licensed under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/) 2022. We took [Exercise 1: What can go wrong with data in Excel](https://carpentries-incubator.github.io/fair-bio-practice/07-data-in-excel/index.html#exercise-1-what-can-go-wrong-with-data-in-excel-4-min) out of context.
 
-## Tidy data
+## Tidy machine readable data
 
 Tidy data is a way of organising your data in a neat and structured way. If you make your data tidy, it is ensured that it is machine readable. This is important in ONTOX, as we want to use the data to build an AI platform.
 
@@ -168,6 +168,11 @@ This would be the tidy version:
 
 
 
+## **Exercise:** tidy data? {.blauw}
+
+of een van hier: https://open-science-training-handbook.github.io/Open-Science-Training-Handbook_EN/05ExamplesAndPracticalGuidance/
+
+
 
 ## Version control on documents and data
 You may know from experience how an unnoticed change in a document, the use of the wrong version or the loss of edits can lead to loss of time invested, frustration and above all confusion! This is why keeping a record on all mutations on a document or the data is important. There usually will be [quite a lot](https://phdcomics.com/comics/archive.php?comicid=1531). Especially, tracking mutations on the data is important for another reason: reproducibility and validity of conclusions connected to the data.
@@ -175,19 +180,18 @@ You may know from experience how an unnoticed change in a document, the use of t
  
  
 
-## Manual Version Control
+### Manual Version Control
 
 https://carpentries-incubator.github.io/fair-bio-practice/11-version-control/index.html#manual-versioning
 https://rebelsguidetopm.com/how-to-do-document-version-control/
 
-## Document Version control using onedrive
+### Document Version control using onedrive
 
 
-## Document Version control using google docs
+### Document Version control using google docs
 
-## exercise: someting {.blauw}
+## **Exercise:** version control {.blauw}
 
-## **version control exercise.**
 
 ## Key Points
 

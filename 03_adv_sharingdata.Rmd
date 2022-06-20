@@ -95,7 +95,7 @@ You may know from experience how an unnoticed change in a document, the use of t
 https://lesmaterialen.rstudio.hu.nl/workflows-reader/gitintro.html
 
 
-### **Exercise:** someting {.blauw}
+### **Exercise:** github {.blauw}
 
 version control exercise.
 
