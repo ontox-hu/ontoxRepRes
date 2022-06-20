@@ -1,0 +1,101 @@
+# Hands-on next level sharing data
+
+```{r setup2, include=FALSE}
+knitr::opts_chunk$set(
+  echo = TRUE,
+  warning = FALSE,
+  error = FALSE,
+  message = FALSE)
+```
+
+<style>
+.blauw {
+  background-color: #f3fbfe;
+}
+</style>
+
+
+**Note: this half of the workshop we will split the participants based on their previous experience and tools they are using. If you can answer "yes" to the following questions, you are on the correct page:**
+
+ - I use code to analyse my data and already know all about tidy data.
+ - I would like to automate my communication of workflows
+ - I would like to use github for version controlling my work.
+
+
+## **Exercise B1: ** reflection {.blauw}
+
+5-10 minutes
+
+Go through your e-mail and look for the last time you sent some colleague or colaborator data or if all your data is shared in the cloud: the last time you uploaded new data. Suppose you move to a different university, your mailbox is closed and some stranger needs to use your data for a project. Would they have enough information to do so? What would you do differently next time?
+
+Discuss in pairs of 2.
+
+
+## Introduction
+Whether you are working in an experimental, computational or design oriented scientific field, data is often either the final or at least an important product of your scientific research. When working in science, we seldom work in isolation, so sharing data and being able to track mutations and versions of the data and it's connected metadata should be an import aspect of your work. Because usually we grow into a project without having much education on very practical things such as where to store data, how to handle file structure, how to define versions of the data and how to handle mutations and version change, we decided to focus on these aspects in a very practical manner. 
+
+In this part of the workshop, we will provide you with hands-on practical handles on how to collaborate on data. We will provide you with ways how to communicate on your data workflow and you will learn how to administer and track changes to your data. We will share some good practices on how to deal with sharing of data with others as well.
+
+The contents of this part of the workshop:
+
+ 1. Defining and visualizing your data workflow, using `{mermaid}`
+ 1. Version control on data (and code). For those familiar with programming we will introduce Git and Github. 
+ 1. Sending (and recieving) data via email and storing data online (Google Drive).
+
+
+## Data flows in ONTOX
+
+ONTOX is a data intensive project. Meaning, there is a lot of data collection going on in the project. With so many people collecting data, there is an eminent need for a good protocol. Usually data collection protocols are indicated as workflows which are described as flow diagrams. 
+
+To create a workflow, there is a lot of available software. You could use e.g. [Lucidchart](https://www.lucidchart.com/pages/nl) or Microsoft Visio. These software solutions are easy to use, but have one disadvantage: They use a Graphical User Interface. As explained previously, GUIs prevent recording of steps and are in that sense not compatible with Reproducible Research. That is why we will use another tool 'Mermaid' to create our workflow. To learn more about Mermaid, follow this [link](https://mermaid-js.github.io/mermaid/#/). The Mermaid syntax is easy to follow and can be implemented in Markdown. The good thing is that Github supports Mermaid natively, meaning that you do not need any additional steps to visualize Mermaid flow diagrams in Github. 
+
+### **Exercise B2**; Understanding data workflows with Mermaid {.blauw}
+
+For starters we can look at an example workflow that is used within ONTOX by looking at the source file in Github. 
+
+Study the source file of the ONTOX workflow that is called `LiteraturToAOP` [here](https://github.com/ontox-hu/workflows/blob/main/LiteratureToAop.md). To see the source, click on the `raw` button on the top right corner of the file. Try to answer the following questions:
+
+ 1. What defines the relationship between two elements in the workflow?
+ 1. How do you create a box?
+ 1. How do you create a 'database' element?
+ 1. How do you put text on an arrow (relationship?)
+ 1. How do you define a circle in the workflow
+ 1. What do you need to do to get more relationships pointing TO a box?
+ 1. What do you need to do to get more relationsships pointing FROM a box?
+
+## Create your own workflow
+When collecting or generating data in research, it is good practice to make the process by which data is collected, processed, stored and analysed, visualized and results reported explicit in a workflow. In the exercise below you will start to create a workflow for your own work. 
+ 
+### **Exercise B3**; Creating your own workflow {.blauw}
+
+In the previous exercise on Github you created a test repository in your own Github account. Here you will create a very simple `mermaid` graph that applies to an element of data collection in your own work
+
+ 1. Take a piece of paper and start drawing a simple flow diagram on an element of your data collection that applies to your daily work as a scientist. Limit yourself to a maximum of five elements in your graph. 
+ 1. Create a repo in your Github account called `my_mermaid`
+ 1. Add one file to this repo called `workflow.md`
+ 1. Try recreating the graph you have drawn on paper in this Markdown file
+ 
+**Note: Mind that mermaid graphs are automatically rendered in Github, when stored as code in a Markdown file. To indicate that the code in the file is a mermaid flow diagram you need to add a special start and end line to the beginning and end of your mermaid graph:**
+
+Add 
+` ```mermaid `
+to the start of your file.
+When you want to end the definition of the flow diagram, close the mermaid fragment with:
+` ``` `
+
+## Version control on documents and data
+You may know from experience how an unnoticed change in a document, the use of the wrong version or the loss of edits can lead to loss of time invested, frustration and above all confusion! This is why keeping a record on all mutations on a document or the data is important.There usually will be [quite a lot](https://phdcomics.com/comics/archive.php?comicid=1531). Especially, tracking mutations on the data is important for another reason: reproducibility and validity of conclusions connected to the data.  
+ 
+ 
+
+
+
+## Version Control, using Github
+https://lesmaterialen.rstudio.hu.nl/workflows-reader/gitintro.html
+
+
+### **Exercise:** someting {.blauw}
+
+version control exercise.
+
+

@@ -25,70 +25,65 @@ Maybe ~~videotape~~ tiktok-record your process and add .mp4 to your paper? Type 
 
 This is why so many researchers are using code to analyse their data. If you do, just make sure you keep the code with the data. If you don't, make sure you precisely keep track of every step you take, in a separate text document.
 
+## Using code
+In Brown & Kaiser (2018), the authors write an important note on science that drives Reproducible Research:
 
+"…in science, three things matter:
 
-## Tidy data
+    the data,
+    the methods used to collect the data […], and
+    the logic connecting the data and methods to conclusions,
 
-Tidy data is a way of organising your data in a neat and structured way. If you make your data tidy, it is ensured that it is machine readable. This is important in ONTOX, as we want to use the data to build an AI platform.
+everything else is a distraction."
 
-So what is tidy data:
+This means that in practice, when we adhere to the Reproducible Research principles, we can reproduce the analysis and the results from a data analysis in a paper when we:
 
-1. Each variable must have its own column.  
-1. Each observation must have its own row. 
-1. Each value must have its own cell.
+ - Are sure that the data is exactly the same as the data used by the authors of the paper
+ - We have the _exact_ methods used to do the analysis
+ - We have a reproducible analysis environment (meaning we use the same software and/or settings)
+ 
+This sounds trivial, but really is not. This also leads to the conclusion that using software that depends on a graphical user interface is not really compatible with Reproducible Research. We are going to illustrate this with a small exercise. This exercise is meant as a primer to get you to consider using a programming language to do data analysis. Although the authors are quite agnostic when it comes to programming for data science. Meaning they could basically learn every language because of prior knowledge. They both howver, prefer working with R. We will give something of a primer on R in part 3 of this short course. Although both authors are adept programmers a word of warning is appropriate here: Learning to program is hard. It need practice, discipline and patience. Frustration and errors are an integral part of learning how to and doing programming. In the long run, you will be able to 'cash' on your investments, but it is not an easy win and usually you will also be opposed by some (or many if you are unlucky) in your academic environment. Learning how to use a programming language to solve analytic problems, to generate visualizations and to write your future publications (yes you can!) does have the advantage that you will be able to integrate the Reproducible Research principles in full in your daily work as a scientist. More on this later. 
 
-*Table1: Example of tidy data*
+### **Exercise B5**; Recreating a graphs and recording the steps, given the data and the result {.blauw}
 
-| country 	| year 	| population 	| birth rate 	|
-|:---------	|:-----	|:----------	|:-----------	|
-| mali    	| 2001 	| 10.000.000 	| 6.88       	|
-| mali    	| 2010 	| 15.000.000 	| 6.06       	|
-| sweden  	| 2001 	| 9.000.000  	| 1.57       	|
-| sweden  	| 2010 	| 10.000.000 	| 1.85       	|
+Try recreating the graph below from the dataset `steps_graph_excel.csv` in the /data folder of the course repository. Record at least 10 steps that you would need to recreate your version of this graph.
 
+Data Source
 
-Each variable must have its own column.  
+This dataset is part of the base-R installation in the `{datasets}` R-package as the `Puromycin` dataset-object.  
+```{r, echo=FALSE}
+library(tidyverse)
+datasets::Puromycin
 
-```{r , echo=FALSE, message=FALSE, out.width = "60%"}
-knitr::include_graphics("images/03_4_tidy1.jpg")
+data(package = "datasets", "Puromycin")
+Puromycin |>
+  as_tibble() |>
+  group_by(state, conc) |>
+  summarise(mean_rate = mean(rate),
+            sd = sd(rate))  |>
+  ggplot(aes(x = as_factor(conc), y = mean_rate)) +
+  geom_col(aes(fill = state, group = state), position = position_dodge(0.9)) +
+  geom_errorbar(
+    aes(
+      ymin=mean_rate-sd, 
+      ymax=mean_rate+sd, 
+      group = state), 
+    position = position_dodge(0.9),
+    width = 0.25) +
+   xlab("Concentration Puromycin (ppm)") +
+   ylab("Reaction Rates (counts/min/min)") 
+```
+```{r, include=FALSE, eval=FALSE}
+# run one-time
+datasets::Puromycin |>
+  write_csv(
+    here::here(
+      "data",
+      "steps_graph_excel.csv"
+    )
+  )
 ```
 
-Each observation must have its own row. 
-
-```{r , echo=FALSE, message=FALSE, out.width = "60%"}
-knitr::include_graphics("images/03_5_tidy2.jpg")
-```
-
-Each value must have its own cell.
-
-```{r , echo=FALSE, message=FALSE, out.width = "60%"}
-knitr::include_graphics("images/03_6_tidy3.jpg")
-```
-
-So the following table would by untidy, as there are multiple observations per row:
-
-*Table2: Example of untidy data*
-
-| participant  	| sample1 	| sample2 	| sample3 	| sample4 	|
-|:----------	|:------	|:--------	|:-------------	|:-----	|
-| Pietje   	| 7.5  	| 6      	| 8.2         	| 8   	|
-| Marietje 	| 8    	| 7.9    	| 5           	| 9   	|
-
-
-This would be the tidy version:
-
-*Table3: Example of untidy data made tidy*
-
-| student  	| sample      	| stairs_walked 	|
-|:----------	|:-------------	|:-------	|
-| Pietje   	| 1        	| 7.5   	|
-| Pietje   	| 2      	| 6     	|
-| Pietje   	| 3 	| 8.2   	|
-| Pietje   	| 4         	| 8     	|
-| Marietje 	| 1        	| 8     	|
-| Marietje 	| 2      	| 7.9   	|
-| Marietje 	| 3 	| 5     	|
-| Marietje 	| 4         	| 9     	|
 
 
 

@@ -15,20 +15,38 @@ knitr::opts_chunk$set(
 </style>
 
 
-**Note: this half of the workshop we will split the participants based on their previous experience and tools they are using.**
+**Note: this half of the workshop we will split the participants based on their previous experience and tools they are using. If you can answer "yes" to the following questions, you are on the correct page:**
+
+ - I don't use code (R, Python, Matlab, Julia,  etc) to analyse my data
+ - I would like to use a tidy data format to make my data machine readable
+ - I would like to use onedrive / google docs / similar software for version controlling my work.
 
 
-## **Exercise A1: ** reflection {.blauw}
+## **Exercise B1: ** reflection {.blauw}
 
 5-10 minutes
 
-Go through your e-mail and look for the last time you sent some colleague or colaborator data. Suppose you move to a different university, your mailbox is closed and some stranger needs to use your data for a project. Would they have enough information to do so? What would you do differently?
+Go through your e-mail and look for the last time you sent some colleague or colaborator data or if all your data is shared in the cloud: the last time you uploaded new data. Suppose you move to a different university, your mailbox is closed and some stranger needs to use your data for a project. Would they have enough information to do so? What would you do differently next time?
 
 Discuss in pairs of 2.
 
+## Introduction
+Whether you are working in an experimental, computational or design oriented scientific field, data is often either the final or at least an important product of your scientific research. When working in science, we seldom work in isolation, so sharing data and being able to track mutations and versions of the data and it's connected metadata should be an import aspect of your work. Because usually we grow into a project without having much education on very practical things such as where to store data, how to handle file structure, how to define versions of the data and how to handle mutations and version change, we decided to focus on these aspects in a very practical manner. 
+
+In this part of the workshop, we will provide you with hands-on practical handles on how to collaborate on data. We will provide you with ways how to communicate on your data workflow and you will learn how to administer and track changes to your data. We will share some good practices on how to deal with sharing of data with others as well.
+
+The contents of this part of the workshop:
+
+ 1. sharing and working with data in Excel
+ 1. Version control on data and text.
+ 1. Sending (and recieving) data via email and storing data online (Google Drive).
 
 
-## **Exercise A2: ** What can go wrong with data in Excel (groups of 3-5)
+## Data flows in ONTOX
+
+ONTOX is a data intensive project. Meaning, there is a lot of data collection going on in the project. While there are several ongoing developments to automate and standardize the data formats in ONTOX, many of us use a spreadsheet program such as MS Excel to gather and document data. In a large AI based project such as ONTOX, we need to keep in mind that the data does not only need to be understandable for us. It also needs to be machine readable (or at the very least: really easy to convert to machine readable data). Therefore, we will discuss how to best store data in tabular (in this case spreadsheet) formats.
+
+## **Exercise B2: ** What can go wrong with data in Excel (groups of 3-5)
 
 Exercise by [FAIR in (biological) practice course on carpentries-incubator](https://carpentries-incubator.github.io/fair-bio-practice/05-intro-to-metadata/index.html#types-of-metadata). (see below for full reference)
 
@@ -73,135 +91,107 @@ It contains data similar to the presented data before from experiments on plants
 </details>
 </br>
 
+## Some common spreadsheat errors (that have been spotted in ONTOX):
+(shortened  and reworded accordingly slightly from source at carpentries-incubator.github.io)
+
+ - **Not filling in zeros** 
+It might be that when you’re measuring something, it’s usually a zero, say the number of times an adverse effect is observed in the survey. Why bother writing in the number zero in that column, when it’s mostly zeros? However, "I counted zero adverse effects" is diffent from "I did not measure this, this data is missing". Make sure to record zeros as zeros and truly missing data as empty / missing (so not -999, 999 and definately not 0. computers will conclude that there is data).
+ - **Using formatting to convey information organizing data**
+Never highlight cells, rows or columns that should be excluded from an analysis, or to mark particular properties/conditions. Also never merge cells. Formatting information is not available to analysis software and almost certainly will be lost during processing.
+ - **Placing comments or units or more than one variable in a cell**
+ Cells in a spreadsheet should contain one piece of information per cell. 
+
 Source: [FAIR in (biological) practice](https://carpentries-incubator.github.io/fair-bio-practice/05-intro-to-metadata/index.html#types-of-metadata). Licensed under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/) 2022. We took [Exercise 1: What can go wrong with data in Excel](https://carpentries-incubator.github.io/fair-bio-practice/07-data-in-excel/index.html#exercise-1-what-can-go-wrong-with-data-in-excel-4-min) out of context.
 
-## Introduction
-Whether you are working in an experimental, computational or design oriented scientific field, data is often either the final or at least an important product of your scientific research. When working in science, we seldom work in isolation, so sharing data and being able to track mutations and versions of the data and it's connected metadata should be an import aspect of your work. Because usually we grow into a project without having much education on very practical things such as where to store data, how to handle file structure, how to define versions of the data and how to handle mutations and version change, we decided to focus on these aspects in a very practical manner. In this part of the workshop, we will provide you with hands-on practical handles on how to collaborate on data. We will provide you with ways how to communicate on your data workflow and you will learn how to administer and track changes to your data. We will share some good practices on how to deal with sharing of data with others as well.
+## Tidy data
 
-The contents of this part of the workshop:
+Tidy data is a way of organising your data in a neat and structured way. If you make your data tidy, it is ensured that it is machine readable. This is important in ONTOX, as we want to use the data to build an AI platform.
 
- 1. Defining and visualizing your data workflow, using `{mermaid}`
- 1. Version control on data (and code). For those familiar with programming we will introduce Git and Github. For those not planning on using a computer language to do data science, we intorduce an alternative workflow
- 1. Sending (and recieving) data via email and storing data online (Google Drive).
+So what is tidy data:
+
+1. Each variable must have its own column.  
+1. Each observation must have its own row. 
+1. Each value must have its own cell.
+
+*Table1: Example of tidy data*
+
+| country 	| year 	| population 	| birth rate 	|
+|:---------	|:-----	|:----------	|:-----------	|
+| mali    	| 2001 	| 10.000.000 	| 6.88       	|
+| mali    	| 2010 	| 15.000.000 	| 6.06       	|
+| sweden  	| 2001 	| 9.000.000  	| 1.57       	|
+| sweden  	| 2010 	| 10.000.000 	| 1.85       	|
 
 
-## Data flows in ONTOX
+Each variable must have its own column.  
 
-ONTOX is a data intensive project. Meaning, there is a lot of data collection going on in the project. With so many people collecting data, there is an eminent need for a good protocol. Usually data collection protocols are indicated as workflows which are described as flow diagrams. 
+```{r , echo=FALSE, message=FALSE, out.width = "60%"}
+knitr::include_graphics("images/03_4_tidy1.jpg")
+```
 
-To create a workflow, there is a lot of available software. You could use e.g. [Lucidchart](https://www.lucidchart.com/pages/nl) or Microsoft Visio. These software solutions are easy to use, but have one disadvantage: They use a Graphical User Interface. As explained previously, GUIs prevent recording of steps and are in that sense not compatible with Reproducible Research. That is why we will use another tool 'Mermaid' to create our workflow. To learn more about Mermaid, follow this [link](https://mermaid-js.github.io/mermaid/#/). The Mermaid syntax is easy to follow and can be implemented in Markdown. The good thing is that Github supports Mermaid natively, meaning that you do not need any additional steps to visualize Mermaid flow diagrams in Github. 
+Each observation must have its own row. 
 
-### EXERCISE; Understanding data workflows with Mermaid {.blauw}
+```{r , echo=FALSE, message=FALSE, out.width = "60%"}
+knitr::include_graphics("images/03_5_tidy2.jpg")
+```
 
-For starters we can look at an example workflow that is used within ONTOX by looking at the source file in Github. 
+Each value must have its own cell.
 
-Study the source file of the ONTOX workflow that is called `LiteraturToAOP` [here](https://github.com/ontox-hu/workflows/blob/main/LiteratureToAop.md). To see the source, click on the `raw` button on the top right corner of the file. Try to answer the following questions:
+```{r , echo=FALSE, message=FALSE, out.width = "60%"}
+knitr::include_graphics("images/03_6_tidy3.jpg")
+```
 
- 1. What defines the relationship between two elements in the workflow?
- 1. How do you create a box?
- 1. How do you create a 'database' element?
- 1. How do you put text on an arrow (relationship?)
- 1. How do you define a circle in the workflow
- 1. What do you need to do to get more relationships pointing TO a box?
- 1. What do you need to do to get more relationsships pointing FROM a box?
+So the following table would by untidy, as there are multiple observations per row:
 
-## Create your own workflow
-When collecting or generating data in research, it is good practice to make the process by which data is collected, processed, stored and analysed, visualized and results reported explicit in a workflow. In the exercise below you will start to create a workflow for your own work. 
- 
-### EXERCISE; Creating your own workflow {.blauw}
+*Table2: Example of untidy data*
 
-In the previous exercise on Github you created a test repository in your own Github account. Here you will create a very simple `mermaid` graph that applies to an element of data collection in your own work
+| participant  	| sample1 	| sample2 	| sample3 	| sample4 	|
+|:----------	|:------	|:--------	|:-------------	|:-----	|
+| Pietje   	| 7.5  	| 6      	| 8.2         	| 8   	|
+| Marietje 	| 8    	| 7.9    	| 5           	| 9   	|
 
- 1. Take a piece of paper and start drawing a simple flow diagram on an element of your data collection that applies to your daily work as a scientist. Limit yourself to a maximum of five elements in your graph. 
- 1. Create a repo in your Github account called `my_mermaid`
- 1. Add one file to this repo called `workflow.md`
- 1. Try recreating the graph you have drawn on paper in this Markdown file
- 
-**Note: Mind that mermaid graphs are automatically rendered in Github, when stored as code in a Markdown file. To indicate that the code in the file is a mermaid flow diagram you need to add a special start and end line to the beginning and end of your mermaid graph:**
 
-Add 
-` ```mermaid `
-to the start of your file.
-When you want to end the definition of the flow diagram, close the mermaid fragment with:
-` ``` `
+This would be the tidy version:
+
+*Table3: Example of untidy data made tidy*
+
+| student  	| sample      	| stairs_walked 	|
+|:----------	|:-------------	|:-------	|
+| Pietje   	| 1        	| 7.5   	|
+| Pietje   	| 2      	| 6     	|
+| Pietje   	| 3 	| 8.2   	|
+| Pietje   	| 4         	| 8     	|
+| Marietje 	| 1        	| 8     	|
+| Marietje 	| 2      	| 7.9   	|
+| Marietje 	| 3 	| 5     	|
+| Marietje 	| 4         	| 9     	|
+
+
+
 
 ## Version control on documents and data
-You may know from exprience how an unnoticed change in a document, the use of the wrong version or the loss of edits can lead to loss of time invested, frustration and above all confusion! This is why keeping a record on all mutations on a document or the data is important. Especially, tracking mutations on the data is important for another reason: reproducibility and validity of conclusions connected to the data.  In Brown & Kaiser (2018), the authors write an important note on science that drives Reproducible Research:
-
-"…in science, three things matter:
-
-    the data,
-    the methods used to collect the data […], and
-    the logic connecting the data and methods to conclusions,
-
-everything else is a distraction."
-
-This means that in practice, when we adhere to the Reproducible Research principles, we can reproduce the analysis and the results from a data analysis in a paper when we:
-
- - Are sure that the data is exactly the same as the data used by the authors of the paper
- - We have the _exact_ methods used to do the analysis
- - We have a reproducible analysis environment (meaning we use the same software and/or settings)
- 
-This sounds trivial, but really is not. This also leads to the conclusion that using software that depends on a graphical user interface is not really compatible with Reproducible Research. We are going to illustrate this with a small exercise. This exercise is meant as a primer to get you to consider using a programming language to do data analysis. Although the authors are quite agnostic when it comes to programming for data science. Meaning they could basically learn every language because of prior knowledge. They both howver, prefer working with R. We will give something of a primer on R in part 3 of this short course. Although both authors are adept programmers a word of warning is appropriate here: Learning to program is hard. It need practice, discipline and patience. Frustration and errors are an integral part of learning how to and doing programming. In the long run, you will be able to 'cash' on your investments, but it is not an easy win and usually you will also be opposed by some (or many if you are unlucky) in your academic environment. Learning how to use a programming language to solve analytic problems, to generate visualizations and to write your future publications (yes you can!) does have the advantage that you will be able to integrate the Reproducible Research principles in full in your daily work as a scientist. More on this later. 
-
-### EXERCISE; Recreating a graphs and recording the steps, given the data and the result {.blauw}
-
-Try recreating the graph below from the dataset `steps_graph_excel.csv` in the /data folder of the course repository. Record at least 10 steps that you would need to recreate your version of this graph.
-
-Data Source
-
-This dataset is part of the base-R installation in the `{datasets}` R-package as the `Puromycin` dataset-object.  
-```{r, echo=FALSE}
-library(tidyverse)
-datasets::Puromycin
-
-data(package = "datasets", "Puromycin")
-Puromycin |>
-  as_tibble() |>
-  group_by(state, conc) |>
-  summarise(mean_rate = mean(rate),
-            sd = sd(rate))  |>
-  ggplot(aes(x = as_factor(conc), y = mean_rate)) +
-  geom_col(aes(fill = state, group = state), position = position_dodge(0.9)) +
-  geom_errorbar(
-    aes(
-      ymin=mean_rate-sd, 
-      ymax=mean_rate+sd, 
-      group = state), 
-    position = position_dodge(0.9),
-    width = 0.25) +
-   xlab("Concentration Puromycin (ppm)") +
-   ylab("Reaction Rates (counts/min/min)") 
-```
-```{r, include=FALSE, eval=FALSE}
-# run one-time
-datasets::Puromycin |>
-  write_csv(
-    here::here(
-      "data",
-      "steps_graph_excel.csv"
-    )
-  )
-```
-
-
+You may know from experience how an unnoticed change in a document, the use of the wrong version or the loss of edits can lead to loss of time invested, frustration and above all confusion! This is why keeping a record on all mutations on a document or the data is important. There usually will be [quite a lot](https://phdcomics.com/comics/archive.php?comicid=1531). Especially, tracking mutations on the data is important for another reason: reproducibility and validity of conclusions connected to the data.
 
  
  
- 
 
+## Manual Version Control
 
-
-
-
-## Version Control, using Github
-
-## Version Control, using 
-
+https://carpentries-incubator.github.io/fair-bio-practice/11-version-control/index.html#manual-versioning
 https://rebelsguidetopm.com/how-to-do-document-version-control/
 
-### exercise: someting {.blauw}
-
-version control exercise.
+## Document Version control using onedrive
 
 
+## Document Version control using google docs
+
+## exercise: someting {.blauw}
+
+## **version control exercise.**
+
+## Key Points
+
+ - keep your excel files machine readable and umambiguous
+ - don't use formatting to convey information in Excel
+ - use tidy data if possible
+ - version control takes some effort, but saves a lot of confusion -thus time- in the long run
