@@ -309,4 +309,9 @@ knitr::include_graphics(
     "images",
     "1539096097.png"))
 ```
- 
+
+## key points
+
+ - use a project centered folder structure and be consistent 
+ - keep meta data with your data
+ - don't change data files, use versioning
