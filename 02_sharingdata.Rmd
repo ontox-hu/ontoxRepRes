@@ -105,9 +105,9 @@ Source: [FAIR in (biological) practice](https://carpentries-incubator.github.io/
 
 ## Tidy machine readable data
 
-Tidy data is a way of organising your data in a neat and structured way. If you make your data tidy, it is ensured that it is machine readable. This is important in ONTOX, as we want to use the data to build an AI platform.
+As discussed, tidy data is a way of organising your data in a neat and structured way. If you make your data tidy, it is ensured that it is machine readable (thus can be "shared with AI's"). This is important in ONTOX, as we want to use the data to build an AI platform.
 
-So what is tidy data:
+So for future reference, what is tidy data again:
 
 1. Each variable must have its own column.  
 1. Each observation must have its own row. 
@@ -147,8 +147,8 @@ So the following table would by untidy, as there are multiple observations per r
 
 | participant  	| sample1 	| sample2 	| sample3 	| sample4 	|
 |:----------	|:------	|:--------	|:-------------	|:-----	|
-| Pietje   	| 7.5  	| 6      	| 8.2         	| 8   	|
-| Marietje 	| 8    	| 7.9    	| 5           	| 9   	|
+| John   	| 7.5  	| 6      	| 8.2         	| 8   	|
+| Mary 	| 8    	| 7.9    	| 5           	| 9   	|
 
 
 This would be the tidy version:
@@ -157,28 +157,46 @@ This would be the tidy version:
 
 | student  	| sample      	| stairs_walked 	|
 |:----------	|:-------------	|:-------	|
-| Pietje   	| 1        	| 7.5   	|
-| Pietje   	| 2      	| 6     	|
-| Pietje   	| 3 	| 8.2   	|
-| Pietje   	| 4         	| 8     	|
-| Marietje 	| 1        	| 8     	|
-| Marietje 	| 2      	| 7.9   	|
-| Marietje 	| 3 	| 5     	|
-| Marietje 	| 4         	| 9     	|
-
+| John   	| 1        	| 7.5   	|
+| John   	| 2      	| 6     	|
+| John   	| 3 	| 8.2   	|
+| John   	| 4         	| 8     	|
+| Mary 	| 1        	| 8     	|
+| Mary 	| 2      	| 7.9   	|
+| Mary 	| 3 	| 5     	|
+| Mary 	| 4         	| 9     	|
 
 
 ## **Exercise:** tidy data? {.blauw}
 
-of een van hier: https://open-science-training-handbook.github.io/Open-Science-Training-Handbook_EN/05ExamplesAndPracticalGuidance/
+Take a look at an example (fake) dataset on blood levels for several compounds in hepatitis patients, blood donors and suspected hepatitis patients in Utrecht, the Netherlands [here](data/hepatitis_example_short.xlsx). Data was collected between January 2022 and May 2022 by K. the Frog, PhD. It doesn't look that bad, especially compared to the example from the previous exercise. But it is not machine readable. 
 
+Make this dataset machine readable and store it in a reproducible way. Keep the following in mind:
+
+ 1. Tidy data: Each variable its own column. No duplicate columns. Each observation its own row. Each value must have its own cell.
+ 1. One datatype per column, be consistent
+ 1. notes in a separate column
+ 1. don't use formatting to convey information
+ 1. never throw away or change a raw datafile. Raw data = however YOU received the data, be it from a machine, handmade in Excel yourself, or received through email.
+ 1. data always needs meta data
 
 
 ## Version control on documents and data
-You may know from experience how an unnoticed change in a document, the use of the wrong version or the loss of edits can lead to loss of time invested, frustration and above all confusion! This is why keeping a record on all mutations on a document or the data is important. There usually will be [quite a lot](https://phdcomics.com/comics/archive.php?comicid=1531). Especially, tracking mutations on the data is important for another reason: reproducibility and validity of conclusions connected to the data.
+You may know from experience how an unnoticed change in a document, the use of the wrong version or the loss of edits can lead to loss of time invested, frustration and above all confusion! This is why keeping a record on all mutations on a document or the data is important. There usually will be [quite a lot](https://phdcomics.com/comics/archive.php?comicid=1531). Especially, tracking mutations on the data is important for another reason: reproducibility and validity of conclusions (or any other interpretation or cummunication) connected to the data.
 
- 
- 
+Version control is the process of tracking and managing different versions (or drafts) of a file / document / dataset. By doing so, you always know what is the most recent version of a file, when something was changed and what was changed.
+
+Think of it as keeping track of any changes, on top of keeping your file.
+
+>So instead of:
+>
+>file --> file-version_2 --> file_version_final -->   file_version_final_2 = file_current
+>
+>You keep track of:
+>
+>file + changes_06_06_2022 + changes_07_06_2022  + changes_22_06_2022 = file_current
+
+This has the added advantage of making it easier to merge changes from two separate collaborators. "Added advantage" with respect to reproducibility, but in case of the file being a manuscript written with >2 co-autheurs, we all know this could be a huge help.
 
 ### Manual Version Control
 
