@@ -167,7 +167,7 @@ This would be the tidy version:
 | Mary 	| 4         	| 9     	|
 
 
-## **Exercise:** tidy data? {.blauw}
+## **Exercise:** tidy data {.blauw}
 
 Take a look at an example (fake) dataset on blood levels for several compounds in hepatitis patients, blood donors and suspected hepatitis patients in Utrecht, the Netherlands [here](data/hepatitis_example_short.xlsx). Data was collected between January 2022 and May 2022 by K. the Frog, PhD. It doesn't look that bad, especially compared to the example from the previous exercise. But it is not machine readable. 
 
@@ -198,15 +198,78 @@ Think of it as keeping track of any changes, on top of keeping your file.
 
 This has the added advantage of making it easier to merge changes from two separate collaborators. "Added advantage" with respect to reproducibility, but in case of the file being a manuscript written with >2 co-autheurs, we all know this could be a huge help.
 
-### Manual Version Control
+If you use code to analyse your data and/or write your manuscripts (e.g. Latex, Rmarkdown), stop here and change to the "advanced" exercises. You should really take the easy route (why not!) and use Github to do the version control for you.
 
-https://carpentries-incubator.github.io/fair-bio-practice/11-version-control/index.html#manual-versioning
-https://rebelsguidetopm.com/how-to-do-document-version-control/
+If you use Word and Excel / imageJ / SPSS / etc, keep reading.
 
-### Document Version control using onedrive
+## Project Version Control: manually
+
+One option that does not make use of storing changes separately is this (proposed) method doing version control manually. It is, however, very easy to implement starting today:
+
+ 1. Whenever you change something significant in your project, just copy the whole folder, and save the old version in a folder with the date of today as the folder name. This may seem wasteful, but remember that storage nowadays is a whole lot cheaper than your time or confusion.
+ 1. Document all changes in a changelog.txt file in your main project folder. Write what you changed, who changed it, when and why.
+ 1. Save everything on onedrive, or google docs, or somewhere else that keeps backups. 
+ 1. Keep the /current folder on your laptop if you want to work locally, but remember to backup  and sync your project daily with the remote folder.
+
+Your folder structure will look something like this:
+
+```
+laptop/projects
+├── project A
+│   ├── changelog.txt
+│   ├── current
+│   │   ├── analyses
+│   │   ├── data_raw
+│   │   ├── documentation
+│   │   ├── manuscript
+│   │   ├── methods
+│   ├── version_01_02_2022
+│   ├── version_14_12_2021
+```
+
+And your changelog may look like this:
+
+```
+├── changelog.txt
+01_02_2022
+Alyanne: Removed chapter 2 from /manuscript/manuscript.docx and changed statistics to Bayesian (updated folder: /analyses) as per reviewer 1's request.
+
+03_01_2022
+optional: keep record of smaller changes as well
+
+14_12_2021
+Marc: Added dataset 3 (/data_raw/dataset3_th.csv) from Theme Hospital and wrote script to tidiy data (/analyses/clean_th_data.R).
+Marc: Added feedback from Francois (/docs/mail_Francois.docx) to /manuscript/manuscript.docx. 
+```
+
+## Document Version control using onedrive / google docs
+
+If you are only working on a document, e.g. writing a proposal together with 3 colleagues with no other files involved, you may instead choose to version control the document only. You can do this by using  onedrive or google docs to store the document. 
+
+Choose one of the 2 links below to read based on whether your organisation uses onedrive or google docs:
+
+[Office](https://support.microsoft.com/en-us/office/restore-a-previous-version-of-a-file-stored-in-onedrive-159cad6d-d76e-4981-88ef-de6e96c93893). and also [here](https://support.microsoft.com/en-us/office/view-the-version-history-of-an-item-or-file-in-a-list-or-library-53262060-5092-424d-a50b-c798b0ec32b1)
+
+[Google docs](https://www.techrepublic.com/article/version-history-essentials-for-google-docs-sheets-and-slides/)
+
+## Document Version control manually
+You could also so this manually, especially if you are not collaborating a lot on this particular file.
+
+Do not fall into the trap of copying your document, then renaming it document_version2.docx, and repeating this step every time. Think the other way around:
+
+ - document.docx should always be the current version
+ - whenever you make bigger changes, keep a copy of the version before those changes with added numbers or dates in the file name as a version controlled log.
+
+Keep a changelog in table format at the beginning of your document. e.g.:
+
+| Version          | Date       | Author  | Change                        |
+|------------------|------------|---------|-------------------------------|
+| 0.1              | 01-02-2022 | Alyanne | First draft                   |
+| 0.2              | 10-02-2022 | Marc    | Added exercise 3.2            |
+| 0.3              | 15-02-2022 | Marie   | reviewed and corrected French |
+| 1.0              | 01-03-2022 | Alyanne | Added chapter 2               |
 
 
-### Document Version control using google docs
 
 ## **Exercise:** version control {.blauw}
 
