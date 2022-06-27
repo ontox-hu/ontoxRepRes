@@ -94,7 +94,7 @@ old_laptop/wrong_structure
 
 This makes sense but has at least two major drawbacks:
 
- 1. Deep nesting of files in folders can cause you to lose files, or the link between files. Most importantly, in 10 years time: will you remember on what dataset a specific powerpoint presentation was based?
+ 1. Deep nesting of files in folders can cause you to lose files, or the link between files. Most importantly, in 10 years time: will you remember on what dataset a specific powerpoint presentation was based? It is essential for reproducible research that the link between data and analyses and interpretation remains intact.
  2. Things will change. There will be new categories and new types of files, you had not thought of before. Where will these go?
 
 
