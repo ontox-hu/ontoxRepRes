@@ -76,6 +76,7 @@ Total of 4 hours (14:30 - 18:30)
    + BREAKOUT (5 people, 30 min) 
      + Option 1: *15 min DIY tidy data* (exercise B3) and *15 min version control* (exercise B4)
      + Option 2: finish C1 till C3, and *20 min visualising workflows* (exercise C4 and C5)
+     
 #### 16:30- 17:00
  - MAIN immediate plans for tomorrow: perhaps Prioritization of training needs from here : https://open-science-training-handbook.github.io/Open-Science-Training-Handbook_EN/05ExamplesAndPracticalGuidance/
  - closure
