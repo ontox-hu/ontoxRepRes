@@ -151,13 +151,6 @@ Look at your research projects. Which example folder structure does it resemble 
  1. Try to fix a few things right now.
  1. Book a timeslot (e.g. 1 morning) in your calendar somewhere this month to fix the folder structure of your current projects.
 
-## **Advanced Exercise A1:** automated workflows for advanced participants {.blauw}
-
-If you have more experience in managing your research projects and already know all about folder structues, meta data, licencing etc, you already use code (R, Python, Matlab, Julia, etc) to analyse your data and you now feel you misestimated the level of this workshop: no worries! Use the time to automate what you are already doing. 
-
-For instance, this folder structure looks a lot like [cookiecutter](https://drivendata.github.io/cookiecutter-data-science/), which has options for integration in workflows in R and Python. But we also like to bring [WORCS](https://cran.r-project.org/web/packages/worcs/vignettes/workflow.html) to your attention, as well as [rrtools](https://github.com/benmarwick/rrtools).
-
-Use the time dedicated to this exercise to scan these options for project management.
 
 
 ## File names
