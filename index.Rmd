@@ -51,16 +51,16 @@ Total of 4 hours (14:30 - 18:30)
 
 #### 14:30-15:00
  - 20 min welcome, everyone introduces themselves
- - 10 min broad introduction to research data management and FAIR data in ONTOX (XXX stress amount of work you throw at someone else down the line if you _dont_ provide your data tidy within ONTOX)
-
+ - 10 min broad introduction to research data management and FAIR data in ONTOX
+ 
 #### 15:00-15:50 hands-on storing your current data 
  - MAIN 5 min intro folder structure 
- - BREAKOUT (3 people) 15 min DIY analysing and cleaning your own current data storage ways
+ - BREAKOUT (3 people, 15 min) DIY analysing and cleaning your own current data storage ways (exercise A1)
  - MAIN 5 min intro metadata
- - BREAKOUT (3 people) 15-20 min DIY and discussion meta data
+ - BREAKOUT (3 people, 15-20 min) DIY and discussion meta data (exercises A2 and A3)
 
 #### 15:50-16:10 sticky notes /discussion
- - MURAL on incentives and barriers for using reproducible methods <mark>sticky note board needed? </mark> 
+ - MURAL on incentives and barriers for using reproducible methods
 
 #### 14:40-15:00 break
 
@@ -68,13 +68,14 @@ Total of 4 hours (14:30 - 18:30)
  - MAIN 10 min intro: The usual problematic workflow
  - MAIN 5 min split group
  - collaboration and digital data
-   + BREAKOUT (5 people 30 min) *5-10 min DIY sharing excel files* 
-   +  *15-20 min DIY data in excel / github*
+   + BREAKOUT (5 people 30 min) 
+     + Option 1: *5-10 min DIY sharing excel files* (exercise B1) and *15-20 min DIY data in excel* (exercise B2) 
+     + Option 2: *5-10 min DIY sharing excel files* (exercise B1) and *15-20 min DIY github* (exercise C1, C2, C3) 
  - machine readable data and workflows
    + MAIN 10 min demo AI: why we need it to be machine readable, tidy data / mermaid, version control
-   + BREAKOUT (5 people, 30 min) *15 min DIY tidy data OR XXX*
-   + *15 min DIY version control*
-
+   + BREAKOUT (5 people, 30 min) 
+     + Option 1: *15 min DIY tidy data* (exercise B3) and *15 min version control* (exercise B4)
+     + Option 2: finish C1 till C3, and *20 min visualising workflows* (exercise C4 and C5)
 #### 16:30- 17:00
  - MAIN immediate plans for tomorrow: perhaps Prioritization of training needs from here : https://open-science-training-handbook.github.io/Open-Science-Training-Handbook_EN/05ExamplesAndPracticalGuidance/
  - closure
