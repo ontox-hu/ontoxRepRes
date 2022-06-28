@@ -1,4 +1,4 @@
-# Hands-on data handling
+# Hands-on data storing
 
  - Folder structure
  - meta data
