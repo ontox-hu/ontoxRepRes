@@ -260,7 +260,7 @@ Do not fall into the trap of copying your document, then renaming it document_ve
  - document.docx should always be the current version
  - whenever you make bigger changes, keep a copy of the version before those changes with added numbers or dates in the file name as a version controlled log.
 
-Keep a changelog in table format at the beginning of your document. e.g.:
+Keep a changelog in table format at the beginning of your document or in a file called `changelog.txt`. e.g.:
 
 | Version          | Date       | Author  | Change                        |
 |------------------|------------|---------|-------------------------------|
@@ -273,6 +273,9 @@ Keep a changelog in table format at the beginning of your document. e.g.:
 
 ## **Exercise:** version control {.blauw}
 
+<mark>XXX</mark>
+
+
 
 ## Key Points
 
@@ -280,3 +283,4 @@ Keep a changelog in table format at the beginning of your document. e.g.:
  - don't use formatting to convey information in Excel
  - use tidy data if possible
  - version control takes some effort, but saves a lot of confusion -thus time- in the long run
+ - always let name_of_your_document.docx be the current version. 
