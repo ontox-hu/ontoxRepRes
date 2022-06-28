@@ -39,14 +39,14 @@ The contents of this part of the workshop:
 
  1. sharing and working with data in Excel
  1. Version control on data and text.
- 1. Sending (and recieving) data via email and storing data online (Google Drive).
+ <!-- 1. Sending (and recieving) data via email and storing data online (Google Drive). -->
 
 
 ## Data flows in ONTOX
 
 ONTOX is a data intensive project. Meaning, there is a lot of data collection going on in the project. While there are several ongoing developments to automate and standardize the data formats in ONTOX, many of us use a spreadsheet program such as MS Excel to gather and document data. In a large AI based project such as ONTOX, we need to keep in mind that the data does not only need to be understandable for us. It also needs to be machine readable (or at the very least: really easy to convert to machine readable data). Therefore, we will discuss how to best store data in tabular (in this case spreadsheet) formats.
 
-## **Exercise B2: ** What can go wrong with data in Excel (groups of 3-5)
+## **Exercise B2: ** What can go wrong with data in Excel {.blauw}
 
 Exercise by [FAIR in (biological) practice course on carpentries-incubator](https://carpentries-incubator.github.io/fair-bio-practice/05-intro-to-metadata/index.html#types-of-metadata). (see below for full reference)
 
@@ -105,9 +105,9 @@ Source: [FAIR in (biological) practice](https://carpentries-incubator.github.io/
 
 ## Tidy machine readable data
 
-Tidy data is a way of organising your data in a neat and structured way. If you make your data tidy, it is ensured that it is machine readable. This is important in ONTOX, as we want to use the data to build an AI platform.
+As discussed, tidy data is a way of organising your data in a neat and structured way. If you make your data tidy, it is ensured that it is machine readable (thus can be "shared with AI's"). This is important in ONTOX, as we want to use the data to build an AI platform.
 
-So what is tidy data:
+So for future reference, what is tidy data again:
 
 1. Each variable must have its own column.  
 1. Each observation must have its own row. 
@@ -147,8 +147,8 @@ So the following table would by untidy, as there are multiple observations per r
 
 | participant  	| sample1 	| sample2 	| sample3 	| sample4 	|
 |:----------	|:------	|:--------	|:-------------	|:-----	|
-| Pietje   	| 7.5  	| 6      	| 8.2         	| 8   	|
-| Marietje 	| 8    	| 7.9    	| 5           	| 9   	|
+| John   	| 7.5  	| 6      	| 8.2         	| 8   	|
+| Mary 	| 8    	| 7.9    	| 5           	| 9   	|
 
 
 This would be the tidy version:
@@ -157,40 +157,124 @@ This would be the tidy version:
 
 | student  	| sample      	| stairs_walked 	|
 |:----------	|:-------------	|:-------	|
-| Pietje   	| 1        	| 7.5   	|
-| Pietje   	| 2      	| 6     	|
-| Pietje   	| 3 	| 8.2   	|
-| Pietje   	| 4         	| 8     	|
-| Marietje 	| 1        	| 8     	|
-| Marietje 	| 2      	| 7.9   	|
-| Marietje 	| 3 	| 5     	|
-| Marietje 	| 4         	| 9     	|
+| John   	| 1        	| 7.5   	|
+| John   	| 2      	| 6     	|
+| John   	| 3 	| 8.2   	|
+| John   	| 4         	| 8     	|
+| Mary 	| 1        	| 8     	|
+| Mary 	| 2      	| 7.9   	|
+| Mary 	| 3 	| 5     	|
+| Mary 	| 4         	| 9     	|
 
 
+## **Exercise B3:** tidy data {.blauw}
 
-## **Exercise:** tidy data? {.blauw}
+Take a look at an example (fake) dataset on blood levels for several compounds in hepatitis patients, blood donors and suspected hepatitis patients in Utrecht, the Netherlands [here](data/hepatitis_example_short.xlsx). Data was collected between January 2022 and May 2022 by K. the Frog, PhD. It doesn't look that bad, especially compared to the example from the previous exercise. But it is not machine readable. 
 
-of een van hier: https://open-science-training-handbook.github.io/Open-Science-Training-Handbook_EN/05ExamplesAndPracticalGuidance/
+Make this dataset machine readable and store it in a reproducible way. Keep the following in mind:
 
+ 1. Tidy data: Each variable its own column. No duplicate columns. Each observation its own row. Each value must have its own cell.
+ 1. One datatype per column, be consistent
+ 1. notes in a separate column
+ 1. don't use formatting to convey information
+ 1. never throw away or change a raw datafile. Raw data = however YOU received the data, be it from a machine, handmade in Excel yourself, or received through email.
+ 1. data always needs meta data
 
 
 ## Version control on documents and data
-You may know from experience how an unnoticed change in a document, the use of the wrong version or the loss of edits can lead to loss of time invested, frustration and above all confusion! This is why keeping a record on all mutations on a document or the data is important. There usually will be [quite a lot](https://phdcomics.com/comics/archive.php?comicid=1531). Especially, tracking mutations on the data is important for another reason: reproducibility and validity of conclusions connected to the data.
+You may know from experience how an unnoticed change in a document, the use of the wrong version or the loss of edits can lead to loss of time invested, frustration and above all confusion! This is why keeping a record on all mutations on a document or the data is important. There usually will be [quite a lot](https://phdcomics.com/comics/archive.php?comicid=1531). Especially, tracking mutations on the data is important for another reason: reproducibility and validity of conclusions (or any other interpretation or cummunication) connected to the data.
 
- 
- 
+Version control is the process of tracking and managing different versions (or drafts) of a file / document / dataset. By doing so, you always know what is the most recent version of a file, when something was changed and what was changed.
 
-### Manual Version Control
+Think of it as keeping track of any changes, on top of keeping your file.
 
-https://carpentries-incubator.github.io/fair-bio-practice/11-version-control/index.html#manual-versioning
-https://rebelsguidetopm.com/how-to-do-document-version-control/
+>So instead of:
+>
+>file --> file-version_2 --> file_version_final -->   file_version_final_2 = file_current
+>
+>You keep track of:
+>
+>file + changes_06_06_2022 + changes_07_06_2022  + changes_22_06_2022 = file_current
 
-### Document Version control using onedrive
+This has the added advantage of making it easier to merge changes from two separate collaborators. "Added advantage" with respect to reproducibility, but in case of the file being a manuscript written with >2 co-autheurs, we all know this could be a huge help.
+
+If you use code to analyse your data and/or write your manuscripts (e.g. Latex, Rmarkdown), stop here and change to the "advanced" exercises. You should really take the easy route (why not!) and use Github to do the version control for you.
+
+If you use Word and Excel / imageJ / SPSS / etc, keep reading.
+
+## Project Version Control: manually
+
+One option that does not make use of storing changes separately is this (proposed) method doing version control manually. It is, however, very easy to implement starting today:
+
+ 1. Whenever you change something significant in your project, just copy the whole folder, and save the old version in a folder with the date of today as the folder name. This may seem wasteful, but remember that storage nowadays is a whole lot cheaper than your time or confusion.
+ 1. Document all changes in a changelog.txt file in your main project folder. Write what you changed, who changed it, when and why.
+ 1. Save everything on onedrive, or google docs, or somewhere else that keeps backups. 
+ 1. Keep the /current folder on your laptop if you want to work locally, but remember to backup  and sync your project daily with the remote folder.
+
+Your folder structure will look something like this:
+
+```
+laptop/projects
+├── project A
+│   ├── changelog.txt
+│   ├── current
+│   │   ├── analyses
+│   │   ├── data_raw
+│   │   ├── documentation
+│   │   ├── manuscript
+│   │   ├── methods
+│   ├── version_01_02_2022
+│   ├── version_14_12_2021
+```
+
+And your changelog may look like this:
+
+```
+├── changelog.txt
+01_02_2022
+Alyanne: Removed chapter 2 from /manuscript/manuscript.docx and changed statistics to Bayesian (updated folder: /analyses) as per reviewer 1's request.
+
+03_01_2022
+optional: keep record of smaller changes as well
+
+14_12_2021
+Marc: Added dataset 3 (/data_raw/dataset3_th.csv) from Theme Hospital and wrote script to tidiy data (/analyses/clean_th_data.R).
+Marc: Added feedback from Francois (/docs/mail_Francois.docx) to /manuscript/manuscript.docx. 
+```
+
+## Document Version control using onedrive / google docs
+
+If you are only working on a document, e.g. writing a proposal together with 3 colleagues with no other files involved, you may instead choose to version control the document only. You can do this by using  onedrive or google docs to store the document. 
+
+Choose one of the 2 links below to read based on whether your organisation uses onedrive or google docs:
+
+[Office](https://support.microsoft.com/en-us/office/restore-a-previous-version-of-a-file-stored-in-onedrive-159cad6d-d76e-4981-88ef-de6e96c93893). and also [here](https://support.microsoft.com/en-us/office/view-the-version-history-of-an-item-or-file-in-a-list-or-library-53262060-5092-424d-a50b-c798b0ec32b1)
+
+[Google docs](https://www.techrepublic.com/article/version-history-essentials-for-google-docs-sheets-and-slides/)
+
+## Document Version control manually
+You could also so this manually, especially if you are not collaborating a lot on this particular file.
+
+Do not fall into the trap of copying your document, then renaming it document_version2.docx, and repeating this step every time. Think the other way around:
+
+ - document.docx should always be the current version
+ - whenever you make bigger changes, keep a copy of the version before those changes with added numbers or dates in the file name as a version controlled log.
+
+Keep a changelog in table format at the beginning of your document or in a file called `changelog.txt`. e.g.:
+
+| Version          | Date       | Author  | Change                        |
+|------------------|------------|---------|-------------------------------|
+| 0.1              | 01-02-2022 | Alyanne | First draft                   |
+| 0.2              | 10-02-2022 | Marc    | Added exercise 3.2            |
+| 0.3              | 15-02-2022 | Marie   | reviewed and corrected French |
+| 1.0              | 01-03-2022 | Alyanne | Added chapter 2               |
 
 
-### Document Version control using google docs
 
-## **Exercise:** version control {.blauw}
+## **Exercise B4:** version control {.blauw}
+
+<mark>XXX</mark>
+
 
 
 ## Key Points
@@ -199,3 +283,4 @@ https://rebelsguidetopm.com/how-to-do-document-version-control/
  - don't use formatting to convey information in Excel
  - use tidy data if possible
  - version control takes some effort, but saves a lot of confusion -thus time- in the long run
+ - always let name_of_your_document.docx be the current version. 

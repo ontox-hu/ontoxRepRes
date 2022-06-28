@@ -1,6 +1,7 @@
 ---
-title: "conquer the chaos"
-author: "Alyanne de Haan, Marc Teunis"
+title: "ONTOX Training Reproducible Research"
+subtitle: "conquer the chaos"
+author: "Alyanne de Haan, PhD,  Marc Teunis, PhD"
 site: bookdown::bookdown_site
 output: Gmisc::docx_document
 ---
@@ -14,14 +15,9 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Why you want to complete this workshop
 
-Here be text including:
- - Research projects are chaotic
- - everyone has trouble keeping track of manuscipt versions
- - almost everyone stores data in a way that works for them, but is almost impossible to reproduce once someone changes jobs.
- - there are some easy systems to implement that conquer this chaos
- - make your work more productive
- - collaborations easier
- - and ontox possible.
+Research projects are chaotic and we all know how hard it can be to keep track of manuscipt versions, changes to datasets, which figure was generated from which file, etc.. However, when building an data platform such as within ONTOX, it is very important that every datapoint can be retraced to its origin.
+
+At the same time, many people store data in a way that works for them, but is almost impossible to reproduce once someone changes jobs. There are some easy systems to implement that conquer this chaos, make your work more productive, collaborations easier, and ONTOX possible. And also, save you a lot of time in the long run.
 
 
 ## Learning objectives
@@ -32,7 +28,7 @@ After this workshop you:
  - Know which information needs to be stored with data, and how to keep these together when collaborating with others.
  - Can keep your projects under version control, so you can always backtrace what changed, when, and by whom.
  - Applied all this to your current most active research project
- - Can start tomorrow (or well, next monday) with using this workflow in your everyday work.
+ - Can start tomorrow (or well, next monday) with applying this in your everyday work.
 
 ## Contents 
 
@@ -51,38 +47,37 @@ Data sharing
 
 ## Schedule 
 
-Total of 4 hours (13:00 - 17:00) 
+Total of 4 hours (14:30 - 18:30) 
 
-#### 13:00-13:30
+#### 14:30-15:00
  - 20 min welcome, everyone introduces themselves
- - 10 min broad introduction to research data management and FAIR data in ONTOX (XXX stress amount of work you throw at someone else down the line if you _dont_ provide your data tidy within ONTOX)
+ - 10 min broad introduction to research data management and FAIR data in ONTOX
+ 
+#### 15:00-15:50 hands-on storing your current data 
+ - MAIN 5 min intro folder structure 
+ - BREAKOUT (3 people, 15 min) DIY analysing and cleaning your own current data storage ways (exercise A1)
+ - MAIN 5 min intro metadata
+ - BREAKOUT (3 people, 15-20 min) DIY and discussion meta data (exercises A2 and A3)
 
-#### 13:30-14:20 hands-on storing your current data 
- - 5 min intro folder structure
- - 15-20 min DIY analysing and cleaning your own current data storage ways
- - 5 min intro metadata
- - 15-20 min DIY and discussion meta data
-
-#### 14:20-14:40 sticky notes /discussion
- - on incentives and barriers for using reproducible methods <mark>sticky note board needed? </mark> 
+#### 15:50-16:10 sticky notes /discussion
+ - MURAL on incentives and barriers for using reproducible methods
 
 #### 14:40-15:00 break
 
-#### 15:00-16:40  hands-on sharing your current data
- - 10 min intro: The usual problematic workflow
+#### 16:30-18:10 hands-on sharing your current data
+ - MAIN 10 min intro: The usual problematic workflow
+ - MAIN 5 min split group
  - collaboration and digital data
-   + *5-10 min DIY B1  sharing excel files* 
-   + *15-20 min DIY B2 data in excel / github*
+   + BREAKOUT (5 people 30 min) 
+     + Option 1: *5-10 min DIY sharing excel files* (exercise B1) and *15-20 min DIY data in excel* (exercise B2) 
+     + Option 2: *5-10 min DIY sharing excel files* (exercise B1) and *15-20 min DIY github* (exercise C1, C2, C3) 
  - machine readable data and workflows
-   + 10 min demo AI: why we need it to be machine readable
-   + 5-10 min intro tidy data / mermaid
-   + *10 min DIY*
- - version control
-   + 10 min intro version control
-   + *10 min DIY version control*
-
+   + MAIN 10 min demo AI: why we need it to be machine readable, tidy data / mermaid, version control
+   + BREAKOUT (5 people, 30 min) 
+     + Option 1: *15 min DIY tidy data* (exercise B3) and *15 min version control* (exercise B4)
+     + Option 2: finish C1 till C3, and *20 min visualising workflows* (exercise C4 and C5)
 #### 16:30- 17:00
- - immediate plans for tomorrow: perhaps Prioritization of training needs from here : https://open-science-training-handbook.github.io/Open-Science-Training-Handbook_EN/05ExamplesAndPracticalGuidance/
+ - MAIN immediate plans for tomorrow: perhaps Prioritization of training needs from here : https://open-science-training-handbook.github.io/Open-Science-Training-Handbook_EN/05ExamplesAndPracticalGuidance/
  - closure
 
 

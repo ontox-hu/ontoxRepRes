@@ -1,4 +1,4 @@
-# Hands-on data handling
+# Hands-on data storing
 
  - Folder structure
  - meta data
@@ -94,7 +94,7 @@ old_laptop/wrong_structure
 
 This makes sense but has at least two major drawbacks:
 
- 1. Deep nesting of files in folders can cause you to lose files, or the link between files. Most importantly, in 10 years time: will you remember on what dataset a specific powerpoint presentation was based?
+ 1. Deep nesting of files in folders can cause you to lose files, or the link between files. Most importantly, in 10 years time: will you remember on what dataset a specific powerpoint presentation was based? It is essential for reproducible research that the link between data and analyses and interpretation remains intact.
  2. Things will change. There will be new categories and new types of files, you had not thought of before. Where will these go?
 
 
@@ -151,13 +151,6 @@ Look at your research projects. Which example folder structure does it resemble 
  1. Try to fix a few things right now.
  1. Book a timeslot (e.g. 1 morning) in your calendar somewhere this month to fix the folder structure of your current projects.
 
-## **Advanced Exercise A1:** automated workflows for advanced participants {.blauw}
-
-If you have more experience in managing your research projects and already know all about folder structues, meta data, licencing etc, you already use code (R, Python, Matlab, Julia, etc) to analyse your data and you now feel you misestimated the level of this workshop: no worries! Use the time to automate what you are already doing. 
-
-For instance, this folder structure looks a lot like [cookiecutter](https://drivendata.github.io/cookiecutter-data-science/), which has options for integration in workflows in R and Python. But we also like to bring [WORCS](https://cran.r-project.org/web/packages/worcs/vignettes/workflow.html) to your attention. 
-
-Use the time dedicated to this exercise to scan both options for automated workflows.
 
 
 ## File names
@@ -315,3 +308,4 @@ knitr::include_graphics(
  - use a project centered folder structure and be consistent 
  - keep meta data with your data
  - don't change data files, use versioning
+ - always keep current, used, data in the main /data folder, store older versions in subfolders called `v1`, `v2` etc
