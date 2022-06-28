@@ -146,7 +146,7 @@ ONTOX is a data intensive project. Meaning, there is a lot of data collection go
 
 To create a workflow, there is a lot of available software. You could use e.g. [Lucidchart](https://www.lucidchart.com/pages/nl) or Microsoft Visio. These software solutions are easy to use, but have one disadvantage: They use a Graphical User Interface. As explained previously, GUIs prevent recording of steps and are in that sense not compatible with Reproducible Research. That is why we will use another tool 'Mermaid' to create our workflow. To learn more about Mermaid, follow this [link](https://mermaid-js.github.io/mermaid/#/). The Mermaid syntax is easy to follow and can be implemented in Markdown. The good thing is that Github supports Mermaid natively, meaning that you do not need any additional steps to visualize Mermaid flow diagrams in Github. 
 
-### **Exercise C4**: Understanding data workflows with Mermaid {.blauw}
+## **Exercise C4:** Understanding data workflows with Mermaid {.blauw}
 
 (5 minutes)
 
@@ -165,7 +165,7 @@ Study the source file of the ONTOX workflow that is called `LiteraturToAOP` [her
 ## Create your own workflow
 When collecting or generating data in research, it is good practice to make the process by which data is collected, processed, stored and analysed, visualized and results reported explicit in a workflow. In the exercise below you will start to create a workflow for your own work. 
  
-### **Exercise C5**; Creating your own workflow {.blauw}
+## **Exercise C5:** Creating your own workflow {.blauw}
 
 (15 minutes)
 
