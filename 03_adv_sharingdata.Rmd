@@ -47,6 +47,15 @@ You may know from experience how an unnoticed change in a document, the use of t
 
 We discussed versioning of data folders (keep current, used, data in the main /data folder, store older versions in subfolders called `v1`, `v2` etc). But what about whole projects. Or what about if you are collaborating on a project? 
 
+<!-- ## **Optional Exercise A1:** automated workflows for advanced participants {.blauw} -->
+
+<!-- If you have more experience in managing your research projects, know all about folder structues, meta data, licencing etc, you already use code (R, Python, Matlab, Julia, etc) to analyse your data and you now feel you misestimated the level of this workshop: no worries! Use the time to automate what you are already doing.  -->
+
+<!-- For instance, this folder structure looks a lot like [cookiecutter](https://drivendata.github.io/cookiecutter-data-science/), which has options for integration in workflows in R and Python. But we also like to bring [WORCS](https://cran.r-project.org/web/packages/worcs/vignettes/workflow.html) to your attention, as well as [rrtools](https://github.com/benmarwick/rrtools). -->
+
+<!-- Use the time dedicated to this exercise to scan these options for project management. -->
+
+
 ## Github
 You will probably have heard of Git or Github. To explain why Git and GitHub are so important, let us look at an example. Suppose you are analyzing some data for your current project. You have written a script to perform the data analysis and the script is working. However, a colleague also edited the script to include some new analysis. It would be great if you could just merge your work automatically, track all changes, see if the script still works and if not, go back to the previous version of the code. Or if you could easily see the changes you made, to find out why your script stopped working.
 
@@ -60,6 +69,8 @@ However, it does more than being a backup service: it keeps track of all the cha
 
 ## **Exercise:** version control in github: new repo {.blauw}
 
+(10 minutes)
+
 Git and Github can be used from within Rstudio, but it will take a bit more than 15 minutes to get that set up. Unless you are proficient with Rstudio already, in which case, go ahead and go to [this page](#Github-for-future-reference) instead! 
 
 Here, we will use github from the web interface for this exercise.
@@ -68,7 +79,11 @@ First,go to [github.com](github.com) and make an account (do choose some profess
 
 Now follow the github quickstart guide  [here](https://docs.github.com/en/get-started/quickstart/create-a-repo).
 
-## **Exercise:** version control in github: workflow {.blauw}
+## {.unlisted .unnumbered}
+
+## **Exercise:** version control in github: commits {.blauw}
+
+(5 minutes)
 
 Working with github, your workflow will consist of a repeating pattern of a few actions:
 
@@ -76,17 +91,42 @@ Working with github, your workflow will consist of a repeating pattern of a few 
  - Saving a (new) version of your files [(commit and push changes)](). You changed reade.md in the previous exercise, but you can also just upload newer versions of a file, keeping the file name the same. 
  - Commit often. See it as ctrl-s. Make sure to include an informative commit message!
 
+Take a look at the commits in [this repo](https://github.com/cjvanlissa/veni_sysrev/commits/master). 
+
+ - What would be the benefit of keeping a change log like this?
+ - The short sentences in bold are the "commit messages". What do you think should be in a usefull commit message?
+ - What doesn't need to be in a commit message because github is already tracking it?
 
 
 <!--  - [create a branch](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-and-deleting-branches-within-your-repository) to work in. This is particularly important when working with several people on the same repository in github. Github can automatically merge both your changes to the "main branch". -->
-
+## {.unlisted .unnumbered}
 
 ## **Exercise:** version control in github: commits {.blauw}
 
-Commits don't need to be handtyped into github.com like this. You can just upload a 
+(5 minutes)
+
+Commits don't need to be handtyped into github.com like this. You can just upload a file:
+
+ - Upload a random .csv file to your repository (upper right, click `Add file`). [Here](data/random_stuff.csv) is a random .csv file if you need one.
+ - Change the .csv file on your computer and upload it again (type a useful commit message!)
+ - look at the history of the commits in this repo. Click around to see what is stored where.
+
+```{r, echo=FALSE,  out.width = "200px"}
+knitr::include_graphics(
+  here::here(
+    "images",
+    "commits.png"))
+```
+
+ - look at the history of your csv file: click on the file, then upper right: click "history", then click on the random code (see image below). Note that alle changes are tracked. This makes it very easy to keep track of any changes to a datafile, who did them and when!
 
 
-
+```{r, echo=FALSE,  out.width = "200px"}
+knitr::include_graphics(
+  here::here(
+    "images",
+    "hist_file.png"))
+```
 
 ## {.unlisted .unnumbered}
 
