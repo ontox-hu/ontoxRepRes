@@ -315,3 +315,4 @@ knitr::include_graphics(
  - use a project centered folder structure and be consistent 
  - keep meta data with your data
  - don't change data files, use versioning
+ - always keep current, used, data in the main /data folder, store older versions in subfolders called `v1`, `v2` etc
