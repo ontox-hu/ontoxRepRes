@@ -72,8 +72,8 @@ Total of 4 hours (14:30 - 18:30)
  - MAIN 10 min intro: The usual problematic workflow
  - MAIN 5 min split group
  - collaboration and digital data
-   + BREAKOUT (5 people 30 min) *5-10 min DIY B1  sharing excel files* 
-   +  *15-20 min DIY B2 data in excel / github*
+   + BREAKOUT (5 people 30 min) *5-10 min DIY sharing excel files* 
+   +  *15-20 min DIY data in excel / github*
  - machine readable data and workflows
    + MAIN 10 min demo AI: why we need it to be machine readable, tidy data / mermaid, version control
    + BREAKOUT (5 people, 30 min) *15 min DIY tidy data OR XXX*
