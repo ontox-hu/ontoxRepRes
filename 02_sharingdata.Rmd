@@ -39,14 +39,14 @@ The contents of this part of the workshop:
 
  1. sharing and working with data in Excel
  1. Version control on data and text.
- 1. Sending (and recieving) data via email and storing data online (Google Drive).
+ <!-- 1. Sending (and recieving) data via email and storing data online (Google Drive). -->
 
 
 ## Data flows in ONTOX
 
 ONTOX is a data intensive project. Meaning, there is a lot of data collection going on in the project. While there are several ongoing developments to automate and standardize the data formats in ONTOX, many of us use a spreadsheet program such as MS Excel to gather and document data. In a large AI based project such as ONTOX, we need to keep in mind that the data does not only need to be understandable for us. It also needs to be machine readable (or at the very least: really easy to convert to machine readable data). Therefore, we will discuss how to best store data in tabular (in this case spreadsheet) formats.
 
-## **Exercise B2: ** What can go wrong with data in Excel (groups of 3-5)
+## **Exercise B2: ** What can go wrong with data in Excel {.blauw}
 
 Exercise by [FAIR in (biological) practice course on carpentries-incubator](https://carpentries-incubator.github.io/fair-bio-practice/05-intro-to-metadata/index.html#types-of-metadata). (see below for full reference)
 
@@ -167,7 +167,7 @@ This would be the tidy version:
 | Mary 	| 4         	| 9     	|
 
 
-## **Exercise:** tidy data {.blauw}
+## **Exercise B3:** tidy data {.blauw}
 
 Take a look at an example (fake) dataset on blood levels for several compounds in hepatitis patients, blood donors and suspected hepatitis patients in Utrecht, the Netherlands [here](data/hepatitis_example_short.xlsx). Data was collected between January 2022 and May 2022 by K. the Frog, PhD. It doesn't look that bad, especially compared to the example from the previous exercise. But it is not machine readable. 
 
@@ -271,7 +271,7 @@ Keep a changelog in table format at the beginning of your document or in a file 
 
 
 
-## **Exercise:** version control {.blauw}
+## **Exercise B4:** version control {.blauw}
 
 <mark>XXX</mark>
 
