@@ -1,4 +1,7 @@
-# Github for future reference
+# Extra Github for future reference
+
+
+__Note: This lesson is a copy from a reader we wrote for the Utrecht University of Applied Sciences. It is designed to be embedded in a larger course. We thought it would be useful for workshop participants who want to take their newly acquired skills a level further, so we included it here. If anything seems to be referring to some course you know nothing about, it probably is, and that can be ignored.__
 
 ```{r setup2, include=FALSE}
 knitr::opts_chunk$set(
@@ -221,7 +224,7 @@ git pull origin main
 ```
 
 <div class="question">
-##### Exercise `r les` {-}
+##### Exercise {-}
 **making a repo** 
 
 a) Create a new Git repository on GitHub. Make sure that the Git repository contains a gitignore file for R.  
@@ -242,7 +245,7 @@ e) Add some extra lines to the RMarkdown file and change the title. Commit the c
 </div>
 
 <div class="question">
-##### Exercise `r les` {-}
+##### Exercise {-}
 **gitignore**
 
 Use the Git repository of the previous question for this question.
@@ -259,7 +262,7 @@ c) Change in the gitignore file the line `data/**` for `data/*.xls`. Now only th
 </details>
 
 <div class="question">
-##### Exercise `r les` {-}
+##### Exercise {-}
 **Clone & commit**
 
 a) Clone the Git repository that you created on GitHub (the same one again) to a folder on your computer using the command line.
@@ -268,7 +271,7 @@ c) Commit your changes and push the changes to GitHub using the command line.
 </div>
 
 <div class="question">
-##### Exercise `r les` {-}
+##### Exercise {-}
 **Mess around**
 
 Try changing some stuff, committing and pushing again. 
@@ -288,3 +291,231 @@ If things get so messy that you are not able to upload a changed file, just down
 You could also check if your mess up is listed [here](https://ohshitgit.com/) or if you prefer, the same site without swears [here](https://dangitgit.com/en).
 
 </details>
+
+
+
+## The extended Git workflow: branching & merging
+
+Suppose Bas and Marc are working together on a (data analysis) project. For this project, Bas created one shared Git repository on GitHub in which Bas and Marc can store the scripts for the project. Bas and Marc both cloned this repository to their laptops. Every now and then Bas and Marc make changes to the scripts. You can imagine that this may go wrong: Bas and Marc are both adding/deleting things from the Git repository at the same time from different computers and this can result in conflicts. For example, Bas may decide to add an extra line to script1 and commit/push the changes to GitHub. Marc, who still works on the old version, then removes some lines from script1. When Marc now commits/pushes the changes to GitHub an error will occur, because Marc's changes are not in line with Bas' changes. 
+
+Clearly, if you are working together with other persons, the workflow presented previously is too simple and can give rise to conflicts. Fortunately, Git offers additional tools for working together. The most important tool is a branch. A **branch** can be seen as a development environment in Git in which you store your commits. When you create a Git repository in GitHub, you automatically create one branch, the **main branch**. In the default state, you store all commits in this main branch. If you are working with multiple persons on the same project, it is best practice to have a **development branch** for each person. You can create such a development branch anytime during the project. When you create a development branch, you basically create a copy of the main branch (you 'branch off') in which you can work without affecting the content of the main branch. In this development branch you can commit/push as you normally would do in the main branch. After you made your changes and you know that the scripts are working as expected, you can add your changes to the main branch by **merging** your development branch with the main branch. You can most easily perform this merge on GitHub (where it is called a **pull request**), because of GitHub's user-friendly interface. After that, you can pull the updates in the main branch to your computer. 
+
+In summary, the workflow for projects with multiple persons consists of the following steps:
+
+1. The person that wants to make some changes to the project, creates a development branch. 
+1. This person can then make changes, commit the changes and pushes them to GitHub. 
+1. On GitHub, the person can create a pull request to add his changes to the main branch. 
+1. All the team members can now pull the changes to their computer.
+
+Below, we will explain these steps in detail and we will show how you can perform the steps in RStudio and GitHub.
+
+### Creating a new development environment (branching)
+
+If you are committing your changes to the Git repository, the default is to commit the changes to the main branch. If you are in RStudio, you can easily see on which branch you are working by checking the Git menu:
+
+```{r echo=FALSE, fig.align='center', fig.cap='The main branch in RStudio.'}
+knitr::include_graphics('images/lesson23_1_mainbranch.png')
+```
+
+You can create a development branch by clicking on the purple 'New Branch' symbol in the Git menu: 
+
+```{r echo=FALSE, fig.align='center', fig.cap='Create a new branch in RStudio.'}
+knitr::include_graphics('images/lesson23_2_newbranch.png')
+```
+
+Make sure that you pull once before creating your development branch, to make sure that your main branch is up to date. You can pull using the blue, downward pointing pull arrow in the Git menu. Once you click on the 'New Branch' symbol, a new menu will open. In this menu, you can choose the name for your development branch. For the other options, you can accept the default settings (see figure below). 
+
+```{r echo=FALSE, fig.align='center', fig.cap='Branch menu in RStudio.', out.width='40%'}
+knitr::include_graphics('images/lesson23_3_newbranch2.png')
+```
+
+After creating the development branch, you can see that you automatically switched from the main branch to the newly created development branch. 
+
+### Saving a new version of your files (commit and push)
+
+Now that you are on the new development branch, you can start changing files. Change some files in any way you like. After you made your changes, you can commit your changes and push the changes to GitHub as explained in the previous section. You can also see the changes you made in GitHub by selecting the correct branch. You can do this in the 'code' menu of your repository:
+
+```{r echo=FALSE, fig.align='center', fig.cap='Branch menu in GitHub.', out.width='40%'}
+knitr::include_graphics('images/lesson23_4_branchesGitHub.png')
+```
+
+### Creating and resolving a pull request on GitHub
+
+Once you finished making your changes, you can add the changes to the main branch. The easiest way to do this is to create a pull request on GitHub. On the GitHub website go to the pull request menu (again: do all this. don't just read about it):
+
+```{r echo=FALSE, fig.align='center', fig.cap='Pull request menu in GitHub (1).'}
+knitr::include_graphics('images/lesson23_5_pullrequest.png')
+```
+
+Usually, you will see a message in this menu that states that your development branch had some recent pushes. You can then click on the 'Compare and pull request' button. If this message is not visible, you can click on the 'New pull request' button. In both cases, you will go to a new page that looks like this:
+
+```{r echo=FALSE, fig.align='center', fig.cap='Pull request menu in GitHub (2).', out.width='60%'}
+knitr::include_graphics('images/lesson23_6_pullrequest2.png')
+```
+
+Here, you have to check if the branches that are going to be merged, are correct. In this case it is correct: the development branch 'Bas3' will be merged into the main branch. GitHub also checks for you if there will be any conflicts when merging. If everyone in your team follows the workflow as indicated in this lesson, there will rarely be conflicts. If everything is OK, you can create the pull request by clicking on the 'Create pull request' button. 
+
+After you created the pull request, you will be automatically guided to the page where you can resolve the merge request:
+
+```{r echo=FALSE, fig.align='center', fig.cap='Resolve pull request in GitHub (1).', out.width='90%'}
+knitr::include_graphics('images/lesson23_7_pullrequest3.png')
+```
+
+Click on 'Merge pull request' and subsequently on 'Confirm merge'. If the merge was successful, you will see the following:
+
+```{r echo=FALSE, fig.align='center', fig.cap='Resolve pull request in GitHub (2).', out.width='90%'}
+knitr::include_graphics('images/lesson23_8_pullrequest4.png')
+```
+
+You can now delete the development branch from GitHub by clicking 'Delete branch'. 
+
+### Downloading the changes to your local repository (pull)
+
+Your Git repository on GitHub is now up to date again, but the main branch of your local Git repository (on your laptop) still needs to be updated. For this, you first switch to the main branch using the Git menu in RStudio:
+
+```{r echo=FALSE, fig.align='center', fig.cap='The main branch in RStudio.'}
+knitr::include_graphics('images/lesson23_1_mainbranch.png')
+```
+
+Then you pull the changes from GitHub to your local Git repository using the blue, downward pointing arrow in the GitHub menu. 
+
+### Deleting the local development branch
+
+You have updated the Git repository on GitHub and on your laptop. You have also removed the development branch from GitHub. However, the branch is still present on your laptop. You can remove the branch by opening the Terminal in RStudio and typing the command `git branch -d Bas3` (of course you have to use the name of your development branch instead of 'Bas3'). Try this.
+
+The circle is closed: you have made some changes to the project using a development branch and merged this branch into the main branch. If you want to make some new changes, you can create a new branch and follow the same steps for these new changes. 
+
+<div class="question">
+##### Exercise {-}
+
+Use a Git repository with a Rmarkdown file. 
+
+a) Create a new branch in RStudio. 
+b) Modify the markdown file by adding some additional text. Save the changes and commit/push the changes to GitHub. Go to GitHub and try to find the commits of the new branch. 
+c) In RStudio, change to the main branch. What happens to your recent changes in your RMarkdown file? What happens if you change to your development branch?
+d) Merge your changes with the main branch by creating and resolving a pull request. In RStudio, switch to the main branch and pull your changes. Does the RMarkdown file now have the changes?
+e) Delete the local development branch using the command line.
+</div>
+
+<details><summary>Click for the answer</summary>
+
+c) The changes disappear, because the changes are only present in the development branch and not in the main branch. If you go back to your development branch, the content reappears.
+d) After resolving the pull request on GitHub and pulling the changes to your computer, you should be able to see the file changes in the main branch. 
+e) You can delete the branch on your computer using the command `git branch -d <branch-name>`.
+</details>
+
+
+## Collaboration {#gitcollaboration}
+
+The workflow proposed below is documented [here:](https://guides.github.com/introduction/flow/) 
+
+
+
+<div class="question">
+##### Exercise {-}
+
+**Github documentation**
+
+ A) Study the github documentation on "Project Boards" [here](https://docs.github.com/en/github/managing-your-work-on-github/managing-project-boards)
+
+
+ B) Setup a github project in your github account.
+ 
+ C) Link your repo to the github project you just created. 
+
+
+</div>
+
+
+### Issues
+
+Github issues are the core for collaboration with people within and outside your code project. Issues can be used for external people to report a bug, a feature request or a question regarding functionality or implementation. People using for example your package can ask questions or report problems in the form of an issue. Below, an example is shown for the `{dplyr}` R-package, which has a huge user community.
+
+```{r}
+knitr::include_graphics(
+  here::here(
+    "images",
+    "dplyr_issues.png"
+  )        
+)
+```
+
+Posting an issue when you encounter an error or bug helps developers create robuster code and is the core driving force for developing new features or resolving problems in open source software. Opening issues is an easy way to start contributing to the open source community.
+
+
+<div class="question">
+##### Exercise {-}
+**Looking at issues to learn from others**
+
+(A)  
+Review the first bug you can find on this page: 
+
+https://github.com/tidyverse/dplyr/issues
+
+Read the description and the proposed solutions if any. Describe in your own words what the bug relates to. Discuss the bug with a fellow student.
+
+(B)  
+Review issue  `#5640` in the `{dplyr}` issues. Why was this issue closed? Was the issue resolved for the user who reported it?
+</div>
+
+#### Creating issues in your project repo {-}
+
+When collaborating together on project repository, you can create issues to stay on track for the different actions that need to be undertaken. Issues can be related to adding functionality (code) to the project, but also to report a bug or to request the addition or improvement of documentation. You can create an issue by opening the `Issues` tab and creating a new issue by clicking the green `New issue` button. A form will open where you can add a title and further remarks to document your issue. The formatting of the `Leave a comment` field can be entered using Markdown formatting. When creating an issue, it is important to assign (preferable one) person to the issue. You can also choose a label, and if needed you can customize the label categories. When a Kanban/Project is also linked to the organization or repo, you can also add the issue to a Kanban board.
+
+<div class="question">
+##### Exercise  {-}
+
+Follow these steps to complete this exercise:
+
+ 1. Add your first issue to the issue list in your repo. For example: start with editing the README.md file to contain information on the project and the repo.
+ 1. Assign the issue to yourself (or a coworker) 
+ 1. Assign the issue to the Github project linked to the repo (if you have no project, create it and ad the repo as a linked repo to the github project)
+ 1. Create a new branch in the repo that you call issue_<issue_number>
+ 1. Clone (or pull if you already cloned the repo) the new branch to your RStudio project environment
+ 1. Solve the issue in your 'local' version of the repo
+ 1. Write a commit that addresses the issue solved and that also includes this phrase: "fixes #<issue_number>". Replace the `<issue_number>` part with the issue number that you are trying to push.
+ 1. Generate a pull request and merge the pull request to the main branch
+ 1. Check the issue list to see if the issue was automatically closed
+ 1. Check the issue on the project Kanban board to see if it was automatically put in the `closed` column.
+ 1. Delete the branch related to the issue you just resolved 
+</div>
+
+ 
+#### One issue per change, one issue per branch [`fixes #<issue_number>` and `new branch`] {-}
+In the exercise above we saw how to open, fix and automatically close an issue. But what defines an issue and how would you prevent working on the same piece of code when working together.
+
+In the main [resource](https://guides.github.com/introduction/flow/) used for this piece in the course, we can read this about branches (as was already explained previously):
+
+
+>Branching is a core concept in Git, and the entire GitHub flow is based upon it. There's only one rule: anything in the main branch is always deployable.
+
+>Because of this, it's extremely important that your new branch is created off of main when working on a feature or a fix. Your branch name should be descriptive (e.g., refactor-authentication, user-content-cache-key, make-retina-avatars), so that others can see what is being worked on.
+
+
+When working together in git/github, this flow is extremely important to agree upon and than stick to it. 
+
+
+
+#### Helpful links
+
+- [Mastering GitHub issues](https://guides.github.com/features/issues/)
+- [Mastering GitHub markdown](https://guides.github.com/features/mastering-markdown/)
+- [GitHub Flavored Markdown](https://help.github.com/articles/github-flavored-markdown/)
+
+## Resources
+
+### Git command line
+
+- [Git - the simple guide](http://rogerdudler.github.io/git-guide/). This web resource provides a simple explanation of Git and its commands.
+- [Pro Git book](https://git-scm.com/book/en/v2). This book explains the principles behind Git and also provides a great introduction to the Git command line. 
+
+### Git and R(Studio)
+
+- [Collaboration and time travel using Git](https://rstudio.com/resources/webinars/collaboration-and-time-travel-version-control-with-git-github-and-rstudio/). In this video (approximately 45 minutes), R guru Hadley Wickham explains the concepts of Git collaboration and Git version control. 
+- [Happy Git with R book](https://happygitwithr.com/). This book is a nice resource for R users that want to use Git in their projects.
+
+### scrum / agile
+
+https://github.com/jvandemo/github-scrum-workflow
+https://docs.github.com/en/free-pro-team@latest/github/managing-your-work-on-github/managing-your-work-with-issues-and-pull-requests
+
