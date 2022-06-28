@@ -34,14 +34,72 @@ Discuss in pairs of 2.
 ## Introduction
 Whether you are working in an experimental, computational or design oriented scientific field, data is often either the final or at least an important product of your scientific research. When working in science, we seldom work in isolation, so sharing data and being able to track mutations and versions of the data and it's connected metadata should be an import aspect of your work. Because usually we grow into a project without having much education on very practical things such as where to store data, how to handle file structure, how to define versions of the data and how to handle mutations and version change, we decided to focus on these aspects in a very practical manner. 
 
-In this part of the workshop, we will provide you with hands-on practical handles on how to collaborate on data. We will provide you with ways how to communicate on your data workflow and you will learn how to administer and track changes to your data. We will share some good practices on how to deal with sharing of data with others as well.
+In this part of the workshop, we will provide you with hands-on practical handles on how to collaborate on data / projects. We will provide you with ways how to communicate on your data workflow and you will learn how to administer and track changes to your data. We will share some good practices on how to deal with sharing of data with others as well.
 
 The contents of this part of the workshop:
 
-
  1. Version control on data (and code). For those familiar with programming we will introduce Git and Github.
- 1. Defining and visualizing your data workflow, using `{mermaid}` <mark>XXX omdraaien in les!</mark>
+ 1. Defining and visualizing your data workflow, using `{mermaid}` 
  1. Sending (and recieving) data via email and storing data online (Google Drive).
+
+## Version control on documents and data
+You may know from experience how an unnoticed change in a document, the use of the wrong version or the loss of edits can lead to loss of time invested, frustration and above all confusion! This is why keeping a record on all mutations on a document or the data is important.There usually will be [quite a lot](https://phdcomics.com/comics/archive.php?comicid=1531). Especially, tracking mutations on the data is important for another reason: reproducibility and validity of conclusions connected to the data.  
+
+We discussed versioning of data folders (keep current, used, data in the main /data folder, store older versions in subfolders called `v1`, `v2` etc). But what about whole projects. Or what about if you are collaborating on a project? 
+
+## Github
+You will probably have heard of Git or Github. To explain why Git and GitHub are so important, let us look at an example. Suppose you are analyzing some data for your current project. You have written a script to perform the data analysis and the script is working. However, a colleague also edited the script to include some new analysis. It would be great if you could just merge your work automatically, track all changes, see if the script still works and if not, go back to the previous version of the code. Or if you could easily see the changes you made, to find out why your script stopped working.
+
+The example shows that it is really helpful to keep track of your changes. Of course you could have made your changes in a copy of the original script. But in this way, you would end up with a lot of files on your computer and you would have to keep track of any cahnges manually. In addition, it is not easy to see what you changed. We all have been manually merging comments from 2 co-autheurs into one document before... This is why we use version control software: software that keeps track of file changes and allows you to inspect the changes and to go back to previous versions of the files.
+
+__Git__ is the most popular version control software used today. It is designed to track changes of text files (files you can open in a simple text editor). 
+
+However, you often want to work together with others (for example, colleagues within ONTOX) on the same documents. __GitHub__ is a web-based platform based on the Git software. The platform allows you to create an online copy of your project folder. It is also __free__ and allows you to store your files __without anyone else having access to them__ (or share only with people you explicitely gave access).
+
+However, it does more than being a backup service: it keeps track of all the changes to your project folder whenever you upload an update. It will keep track of MS Office documents as a whole "this file was changed by Alyanne on July 1, 2022", but for plain text based files (analyses scripts in R, Python, SPSS etc, .csv files, .txt files, Markdown, Latex, etc) it will keep track of every little change that was made. If your co-author changed a sentence, you will be able to see where, when and how.
+
+## **Exercise:** version control in github: new repo {.blauw}
+
+Git and Github can be used from within Rstudio, but it will take a bit more than 15 minutes to get that set up. Unless you are proficient with Rstudio already, in which case, go ahead and go to [this page](#Github-for-future-reference) instead! 
+
+Here, we will use github from the web interface for this exercise.
+
+First,go to [github.com](github.com) and make an account (do choose some professional account name. Don't ask how we know that does matter.)
+
+Now follow the github quickstart guide  [here](https://docs.github.com/en/get-started/quickstart/create-a-repo).
+
+## **Exercise:** version control in github: workflow {.blauw}
+
+Working with github, your workflow will consist of a repeating pattern of a few actions:
+
+ - [set up a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository)
+ - Saving a (new) version of your files [(commit and push changes)](). You changed reade.md in the previous exercise, but you can also just upload newer versions of a file, keeping the file name the same. 
+ - Commit often. See it as ctrl-s. Make sure to include an informative commit message!
+
+
+
+<!--  - [create a branch](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-and-deleting-branches-within-your-repository) to work in. This is particularly important when working with several people on the same repository in github. Github can automatically merge both your changes to the "main branch". -->
+
+
+## **Exercise:** version control in github: commits {.blauw}
+
+Commits don't need to be handtyped into github.com like this. You can just upload a 
+
+
+
+
+## {.unlisted .unnumbered}
+
+Details on the choices you have to make for a new Git repository:
+
+1. **Repository name field**: in the repository name field you can specify the name for your new repository. GitHub will automatically check if another repository with the same name already exists. 
+1. **Public or Private**: when you create a new repository, you have to indicate if you want to create a public or a private repository. A **public repository** can be found and downloaded by anyone on the internet (although only specified persons can contribute to the Git repository). A **private repository** is only accessible to persons specified by you (the owner). Although you promote reproducible research by creating a public repository, this not always possible. Especially if you are employed (or doing an internship!) at a company or other agency, your employer often does not allow you to make your files public. Always check with your employer (or supervisor) to see what is allowed. *Choose a private repository if you are not sure!*
+1. **Initialization files**: when you create a repository, you can create some 'initialization files'. These files include a README file, a gitignore file and a license:
+  a. **README file**: a README file is a file that contains information about the repository. This file should be read by everyone that is planning to use the files in the repository. It usually contains information about the content of the Git repository. You can create the README file when creating the Git repository, but you can also do it later. 
+  a. **gitignore file**: we will explain the purpose of the gitignore file in detail below. In short, the gitignore file contains all the file names of files that should *not* be tracked by Git. That means that you cannot commit changes to files that are in the gitignore file. On GitHub, you can easily create a gitignore file that is specific for the programming language you are using. It is therefore recommended to create a gitignore file (for example for R) when creating the Git repository.
+  a. **License**: when you create a public repository, it is important to add a license to your repository. The license states what others can do with the files in the Git repository. For example, with an MIT license, you allow others to use your file for any purpose they like (even for commercial applications). Similarly, if you want to use the files of others, it is important to check their license to see what you can and cannot do. Please check the resources for more information about licenses.  
+
+
 
 
 ## Data flows in ONTOX
@@ -84,15 +142,6 @@ to the start of your file.
 When you want to end the definition of the flow diagram, close the mermaid fragment with:
 ` ``` `
 
-## Version control on documents and data
-You may know from experience how an unnoticed change in a document, the use of the wrong version or the loss of edits can lead to loss of time invested, frustration and above all confusion! This is why keeping a record on all mutations on a document or the data is important.There usually will be [quite a lot](https://phdcomics.com/comics/archive.php?comicid=1531). Especially, tracking mutations on the data is important for another reason: reproducibility and validity of conclusions connected to the data.  
- 
- 
-
-
-
-## Version Control, using Github
-https://lesmaterialen.rstudio.hu.nl/workflows-reader/gitintro.html
 
 
 ### **Exercise:** github {.blauw}
