@@ -1,6 +1,7 @@
 ---
-title: "conquer the chaos"
-author: "Alyanne de Haan, Marc Teunis"
+title: "ONTOX Training Reproducible Research"
+subtitle: "conquer the chaos"
+author: "Alyanne de Haan, PhD,  Marc Teunis, PhD"
 site: bookdown::bookdown_site
 output: Gmisc::docx_document
 ---
@@ -14,14 +15,9 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Why you want to complete this workshop
 
-Here be text including:
- - Research projects are chaotic
- - everyone has trouble keeping track of manuscipt versions
- - almost everyone stores data in a way that works for them, but is almost impossible to reproduce once someone changes jobs.
- - there are some easy systems to implement that conquer this chaos
- - make your work more productive
- - collaborations easier
- - and ontox possible.
+Research projects are chaotic and we all know how hard it can be to keep track of manuscipt versions, changes to datasets, which figure was generated from which file, etc.. However, when building an data platform such as within ONTOX, it is very important that every datapoint can be retraced to its origin.
+
+At the same time, many people store data in a way that works for them, but is almost impossible to reproduce once someone changes jobs. There are some easy systems to implement that conquer this chaos, make your work more productive, collaborations easier, and ONTOX possible. And also, save you a lot of time in the long run.
 
 
 ## Learning objectives
@@ -32,7 +28,7 @@ After this workshop you:
  - Know which information needs to be stored with data, and how to keep these together when collaborating with others.
  - Can keep your projects under version control, so you can always backtrace what changed, when, and by whom.
  - Applied all this to your current most active research project
- - Can start tomorrow (or well, next monday) with using this workflow in your everyday work.
+ - Can start tomorrow (or well, next monday) with applying this in your everyday work.
 
 ## Contents 
 

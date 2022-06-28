@@ -13,4 +13,4 @@ bookdown::gitbook:
     toc:
       collapse: section
       scroll_highlight: yes
-      before: <h4 class=".paddingtitel "> Reproducible data management 101 </h4>
+      before: <h4 class=".paddingtitel "> Reproducible Research </h4>
