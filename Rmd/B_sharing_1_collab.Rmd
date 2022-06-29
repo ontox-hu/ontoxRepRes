@@ -1,0 +1,74 @@
+---
+title: "Reproducible research" 
+subtitle: "collaboration and digital data" 
+author: "Alyanne de Haan, Mark Teunis"
+output: 
+  ioslides_presentation:
+     widescreen: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## prepare
+
+```{r, echo = FALSE, out.width=780, fig.cap=""}
+knitr::include_graphics(
+  here::here(
+    "images",
+    "twitter_branch.png"
+    )
+)
+```
+
+Projects are changing all the time.
+
+## reproducible workflows
+
+https://www.youtube.com/watch?v=s3JldKoA0zw
+
+## Does it take a lot of time?
+
+```{r, echo = FALSE, out.width=700, fig.cap=""}
+knitr::include_graphics(
+  here::here(
+    "images",
+    "time.png"
+    )
+)
+```
+
+sheet from [Olivier Gimenez](https://oliviergimenez.github.io/reproducible-science-workshop/), shared Creative Commons Attribution [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). 
+
+## Split: sharing data
+
+regular:
+
+ - I don’t use code (R, Python, Matlab, Julia, etc) to analyse my data
+ - I would like to use a tidy data format to make my data machine readable
+ - I would like to use onedrive / google docs / similar software for version controlling my work.
+
+next level:
+
+ - I use code to analyse my data and already know all about tidy data.
+ - I would like to automate my communication of workflows
+ - I would like to use github for version controlling my work.
+
+## Exercises regular
+
+ - B1: evaluate your emailing of data / study information. 
+ - B2: understanding possible issues when sharing excel files
+
+## Exercises next level
+
+ - B1: evaluate your emailing of data / study information. 
+ - C1 + C2 + C3 : get started with github
+
+## Location
+
+Breakout rooms, groups of 5
+
+back here in 30 minutes
+
+

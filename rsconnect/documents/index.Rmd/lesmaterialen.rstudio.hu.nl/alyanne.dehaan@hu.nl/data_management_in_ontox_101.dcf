@@ -5,7 +5,7 @@ account: alyanne.dehaan@hu.nl
 server: lesmaterialen.rstudio.hu.nl
 hostUrl: https://lesmaterialen.rstudio.hu.nl/__api__
 appId: 17
-bundleId: 275
-url: https://lesmaterialen.rstudio.hu.nl/data_management_proposal/
-when: 1656493143.53948
-lastSyncTime: 1656493143.53949
+bundleId: 278
+url: https://lesmaterialen.rstudio.hu.nl/reproducible_research_workshop/
+when: 1656535858.49184
+lastSyncTime: 1656535858.49185
