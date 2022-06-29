@@ -169,6 +169,8 @@ This would be the tidy version:
 
 ## **Exercise B3:** tidy data {.blauw}
 
+(15 minutes)
+
 Take a look at an example (fake) dataset on blood levels for several compounds in hepatitis patients, blood donors and suspected hepatitis patients in Utrecht, the Netherlands [here](data/hepatitis_example_short.xlsx). Data was collected between January 2022 and May 2022 by K. the Frog, PhD. It doesn't look that bad, especially compared to the example from the previous exercise. But it is not machine readable. 
 
 Make this dataset machine readable and store it in a reproducible way. Keep the following in mind:
@@ -273,9 +275,36 @@ Keep a changelog in table format at the beginning of your document or in a file 
 
 ## **Exercise B4:** version control {.blauw}
 
-<mark>XXX</mark>
+(5 minutes)
 
+Take a look at your research project folders. 
 
+ - Are there multiple versions of the same document? Is it immediately clear which one is the current / used / published one?
+ - Can you quickly locate the original version?
+ - Which labeling technique did you use? (e.g. date included in file name, version number included in file name, copying the whole project folder, adding "final" several times.)
+ - How would you prefer to version control your next project?
+ - What would you need to start doing so?
+
+## **Exercise B5:** workflow {.blauw}
+
+(15 minutes)
+
+Create a diagram of your research process. Do this however you prefer, with software,
+with pen and paper, etc. Locate the materials that you are creating, collecting, and
+editing as part of your research process and answer the following questions:
+
+ 1. Will your research materials be edited or transformed between the time that you
+collect them and the time you publish them in your thesis or dissertation? If so, is
+it important to save the intermediate versions? What conventions might you use to
+track the versions?
+ 1. Do you expect to combine multiple files into a single file (e.g., editing multiple clips
+into a single video)? If so, how do you plan to manage the relationships between the
+original objects and the combined object (e.g., naming conventions, folder context,
+readme files, etc.)?
+
+Discuss the issues you see within the breakout room, and plan 1 morning in your agenda in the next month to build a plan to tackle them. Then, stick to the plan!
+
+(Exercise borrowed from the [Educopia / Institute of museum and library service, Electronic Theses and Dissertations (ETD)plus Guidance Briefs](https://educopia.org/etd-plus-guidance-briefs/) shared under creative commons license [CC-BY](https://creativecommons.org/licenses/by/4.0/) )
 
 ## Key Points
 
