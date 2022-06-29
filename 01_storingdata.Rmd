@@ -273,8 +273,6 @@ This may seem to be a bit too much, but try and see how much you could fill in a
 
 ## **Exercise A3:** starting to add meta data files {.blauw}
 
-<mark>XXX moet deze interactief?</mark>
-
 15 minutes 
 
  - Google and discuss whether there are meta data standards for your field.
