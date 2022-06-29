@@ -76,8 +76,8 @@ Approximate durations for each item are displayed, because some exercises could 
  - machine readable data and workflows
    + MAIN 10 min demo AI: why we need it to be machine readable, tidy data / mermaid, version control
    + BREAKOUT (5 people, 45 min) 
-     + Option 1: *15 min DIY tidy data* (exercise B3) and *20 min version control* (exercise B4 and B5)
-     + Option 2: finish C1 till C3, and *20 min visualising workflows* (exercise C4 and C5)
+     + Option 1: *15-20 min DIY tidy data* (exercise B3) and *20-30 min version control* (exercise B4 and B5)
+     + Option 2: finish C1 till C3, and *45 min visualising workflows* (exercise C4 and C5)
      
 #### 18:10- 18:30
  - MAIN/MURAL immediate plans for tomorrow: Prioritization of training needs

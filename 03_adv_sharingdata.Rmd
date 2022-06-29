@@ -148,7 +148,7 @@ To create a workflow, there is a lot of available software. You could use e.g. [
 
 ## **Exercise C4:** Understanding data workflows with Mermaid {.blauw}
 
-(5 minutes)
+(5-10 minutes)
 
 For starters we can look at an example workflow that is used within ONTOX by looking at the source file in Github. 
 
@@ -167,7 +167,7 @@ When collecting or generating data in research, it is good practice to make the 
  
 ## **Exercise C5:** Creating your own workflow {.blauw}
 
-(15 minutes)
+(20-30 minutes)
 
 In the previous exercise on Github you created a test repository in your own Github account. Here you will create a very simple `mermaid` graph that applies to an element of data collection in your own work
 
@@ -184,3 +184,15 @@ to the start of your file.
 When you want to end the definition of the flow diagram, close the mermaid fragment with:
 ` ``` `
 
+answer the following questions:
+
+ 1. Will your research materials be edited or transformed between the time that you
+collect them and the time you publish them in your thesis or dissertation? If so, is
+it important to save the intermediate versions? What conventions might you use to
+track the versions?
+ 1. Do you expect to combine multiple files into a single file (e.g., editing multiple clips
+into a single video)? If so, how do you plan to manage the relationships between the
+original objects and the combined object (e.g., naming conventions, folder context,
+readme files, etc.)?
+
+Discuss the issues you see within the breakout room, and plan 1 morning in your agenda in the next month to build a plan to tackle them. Then, stick to the plan!
