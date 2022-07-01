@@ -110,13 +110,24 @@ knitr::include_graphics(
  ###- Code is the logic that connects the data and methods to conclusions
  ###- Learning to use a programming language takes time but pays of at the long run (for all of science)
  ###- And it is fun!
- ###- But, it is not easy to learn and will cost time
+--
+
+**DISCLAIMER: Your life will never be the same, and you will have less time for your hobbies!**
+```{r, out.width=200, fig.align='right'}
+knitr::include_graphics(
+  here::here(
+  "introduction",
+  "images",
+  "AlarmedRemorsefulKingsnake-size_restricted.gif"
+  )
+)
+```
 ---
 
 # To replicate a scientific study we need at least:
 
-####> - Scientific context, research questions and state of the art [P]
-####> - (Experimental) model or characteristics of population or matter studied [P]
+> - Scientific context, research questions and state of the art [P]
+> - (Experimental) model or characteristics of population or matter studied [P]
 > - Data that was generated and corresponding meta data [D, C]
 > - **Exact** (experimental) design of the study [P, D, C]
 > - Exploratory data analysis of the data [P, C]
