@@ -1,0 +1,195 @@
+---
+title: "Reproducible research" 
+subtitle: "folder structure" 
+author: "Alyanne de Haan, Mark Teunis"
+output: 
+  ioslides_presentation:
+     widescreen: true
+---
+
+## Whitaker's matrix of reproducibility
+
+```{r, echo = FALSE, out.width=400}
+knitr::include_graphics(
+  here::here(
+    "images",
+    "whitaker.png"
+    )
+  
+)
+```
+
+Kirstie Whitaker, University of Cambridge, Creative Commons Attribution license [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+
+## file management in general
+
+```{r, echo = FALSE, out.width=1000, fig.cap="http://phdcomics.com/comics.php?f=1531"}
+knitr::include_graphics(
+  here::here(
+    "images",
+    "phd_final1.png"
+    )
+)
+```
+
+<!-- Jullie kennen dit waarschijnlijk -->
+
+## Reproducible
+
+Suppose you share your data with someone. Would they come to the same results and conclusions?
+
+Should they?
+
+What would they need to replicate your results?
+
+<!-- You have been trained in making your work replicable: other people should be able to repeat the exact same experiment based on your report (methods section). -->
+<!-- But would they reach the exact same results? -->
+<!-- What would they need to have to get the same results?  -->
+
+## Reproducible
+
+Results and conclusions depend on more than data:
+
+ - information about the data (meta data)
+ - outlier selection
+ - choices in analyses
+ - context
+ - interpretations
+ - versions of software used
+ - ... 
+
+Thus, whole project needs to be clear and sharable, not just the data.
+
+
+<!-- Results and conclusions depend on more than data. Also interpretations, choices in analyses, context... Thus, whole project needs to be clear and sharable  -->
+
+## Example: same data, other conclusions
+
+<div class="columns-2">
+```{r, echo = FALSE, out.width=340}
+knitr::include_graphics(
+  here::here(
+    "images",
+    "crownsource.jpg"
+    )
+)
+```
+
+Silberzahn R, Uhlmann EL. Crowdsourced research: Many hands make tight work. *Nature*. 2015 Oct 8;526(7572):189-91. 
+
+doi: 10.1038/526189a. 
+
+PMID: 26450041.
+</div>
+
+## Example: same data, other conclusions
+
+ - 29 research groups got the same question, with the same dataset to solve it.
+ - Are football (soccer) referees more likely to give red cards to players with dark skin than to players with light skin?"
+
+```{r, echo = FALSE, out.width=340, fig.cap="Mario Balotelli, playing for Manchester City, is shown a red card during a match against Arsenal. (Michael Regan/Getty)"}
+knitr::include_graphics(
+  here::here(
+    "images",
+    "card.jpg"
+    )
+)
+```
+ 
+
+## Example: same data, other conclusions
+
+ - They could analyse the data, and hand in their results and analysis method
+ - all 29 methods were distributed to all the other groups anonymously
+ - all groups could then alter their analyses if they wanted
+ - and discuss what would be the best method.
+ 
+
+Example issues that were brought up:
+
+ - Is the age of a player a factor? Position on the field? Where the soccer team is from? How many yellow cards a player got previously? Which players are outliers? What kind of statistics should be used?
+
+## Example: same data, other conclusions
+
+ - The research groups could not reach concensus about what would be "the correct solution"
+ - 20 groups found a significant effect, 9 did not.
+
+## Example: same data, other conclusions
+
+![results Silberzahn & Uhlmann 2015](https://www.nature.com/news/polopoly_fs/7.30039.1444135233!/image/nature_graph_redcard_08.09.15-web1.png_gen/derivatives/landscape_630/nature_graph_redcard_08.09.15-web1.png){width=60%}
+ 
+## Reproducible folder structure
+
+
+```
+old_laptop/wrong_structure
+├── courses
+├── ethical approval
+├── failed projects
+├── images
+├── manuscripts
+│   ├── me_et al , 2020_v01 - Copy.docx
+│   ├── me_et al , 2020_v02.docx
+│   └── me_et al about A, 2020_v03_final_final.docx
+├── presentations
+├── project A
+│   ├── Data files 001
+│   ├── Project Documentation
+│   ├── Volunteer responses
+│   ├── analyses
+│   └── revision
+│       ├── new analyses
+│       ├── new figs
+│       └── replies to reviewers
+└── protocols
+
+```
+
+## Reproducible folder structure
+
+drawbacks:
+
+ 1. lose files, or the link between files. 
+ 2. Things will change. 
+
+## Reproducible folder structure
+
+ 1. **project = folder** . 
+ 1. **consistent folder structure ** 
+ 1. **Do not deep nest folders** 
+ 1. **Keep information about the data, close to the data**. 
+ 1. **Store each dataset in its own sub-folder.** 
+ 1. **Do not change file names or move them.** 
+ 1. **Do not manually edit data source files.** 
+ 1. **In code, use relative paths** 
+
+## Reproducible folder structure
+```
+new_laptop/better_example_structure
+├── courses
+├── project A
+│   ├── analyses
+│   │   ├── code
+│   │   ├── data
+│   │   └── data_raw
+│   │       └── Volunteer responses
+│   ├── documentation
+│   ├── ethical approval
+│   ├── images
+│   ├── manuscript
+│   │   ├── me_et al , 2020.docx
+│   │   ├── version 1
+│   │   └── version 2
+│   ├── methods
+│   │   └── protocols
+│   └── presentations
+├── project B
+└── project C
+```
+
+## Exercise A1
+
+ - Look at your own folder structure and plan to fix it
+ - Breakout rooms, groups of 3
+
+back here in 15 minutes

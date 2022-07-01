@@ -1,0 +1,102 @@
+---
+title: "Reproducible research" 
+subtitle: "meta data" 
+author: "Alyanne de Haan, Mark Teunis"
+output: 
+  ioslides_presentation:
+     widescreen: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Data management
+
+![file names true story](http://www.phdcomics.com/comics/archive/phd052810s.gif)
+
+This is something to avoid
+
+## FAIR data
+```{r, echo = FALSE, out.width=780, fig.cap="source: EU, I think. note the I and R"}
+knitr::include_graphics(
+  here::here(
+    "images",
+    "EC_FAIR_data.png"
+    )
+)
+```
+
+<!-- Want voorbeeld van net is niet heel fair, reproducibility wordt een zooitje -->
+
+## FAIR data
+
+Not just for your own mental health, but also because of agreements for EU projects
+
+```{r, echo = FALSE, out.width=780, fig.cap="H2020 Programme Guidelines"}
+knitr::include_graphics(
+  here::here(
+    "images",
+    "horizon_fair.png"
+    )
+)
+```
+
+## Metadata
+
+Sharing data only is not enough. You need data about the data.
+
+```{r, echo = FALSE, out.width=800}
+knitr::include_graphics(
+  here::here(
+    "images",
+    "laderast_metadata.png"
+    )
+)
+```
+image credit: I got this slide from Ted Laderas
+
+## Examples metadata:
+
+ - date experiment was done
+ - time of measurements
+ - who did the data collection
+ - who paid for the research
+ - experimental design
+ - etc etc
+
+## Types of meta data
+
+According to `How to FAIR` :
+
+ - **Administrative metadata**: relevant for managing;
+E.g. principal investigator, project collaborators, funder, project period, etc. 
+ - **Descriptive or citation metadata**: relevant for linking data to communications
+E.g. authors, title, abstract, keywords
+ - **Structural metadata**: experimental design and data structure
+E.g. collection method, sample size, categories, variables
+
+## meta data templates
+
+ - there are several available
+
+```{r, echo = FALSE, out.width=800}
+knitr::include_graphics(
+  here::here(
+    "images",
+    "bench.png"
+    )
+)
+```
+
+## Exercise A2
+
+ - learn to recognise different meta data types
+ - google and discuss templates
+ - start adding meta data
+ 
+Breakout rooms, groups of 3
+
+back here at 15:45 for a discussion on incentives and barriers
+
+
