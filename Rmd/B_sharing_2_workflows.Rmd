@@ -1,7 +1,7 @@
 ---
 title: "Reproducible research" 
 subtitle: "machine readable data and workflows" 
-author: "Alyanne de Haan, Mark Teunis"
+author: "Alyanne de Haan, Marc Teunis"
 output: 
   ioslides_presentation:
      widescreen: true
@@ -64,6 +64,8 @@ knitr::include_graphics(
  - notes in a separate column
  - don’t use formatting to convey information
 
+ - simple format, fits all (unlike e.g. BITE)
+ 
 ## Reproducible tidy data
 
  - never throw away or change a raw datafile. Raw data = however YOU received the data, be it from a machine, handmade in Excel yourself, or received through email.
@@ -87,6 +89,17 @@ Which of these issues can you relate to?
  - My directory is polluted with a lot of unused/temporary/old folders because I’m afraid of losing something important
 
 source: [Source: FAIR in (biological) practice.  ](https://carpentries-incubator.github.io/fair-bio-practice/11-version-control/index.html) Licensed under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/) 2022.
+
+## I am guilty: 
+
+```{r, echo = FALSE, out.width=680, fig.cap=""}
+knitr::include_graphics(
+  here::here(
+    "images",
+    "copyfolder.png"
+    )
+)
+```
 
 ## Changing a file: 
 
