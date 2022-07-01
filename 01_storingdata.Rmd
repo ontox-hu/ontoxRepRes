@@ -46,7 +46,7 @@ To replicate a scientific study you would need some information from and informa
     + processed data
     + Which inductive statistical tests or inference was done and how.
 
-## Gorilla analytics folder structure
+## Guerilla analytics folder structure
 
 I you set up your projects in a way that makes it easy to find all this information, you will save yourself and others a lot of time. To help you start building this we will use the `Guerrilla Analytics` framework, as described by Enda Ridge in [this booklet](https://www.elsevier.com/books/T/A/9780128002186).  
 
