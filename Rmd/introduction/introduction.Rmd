@@ -5,6 +5,7 @@ affiliation: "HU University of Applied Sciences"
 date: "`r Sys.time()`"
 output:
   xaringan::moon_reader:
+    self_contained: true
     includes:
       after_body: 'insert-logo.html'
     nature:
@@ -20,9 +21,6 @@ knitr::opts_chunk$set(echo = FALSE,
                       error = FALSE,
                       message = FALSE)
 
-image_dir <- here::here(
-  "images"
-)
 
 ## packages
 library(tidyverse)
@@ -50,8 +48,9 @@ library(DiagrammeR)
 
 ```{r, dpi = 120}
 knitr::include_graphics(
-  file.path(
-    image_dir,
+  here::here(
+    "introduction",
+    "images",
     "gollum_climbing.jpg"
   )
 )
@@ -175,8 +174,7 @@ Examples:
  ###- To enhance connecting and enriching data
  ###- Information about analysis, platform, technology, software version, entity ids
  ###- Controlled vocabularies and ontologies
- ###- (Meta)data use a formal, accessible, shared, and broadly applicable language for knowledge 
- ###- representation. (metadata standards)
+ ###- (Meta)data use a formal, accessible, shared, and broadly applicable language for knowledge representation (metadata standards)
  ###- (Meta)data use vocabularies that follow FAIR principles
  ###- (Meta)data include qualified references to other (meta)data (resolvers)
 ---
