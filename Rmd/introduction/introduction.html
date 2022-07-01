@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Introduction</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Marc Teunis, PhD; Alyanne de Haan, PhD" />
+    <script src="introduction_files/header-attrs-2.14/header-attrs.js"></script>
+    <link href="introduction_files/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="introduction_files/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+    <script src="introduction_files/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+    <script src="introduction_files/d3-3.3.8/d3.min.js"></script>
+    <script src="introduction_files/dagre-0.4.0/dagre-d3.min.js"></script>
+    <link href="introduction_files/mermaid-0.3.0/dist/mermaid.css" rel="stylesheet" />
+    <script src="introduction_files/mermaid-0.3.0/dist/mermaid.slim.min.js"></script>
+    <link href="introduction_files/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+    <script src="introduction_files/chromatography-0.1/chromatography.js"></script>
+    <script src="introduction_files/DiagrammeR-binding-1.0.9/DiagrammeR.js"></script>
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Introduction
+]
+.subtitle[
+## Reproducible Open Science
+]
+.author[
+### <a href="https://orcid.org/0000-0002-3496-6669">Marc Teunis, PhD</a>; <a href="https://orcid.org/0000-0003-0896-0906">Alyanne de Haan, PhD</a>
+]
+.date[
+### 2022-07-01 10:55:56
+]
+
+---
+
+
+
+
+# Data, methods and logic
+
+[*Brown, Kaiser &amp; Allison, PNAS, 2018*](https://doi.org/10.1073/pnas.1708279115)
+
+"...in science, three things matter:
+
+--
+ ###- the data,
+ ###- the methods used to collect the data [...], and
+ ###- the logic connecting the data and methods to conclusions,
+--
+
+
+ ### everything else is a distraction."
+---
+
+# `Gollums` lurking about
+
+&lt;img src="images/gollum_climbing.jpg" width="193" /&gt;
+
+
+--
+"In one case, a group accidentally used reverse-coded variables, making their conclusions the opposite of what the data supported."
+
+
+--
+"In another case, authors received an incomplete dataset because entire categories of data were missed; when corrected, the qualitative conclusions did not change, but the quantitative conclusions changed by a factor of \&gt;7"
+
+
+--
+[Brown, Kaiser &amp; Allison, 2018; PNAS](https://doi.org/10.1073/pnas.1708279115)
+---
+
+# Why do we need Reproducible (Open) Science?
+
+ ###- To assess validity of science and methods we need access to data, methods and conclusions
+ ###- To learn from choices other researchers made
+ ###- To learn from omissions, mistakes or errors
+ ###- To prevent publication bias (also negative results will be available in reproducible research)
+ ###- To be able to re-use and/or synthesize data (from many and diverse sources)
+
+[Nature Collection on this topic](https://www.nature.com/collections/prbfkwmwvz)
+---
+
+# The *GUI problem*
+
+How would you 'describe' the steps of an analysis or creation of a graph when you use GUI\* based software?
+
+&lt;img src="images/messy_steps.jpg" width="1516" /&gt;
+
+--
+***"You can only do this using code, so it is (basically) impossible in a GUI"***
+
+&lt;p style="font-size:14px"&gt;
+-- 
+\*[Graphical User Interface (GUI)...is a form of user interface that allows users to interact with electronic devices through graphical icons and audio indicator such as primary notation, instead of text-based user interfaces, typed command labels or text navigation...](https://en.wikipedia.org/wiki/Graphical_user_interface)
+
+&lt;/p&gt;
+---
+
+# Programming is essential for Reproducible (Open) Science
+
+ ###- Only programming an analysis (or creation of a graph) records every step
+ ###- The script(s) function as a (data) analysis journal
+ ###- Code is the logic that connects the data and methods to conclusions
+ ###- Learning to use a programming language takes time but pays of at the long run (for all of science)
+ ###- And it is fun!
+ ###- But, it is not easy to learn and will cost time
+---
+
+# To replicate a scientific study we need at least:
+
+####&gt; - Scientific context, research questions and state of the art [P]
+####&gt; - (Experimental) model or characteristics of population or matter studied [P]
+&gt; - Data that was generated and corresponding meta data [D, C]
+&gt; - **Exact** (experimental) design of the study [P, D, C]
+&gt; - Exploratory data analysis of the data [P, C]
+&gt; - **Exact** methods that were used to conduct any formal inference [P, C]
+&gt; - Model diagnostics [*C*]
+&gt; - Interpretations of the (statistical) model results/model fitting process [*P*, *C*]
+&gt; - Conclusions and academic scoping of the results [&lt;mark&gt;P&lt;/mark&gt;, *C*]
+&gt; - **Access to all of the above** [&lt;mark&gt;OAcc, OSrc&lt;/mark&gt;]
+
+P = Publication, D = Data, C = Code, OAcc = Open Access, OSrc = Open Source
+--
+
+### **= FAIR**
+
+
+---
+
+# FAIR Data
+
+The FAIR principles:
+
+ ###- **F** = *Findable*
+ ###- **A** = *Accessible*
+ ###- **I** = *Interoperable*
+ ###- **R** = *Re-usable*
+
+GO FAIR - Available from: [https://www.go-fair.org/go-fair-initiative/](https://www.go-fair.org/go-fair-initiative/)
+---
+
+# **F**indable data
+
+ ###- Datasets should be described, identified and registered or indexed in a clear and unequivocal manner
+ ###- Datasets should be findable by machines **and** humans
+
+Examples:
+
+ ###- [Digital Object Identifier - DOI](http://n2t.net/e/ark_ids.html)
+ ###- [Archival Resource Key - ARK](https://www.doi.org/)
+ ###- [Handle - HNDL](https://www.handle.net/)
+ ###- [Persistent Uniform Resource Locator - PURL](https://sites.google.com/site/persistenturls/)
+---
+
+# **A**ccesible data
+
+ ###- The (meta)data should be freely available
+ ###- Does not mean access to the data is free
+ ###- Accessibility is communication and linkage
+ ###- Condition under which the associated data are accessible should be open and free.
+ ###- Heavily protected and private data can be FAIR data. But is not Open Science
+ ###- Licence needs to be connected to the metadata
+---
+
+# **I**nteroperable data
+
+ ###- To enhance connecting and enriching data
+ ###- Information about analysis, platform, technology, software version, entity ids
+ ###- Controlled vocabularies and ontologies
+ ###- (Meta)data use a formal, accessible, shared, and broadly applicable language for knowledge 
+ ###- representation. (metadata standards)
+ ###- (Meta)data use vocabularies that follow FAIR principles
+ ###- (Meta)data include qualified references to other (meta)data (resolvers)
+---
+
+# **R**e-usable data
+
+ ###- (Meta)data are released with a clear and accessible data usage license
+ ###- (Meta)data are associated with detailed provenance
+ ###- (Meta)data meet domain-relevant community standards
+ ###- Data should be stored in a non-proprietary format (e.g. not `.xls(x)` or `.sav`)
+---
+
+# Workflow 'Mermaid' - Current
+
+
+```r
+library(DiagrammeR)
+mermaid("
+graph LR
+ CellCultureExperiment--&gt;LabJournal
+ MicrobiologyExperiment--&gt;LabJournal
+ LabJournal--&gt;XLSX
+ XLSX--&gt;ExcelOnLaptop
+")
+```
+
+<div id="htmlwidget-3dcdae5d07b26ee822e3" style="width:504px;height:504px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-3dcdae5d07b26ee822e3">{"x":{"diagram":"\ngraph LR\n CellCultureExperiment-->LabJournal\n MicrobiologyExperiment-->LabJournal\n LabJournal-->XLSX\n XLSX-->ExcelOnLaptop\n"},"evals":[],"jsHooks":[]}</script>
+---
+
+# Workflow 'Mermaid' - Future
+
+
+```r
+library(DiagrammeR)
+mermaid("
+graph LR
+ CellCultureExperiment--&gt;Robot
+ MicrobiologyExperiment--&gt;Robot
+ Robot--&gt;ElectronicLabJournal
+ ElectronicLabJournal--&gt;Dashboard
+")
+```
+
+<div id="htmlwidget-edd80ccee64160a5eb5a" style="width:504px;height:504px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-edd80ccee64160a5eb5a">{"x":{"diagram":"\ngraph LR\n CellCultureExperiment-->Robot\n MicrobiologyExperiment-->Robot\n Robot-->ElectronicLabJournal\n ElectronicLabJournal-->Dashboard\n"},"evals":[],"jsHooks":[]}</script>
+---
+
+# Ontox workflow
+
+[mermaid markdown](https://github.com/ontox-hu/workflows/blob/main/WorkflowONTOX.md)
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();</script>
+<style>
+.logo {
+  background-image: url(cropped-logo-ontox_orange-01-01-2.webp);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  width: 110px;
+  height: 128px;
+  z-index: 0;
+}
+</style>
+
+<script>
+document
+  .querySelectorAll(
+    '.remark-slide-content' +
+    ':not(.title-slide)' +
+    // add additional classes to exclude here, e.g.
+    // ':not(.inverse)' +
+    ':not(.hide-logo)'
+  )
+  .forEach(el => {
+    el.innerHTML += '<div class="logo"></div>';
+  });
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

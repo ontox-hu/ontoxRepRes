@@ -1,0 +1,225 @@
+---
+title: "Introduction"
+author: "[Marc Teunis, PhD](https://orcid.org/0000-0002-3496-6669); [Alyanne de Haan, PhD](https://orcid.org/0000-0003-0896-0906)"
+affiliation: "HU University of Applied Sciences"
+date: "`r Sys.time()`"
+output:
+  xaringan::moon_reader:
+    includes:
+      after_body: 'insert-logo.html'
+    nature:
+      ratio: '16:9'
+subtitle: "Reproducible Open Science"
+always_allow_html: yes
+widescreen: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,
+                      warning = FALSE,
+                      error = FALSE,
+                      message = FALSE)
+
+image_dir <- here::here(
+  "images"
+)
+
+## packages
+library(tidyverse)
+library(nlme)
+library(DiagrammeR)
+```
+
+# Data, methods and logic
+
+[*Brown, Kaiser & Allison, PNAS, 2018*](https://doi.org/10.1073/pnas.1708279115)
+
+"...in science, three things matter:
+
+--
+ ###- the data,
+ ###- the methods used to collect the data [...], and
+ ###- the logic connecting the data and methods to conclusions,
+--
+
+
+ ### everything else is a distraction."
+---
+
+# `Gollums` lurking about
+
+```{r, dpi = 120}
+knitr::include_graphics(
+  file.path(
+    image_dir,
+    "gollum_climbing.jpg"
+  )
+)
+```
+
+
+--
+"In one case, a group accidentally used reverse-coded variables, making their conclusions the opposite of what the data supported."
+
+
+--
+"In another case, authors received an incomplete dataset because entire categories of data were missed; when corrected, the qualitative conclusions did not change, but the quantitative conclusions changed by a factor of \>7"
+
+
+--
+[Brown, Kaiser & Allison, 2018; PNAS](https://doi.org/10.1073/pnas.1708279115)
+---
+
+# Why do we need Reproducible (Open) Science?
+
+ ###- To assess validity of science and methods we need access to data, methods and conclusions
+ ###- To learn from choices other researchers made
+ ###- To learn from omissions, mistakes or errors
+ ###- To prevent publication bias (also negative results will be available in reproducible research)
+ ###- To be able to re-use and/or synthesize data (from many and diverse sources)
+
+[Nature Collection on this topic](https://www.nature.com/collections/prbfkwmwvz)
+---
+
+# The *GUI problem*
+
+How would you 'describe' the steps of an analysis or creation of a graph when you use GUI\* based software?
+
+```{r, dpi = 80}
+knitr::include_graphics(
+  file.path(
+    "images",
+    "messy_steps.jpg"
+  )
+)
+```
+
+--
+***"You can only do this using code, so it is (basically) impossible in a GUI"***
+
+<p style="font-size:14px">
+-- 
+\*[Graphical User Interface (GUI)...is a form of user interface that allows users to interact with electronic devices through graphical icons and audio indicator such as primary notation, instead of text-based user interfaces, typed command labels or text navigation...](https://en.wikipedia.org/wiki/Graphical_user_interface)
+
+</p>
+---
+
+# Programming is essential for Reproducible (Open) Science
+
+ ###- Only programming an analysis (or creation of a graph) records every step
+ ###- The script(s) function as a (data) analysis journal
+ ###- Code is the logic that connects the data and methods to conclusions
+ ###- Learning to use a programming language takes time but pays of at the long run (for all of science)
+ ###- And it is fun!
+ ###- But, it is not easy to learn and will cost time
+---
+
+# To replicate a scientific study we need at least:
+
+####> - Scientific context, research questions and state of the art [P]
+####> - (Experimental) model or characteristics of population or matter studied [P]
+> - Data that was generated and corresponding meta data [D, C]
+> - **Exact** (experimental) design of the study [P, D, C]
+> - Exploratory data analysis of the data [P, C]
+> - **Exact** methods that were used to conduct any formal inference [P, C]
+> - Model diagnostics [*C*]
+> - Interpretations of the (statistical) model results/model fitting process [*P*, *C*]
+> - Conclusions and academic scoping of the results [<mark>P</mark>, *C*]
+> - **Access to all of the above** [<mark>OAcc, OSrc</mark>]
+
+P = Publication, D = Data, C = Code, OAcc = Open Access, OSrc = Open Source
+--
+
+### **= FAIR**
+
+
+---
+
+# FAIR Data
+
+The FAIR principles:
+
+ ###- **F** = *Findable*
+ ###- **A** = *Accessible*
+ ###- **I** = *Interoperable*
+ ###- **R** = *Re-usable*
+
+GO FAIR - Available from: [https://www.go-fair.org/go-fair-initiative/](https://www.go-fair.org/go-fair-initiative/)
+---
+
+# **F**indable data
+
+ ###- Datasets should be described, identified and registered or indexed in a clear and unequivocal manner
+ ###- Datasets should be findable by machines **and** humans
+
+Examples:
+
+ ###- [Digital Object Identifier - DOI](http://n2t.net/e/ark_ids.html)
+ ###- [Archival Resource Key - ARK](https://www.doi.org/)
+ ###- [Handle - HNDL](https://www.handle.net/)
+ ###- [Persistent Uniform Resource Locator - PURL](https://sites.google.com/site/persistenturls/)
+---
+
+# **A**ccesible data
+
+ ###- The (meta)data should be freely available
+ ###- Does not mean access to the data is free
+ ###- Accessibility is communication and linkage
+ ###- Condition under which the associated data are accessible should be open and free.
+ ###- Heavily protected and private data can be FAIR data. But is not Open Science
+ ###- Licence needs to be connected to the metadata
+---
+
+# **I**nteroperable data
+
+ ###- To enhance connecting and enriching data
+ ###- Information about analysis, platform, technology, software version, entity ids
+ ###- Controlled vocabularies and ontologies
+ ###- (Meta)data use a formal, accessible, shared, and broadly applicable language for knowledge 
+ ###- representation. (metadata standards)
+ ###- (Meta)data use vocabularies that follow FAIR principles
+ ###- (Meta)data include qualified references to other (meta)data (resolvers)
+---
+
+# **R**e-usable data
+
+ ###- (Meta)data are released with a clear and accessible data usage license
+ ###- (Meta)data are associated with detailed provenance
+ ###- (Meta)data meet domain-relevant community standards
+ ###- Data should be stored in a non-proprietary format (e.g. not `.xls(x)` or `.sav`)
+---
+
+# Workflow 'Mermaid' - Current
+
+```{r, echo=TRUE}
+library(DiagrammeR)
+mermaid("
+graph LR
+ CellCultureExperiment-->LabJournal
+ MicrobiologyExperiment-->LabJournal
+ LabJournal-->XLSX
+ XLSX-->ExcelOnLaptop
+")
+
+```
+---
+
+# Workflow 'Mermaid' - Future
+
+```{r, echo=TRUE}
+library(DiagrammeR)
+mermaid("
+graph LR
+ CellCultureExperiment-->Robot
+ MicrobiologyExperiment-->Robot
+ Robot-->ElectronicLabJournal
+ ElectronicLabJournal-->Dashboard
+")
+
+```
+---
+
+# Ontox workflow
+
+[mermaid markdown](https://github.com/ontox-hu/workflows/blob/main/WorkflowONTOX.md)
+

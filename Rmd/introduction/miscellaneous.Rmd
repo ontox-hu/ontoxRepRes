@@ -1,0 +1,199 @@
+---
+title: "Miscellaneous"
+author: "[Marc Teunis, PhD](https://orcid.org/0000-0002-3496-6669); [Alyanne de Haan, PhD](https://orcid.org/0000-0003-0896-0906)"
+date: "`r Sys.time()`"
+output:
+  ioslides_presentation:
+    logo: cropped-logo-ontox_orange-01-01-2.webp
+  beamer_presentation: default
+  powerpoint_presentation: default
+subtitle: Reproducible Research & FAIR Data
+always_allow_html: yes
+widescreen: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,
+                      warning = FALSE,
+                      error = FALSE,
+                      message = FALSE)
+
+image_dir <- here::here(
+  "images"
+)
+
+## packages
+library(tidyverse)
+library(nlme)
+library(DiagrammeR)
+```
+
+## Version controlled findable data
+
+Databases that provide access to the data usually work with time-stamped identifiers for updates
+
+```{r, dpi=50}
+knitr::include_graphics(
+  here::here(
+    "images",
+    "pubchem_version.png"
+  )
+)
+```
+
+## FAIR data point (FDP)
+
+-   A formal API that hosts metadata of datasets and that can be *visited* by computers (scripts) and humans
+-   To empower people to store their data as FAIR data on the web
+-   Consists of ["FAIR Data Point 'API' specification"](https://specs.fairdatapoint.org/); Reference implementation - authentication system and a web client that hoists the FDP
+
+Example: [VODAN](https://www.vodan-totafrica.info/about-vodan)
+
+<p style="font-size:14px">
+
+<https://github.com/FAIRDataTeam/FAIRDataPoint>
+
+</p>
+
+<p style="font-size:14px">
+
+<https://specs.fairdatapoint.org/>
+
+</p>
+
+## Metadata standards
+
+To enable harmonization and inter-operability standards have been defined
+
+Examples:
+
+-   [DCAT](https://www.w3.org/TR/vocab-dcat-2/)
+-   [Dublin Core](https://www.dublincore.org/)
+-   [Linked Data Platform](https://www.w3.org/TR/ldp/)
+
+## Dublin Core [DC]
+
+Namespace: terms to include in the metadata schema
+
+A namespace has properties:
+
+*abstract, accessRights, accrualMethod, accrualPeriodicity,* *accrualPolicy, alternative, audience, available, bibliographicCitation,* *conformsTo, contributor, coverage, created, creator, date, ...*
+
+[DC terms namespace](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/)
+
+DC has definitions for RDF and XML.
+
+**When we look at the different namespaces, we discover that the DC is actually an ontology ;-)**
+
+# Interoperability example
+
+| attribute  | property                                                   |
+|-----------------|-------------------------------------------------------|
+| id:        | <GO:0000016>                                               |
+| name:      | lactase activity                                           |
+| namespace: | molecular_function                                         |
+| def:       | "Catalysis of the reaction: lactose + H2O = D-glucose + D-galactose." EC:3.2.1.108] |
+| synonym:   | "lactose galactohydrolase activity" EXACT [EC:3.2.1.108]   |
+| ...        | ...                                                        |
+
+<p style="font-size:14px">
+
+[Gene Ontology Resource](http://geneontology.org/)
+
+</p>
+---
+
+# GENE annotation with this GO term:
+
+| attribute        | property                                                       |
+|------------------|----------------------------------------------------------------|
+| Submitted name   | Lactase, gene 1                                                |
+| Gene             | lct.1                                                          |
+| Organism         | Xenopus tropicalis (Western clawed frog) (Silurana tropicalis) |
+| Status           | Unreviewed                                                     |
+| Annotation score | Protein predicted 
+
+---
+
+
+# Licences
+
+ ###- CC ZERO (No limits)
+ ###- CC BY (Attribution)
+ ###- CC BY-SA (Attribution + Remix/Reuse/Extend)
+ ###- CC BY-ND (Attribution + NoDerivatives - reuse as is)
+ ###- CC BY-NC (Attribution + NonCommercial)
+ ###- CC BY-NC-SA (Combination)
+ ###- CC BY-NC-ND (Restrictive combination)
+ ###- Copyright
+---
+
+## Workflows - Current
+
+```{r}
+knitr::include_graphics(
+  here::here(
+    "images",
+    "state-of-the-art-data-collection.jpg"
+  )  
+)
+```
+
+<p style="font-size:14px">
+
+Solle, D. Be FAIR to your data. Anal Bioanal Chem 412, 3961--3965 (2020). <https://doi.org/10.1007/s00216-020-02526-7>
+
+</p>
+---
+
+# Workflows - Future
+
+```{r}
+knitr::include_graphics(
+  here::here(
+    "images",
+    "future-data-collection.jpg"
+    )
+  )
+```
+<p style="font-size:14px">
+
+Solle, D. Be FAIR to your data. Anal Bioanal Chem 412, 3961--3965 (2020). <https://doi.org/10.1007/s00216-020-02526-7>
+
+</p>
+---
+
+# Contents
+
+ ###- Reproducible (Open) Science
+ ###- FAIR Data
+ ###- Work Flows
+
+The complete source code for the webinars and all dependent data, and files can be found on [Github.com/ontox-hu](https://github.com/ontox-hu/data_management_workshop).
+---
+
+# Introducing Reproducible (Open) Science
+
+ ###1. When things go wrong
+ ###2. Why Reproducible (Open) Science?
+ ###3. The need for learning to program
+ ###4. FAIR data
+
+### Reproducible (Open) Science = Reproducible Research + Open Science
+---
+
+# Metadata
+
+ ###- To find data, datasets should be accompanied by rich metadata ("data about the data")
+ ###- Metadata can adhere to a standard, but not necessarily
+ ###- At least describe: 
+ 
+  - title
+  - origin
+  - date 
+  - variable description
+  - owner 
+  - licence
+  - version
+  - format
+---

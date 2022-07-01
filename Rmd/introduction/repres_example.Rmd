@@ -1,0 +1,194 @@
+---
+title: "Reproducible Research Example"
+author: '[Marc Teunis, PhD](https://orcid.org/0000-0002-3496-6669); [Alyanne de Haan, PhD](https://orcid.org/0000-0003-0896-0906)'
+date: '`r Sys.time()`'
+output:
+  ioslides_presentation:
+    highlight: tango
+    logo: "cropped-logo-ontox_orange-01-01-2.webp"
+subtitle: Reproducible Research
+always_allow_html: yes
+widescreen: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,
+                      warning = FALSE,
+                      error = FALSE,
+                      message = FALSE)
+
+image_dir <- here::here(
+  "images"
+)
+
+## packages
+library(tidyverse)
+library(nlme)
+```
+
+
+## A short example of Reproducible (Open) Science
+
+Assume we have the following question:
+"Which of 4 types of chairs takes the least effort to arise from when seated in?"
+We have the following setup:
+
+ - 4 different types of chairs
+ - 9 different subjects (probably somewhat aged)
+ - Each subject is required to provide a score (from 6 to 20, 6 being very lightly strenuous, 20 being extremely strenuous) when arising from each of the 4 chairs. There is some 'wash-out' time in between the trials. The chair order is randomised.
+
+To analyze this experiment statistically, the model would need to include: the rating score as the **measured (or dependent) variable**, the type of chair as the **experimental factor** and the subject as the **blocking factor**
+
+## Mixed effects models
+
+A typical analysis method for this type of randomized block design is a so-called 'multi-level' or also called 'mixed-effects' or 'hierarchical' model. An analysis method much used in clinical or biological scientific practice. 
+
+## What do we minimally need, to replicate the science of this experiment? {.build}
+
+ >- the data 
+ >- an exploratory graph 
+ >- a statistical model 
+ >- the statistical model results
+ >- a model diagnostic
+ >- some conclusions 
+ 
+In the next few slides, I will hopefully convince you of the power of (literate) programming to communicate such an analysis. 
+
+<p style="font-size:14px">[Example reproduced from: Pinheiro and Bates, 2000, _Mixed-Effects Models in S and S-PLUS_, Springer, New York.](https://cran.r-project.org/web/packages/nlme/index.html)</p>
+ 
+## The data of the experiment
+
+<p style="font-size:14px">[Wretenberg, Arborelius & Lindberg, 1993](https://doi.org/10.1080/00140139308967910)</p>
+
+
+```{r, echo=TRUE}
+library(nlme)
+ergoStool %>% as_tibble()
+```
+
+## An exploratory graph
+```{r}
+set.seed(123)
+plot_ergo <- ergoStool %>%
+  ggplot(aes(x = reorder(Type, effort), y = effort)) + 
+  geom_boxplot(colour = "darkgreen", outlier.shape = NA) + 
+  geom_jitter(aes(colour = reorder(Subject, -effort)), 
+              width = 0.2, size = 3) +
+  scale_colour_manual(values = c("red","blue", "green", "darkblue", "darkgreen", "purple", "grey", "black", "darkgrey")) +
+  ylab("Effort (Borg scale score)") +
+  xlab("Chair type") + 
+  guides(colour=guide_legend(title="Subject id")) +
+  theme_bw()
+plot_ergo
+```
+
+## Mind the variability per subject, what do you see?
+
+ - Can you say something about within-subject variability (note 'Minster Blue')?
+ - Can you say something about between-subject variability (note 'Mister Green', vs 'Mister Black')?
+ - Which chair type takes, on average the biggest effort to arise from?
+ 
+```{r, fig.width=5, fig.height=3}
+plot_ergo
+```
+
+## The statistical questions
+
+ 1. Which chair type takes, on average the biggest effort to arise from? (ANOVA / MEM, fixed effects)
+ - Do individual (within subject) differences play a role in appointing a average score to a chair type? (MEM, random effects)
+ - Does variability between subjects play a role in determining the 'best' chair type (ANOVA / MEM, confidence intervals)
+
+## The statistical model 
+Statistical models (in R) can be specified by a `model formula`. The left side of the formula is the dependent variable, the right side are the 'predictors'. Here we include a `fixed` and a `random` term to the model (as is common for mixed-effects models)
+
+```{r, echo=TRUE, eval=FALSE}
+library(nlme)
+```
+```{r, echo=TRUE}
+ergo_model <- lme(
+  data = ergoStool, # the data to be used for the model
+  fixed = effort ~ Type, # the dependent and fixed effects variables
+  random = ~1 | Subject # random intercepts for Subject variable
+)
+```
+
+<p style="font-size:18px">The `lme()` function is part of the [`{nlme}`](https://cran.r-project.org/web/packages/nlme/index.html) package for mixed effects modelling in R</p>
+
+<p style="font-size:18px">Example reproduced from: [Pinheiro and Bates, 2000, _Mixed-Effects Models in S and S-PLUS_, Springer, New York.](https://cran.r-project.org/web/packages/nlme/index.html)</p>
+
+## The statistical results
+```{r}
+result <- ergo_model %>% summary() 
+result$tTable %>% as.data.frame() %>% knitr::kable()
+```
+
+## Model diagnostics {.build}
+
+ >- Diagnostics of a fitted model is the most important step in a statistical analysis
+ >- In most scientific papers the details are lacking 
+ >- Did the authors omit to perform this step? Or did they not report it?
+ >- If you do not want to include it in your paper, put it in an appendix!
+ 
+A residual plot shows the 'residual' error ('unexplained variance') after fitting the model. Under the Normality assumption standardized residuals should:
+ 
+ >1. Be normally distributed around 0
+ >1. Display no obvious 'patterns'
+ >1. Should display overall equal 'spread' above and below 0 ('assumption of equal variance')
+ 
+## Residual plot
+```{r, echo=TRUE}
+plot(ergo_model) ## type = 'pearson' (standardized residuals)
+```
+
+## The conclusions in a plot
+```{r}
+# install.packages("ggsignif")
+library(ggsignif)
+p_values <- result$tTable %>% as.data.frame()
+annotation_df <- data.frame(Type=c("T1", "T2"), 
+                            start=c("T1", "T1"), 
+                            end=c("T2", "T3"),
+                            y=c(16, 14),
+                            label=
+                              paste("p-value:",
+                              c(
+                              formatC(
+                                p_values$`p-value`[2], digits = 3),
+                              formatC(
+                                p_values$`p-value`[3], digits = 3)
+                              )
+                            )
+                          )
+                            
+set.seed(123)
+ergoStool %>%
+  ggplot(aes(x = reorder(Type, effort), 
+             y = effort)) + 
+  geom_boxplot(colour = "darkgreen", 
+               outlier.shape = NA) + 
+  geom_jitter(aes(
+    colour = reorder(Subject, -effort)), 
+    width = 0.2, 
+    size = 3) +
+  scale_colour_manual(
+    values = c(
+      "red", "blue","green", 
+      "darkblue", "darkgreen", 
+      "purple", "grey", "black", 
+      "darkgrey")) +
+  ylab("Effort (Borg scale score)") +
+  xlab("Chair type") + 
+  guides(colour=guide_legend(title="Subject id")) +
+  ylim(c(6,20)) +
+  geom_signif(
+    data=annotation_df,
+    aes(xmin=start, 
+    xmax=end, 
+    annotations=label, 
+    y_position=y),
+    textsize = 5, vjust = -0.2,
+    manual=TRUE) +
+  theme_bw() -> plot_ergo
+plot_ergo
+```
+
