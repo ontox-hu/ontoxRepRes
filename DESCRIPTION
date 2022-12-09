@@ -1,0 +1,29 @@
+Package: ontoxRepRes
+Title: This R package contians the workshop materials for the "ONTOX Reproducible
+    Research" Workshop held in July 2022"
+Date: 25-11-2022
+Version: 0.1.0
+Authors@R: 
+    c(
+    person("Marie", "Corradi", , "marc.teunis@hu.nl", role = c("aut"),
+           comment = c(ORCID = "https://orcid.org/0000-0001-8185-5913")),
+    person("Alyanne", "De Haan", , "marc.teunis@hu.nl", role = c("aut"),
+           comment = c(ORCID = "https://orcid.org/0000-0003-0896-0906")),
+    person("Marc", "Teunis", , "marc.teunis@hu.nl", role = c("aut", "cre"),
+           comment = c(ORCID = "https://orcid.org/0000-0002-3496-6669"))
+    )
+Description: This R package contians the workshop materials for the "ONTOX Reproducible
+    Research" Workshop held in July 2022"
+License: CC BY-NC 4.0
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.2
+Imports: 
+    bookdown,
+    datasets,
+    here,
+    knitr,
+    rmarkdown,
+    rsconnect
+Depends: 
+    tidyverse

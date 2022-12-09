@@ -33,3 +33,4 @@ _book
 _main.Rmd
 data_management_in_ontox_101.rds
 .DS_Store
+.Rproj.user
